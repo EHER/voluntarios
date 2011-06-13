@@ -1,0 +1,59 @@
+framework:
+    secret:  81FecrL4cEOgsiZiTDaLxfaTwEY8BGNJ
+    charset:            UTF-8
+    router:             { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:               true
+    csrf_protection:    true
+    validation:         { enabled: true, enable_annotations: true }
+    templating:         { engines: ['twig'] } #assets_version: SomeVersionScheme
+    session:
+        default_locale: en
+        lifetime:       3600
+        auto_start:     true
+        name:           voluntarios
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    filters:
+        cssrewrite: ~
+        # closure:
+        #     jar: %kernel.root_dir%/java/compiler.jar
+        # yui_css:
+        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
+
+## Doctrine Configuration
+#doctrine:
+#   dbal:
+#       default_connection:       default
+#       connections:
+#           default:
+#               dbname:   xxxxxxxx
+#               user:     xxxxxxxx
+#               password: ~
+#               logging:  %kernel.debug%
+#   orm:
+#       auto_generate_proxy_classes: %kernel.debug%
+#       default_entity_manager:   default
+#       entity_managers:
+#           default:
+#               connection: default
+#               mappings:
+#                   EherVoluntariosBundle: ~
+
+
+## Swiftmailer Configuration
+#swiftmailer:
+#    transport:  smtp
+#    encryption: ssl
+#    auth_mode:  login
+#    host:       smtp.gmail.com
+#    username:   xxxxxxxx
+#    password:   xxxxxxxx
+
