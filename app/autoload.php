@@ -10,6 +10,7 @@ $loader->registerNamespaces(array(
     'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
     'Doctrine\\DBAL\\Migrations'       => __DIR__.'/../vendor/doctrine-migrations/lib',
     'Doctrine\\DBAL'                   => __DIR__.'/../vendor/doctrine-dbal/lib',
+    'Doctrine\\REST'                   => __DIR__.'/../vendor/doctrine-rest/lib',
     'Doctrine'                         => __DIR__.'/../vendor/doctrine/lib',
     'Assetic'                          => __DIR__.'/../vendor/assetic/src',
     'Monolog'                          => __DIR__.'/../vendor/monolog/src',
