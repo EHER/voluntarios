@@ -3,7 +3,11 @@ default:
 	@echo "perms\t\tAjusta as permisões dos arquivos"
 
 depends:
-	git submodules update --init
+	git submodule update --init
+
+update-depends:
+	git submodule foreach git checkout master
+	git submodule foreach git pull
 
 perms:
 	chmod -R 777 app/logs
