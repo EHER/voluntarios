@@ -1,4 +1,4 @@
+*.swp
 app/cache/*
 app/logs/*
 app/phpunit.xml
-nbproject/

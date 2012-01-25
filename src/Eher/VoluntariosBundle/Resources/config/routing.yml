@@ -2,6 +2,6 @@ homepage:
     pattern:  /
     defaults: { _controller: EherVoluntariosBundle:Voluntarios:welcome }
 
-Voluntarios:
-    pattern:  /Voluntarios
+voluntarios:
+    pattern:  /voluntarios
     defaults: { _controller: EherVoluntariosBundle:Voluntarios:index }
