@@ -13,11 +13,10 @@ class VoluntariosController extends Controller
 
     public function indexAction()
     {
-        return $this->render('EherVoluntariosBundle:Voluntarios:index.html.twig');
-    }
+        define("APONTADOR_KEY", "");
+        define("APONTADOR_SECRET", "");
+        throw new \Exception("Configure as chaves do Apontador no arquivo " . __FILE__);
 
-    public function welcomeAction()
-    {
         $client = new Client();
 
         $manager = new Manager($client);
@@ -28,6 +27,11 @@ class VoluntariosController extends Controller
         $place = Place::find('C406355363443Q443C'); 
         var_dump($place);
 
+        return $this->render('EherVoluntariosBundle:Voluntarios:index.html.twig');
+    }
+
+    public function welcomeAction()
+    {
         return $this->render('EherVoluntariosBundle:Voluntarios:welcome.html.twig');
     }
 

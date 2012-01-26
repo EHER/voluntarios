@@ -10,6 +10,5 @@ web_profiler:
     toolbar: false
     intercept_redirects: false
 
-## Swiftmailer Configuration
 swiftmailer:
     disable_delivery: true
