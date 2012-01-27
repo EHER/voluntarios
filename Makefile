@@ -12,4 +12,4 @@ perms:
 	mkdir -p app/logs
 	mkdir -p app/cache
 	chmod -R 777 app/logs
-	chmod -R 777 app/cache"
+	chmod -R 777 app/cache
