@@ -1,7 +1,18 @@
 {% extends "::base.html.twig" %}
-
+{% block title %}Quero ser Voluntário!{% endblock %}
 {% block body %}
-    <h1>Voluntarios Application</h1>
-
+    <h1><a href="{{ navUrl['homepage'] }}">Quero ser Voluntário!</a></h1>
+    <nav>
+        <a href="{{ navUrl['sobre'] }}">Sobre o site</a> | 
+        <a href="{{ navUrl['buscar'] }}">Buscar entidade</a> | 
+        <a href="{{ navUrl['cadastrarVoluntario'] }}">Cadastrar Voluntário</a> | 
+        <a href="{{ navUrl['cadastrarEntidade'] }}">Cadastrar Entidade</a> | 
+        <a href="{{ navUrl['contato'] }}">Contato</a>
+    </nav>
+    <div>
     {% block content %}{% endblock %}
+    </div>
+    <footer>
+        © 2012 www.queroSerVoluntario.com
+    </footer>
 {% endblock %}

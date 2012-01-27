@@ -3,36 +3,73 @@
 namespace Eher\VoluntariosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
-    Doctrine\REST\Client\Client,
-    Doctrine\REST\Client\Manager,
-    Doctrine\REST\Client\Entity,
     Eher\VoluntariosBundle\Entity\Place;
 
 class VoluntariosController extends Controller
 {
+    private $navUrl = array();
+
+    public function generateNavUrl()
+    {
+        $this->navUrl['homepage'] = $this->get('router')->generate("homepage");
+        $this->navUrl['sobre'] = $this->get('router')->generate("sobre");
+        $this->navUrl['buscar'] = $this->get('router')->generate("buscar");
+        $this->navUrl['cadastrarVoluntario'] = $this->get('router')->generate("cadastrarVoluntario");
+        $this->navUrl['cadastrarEntidade'] = $this->get('router')->generate("cadastrarEntidade");
+        $this->navUrl['contato'] = $this->get('router')->generate("contato");
+    }
 
     public function indexAction()
     {
-        define("APONTADOR_KEY", "");
-        define("APONTADOR_SECRET", "");
-        throw new \Exception("Configure as chaves do Apontador no arquivo " . __FILE__);
-
-        $client = new Client();
-
-        $manager = new Manager($client);
-        $manager->registerEntity('Eher\VoluntariosBundle\Entity\Place');
-
-        Entity::setManager($manager);
-
-        $place = Place::find('C406355363443Q443C'); 
-        var_dump($place);
-
-        return $this->render('EherVoluntariosBundle:Voluntarios:index.html.twig');
+        $this->generateNavUrl();
+        return $this->render(
+            'EherVoluntariosBundle:Voluntarios:index.html.twig',
+            array('navUrl' => $this->navUrl)
+        );
     }
 
-    public function welcomeAction()
+    public function sobreAction()
     {
-        return $this->render('EherVoluntariosBundle:Voluntarios:welcome.html.twig');
+        $this->generateNavUrl();
+        return $this->render(
+            'EherVoluntariosBundle:Voluntarios:sobre.html.twig',
+            array('navUrl' => $this->navUrl)
+        );
     }
 
+    public function buscarAction()
+    {
+        $this->generateNavUrl();
+        return $this->render(
+            'EherVoluntariosBundle:Voluntarios:buscar.html.twig',
+            array('navUrl' => $this->navUrl)
+        );
+    }
+
+    public function cadastrarVoluntarioAction()
+    {
+        $this->generateNavUrl();
+        return $this->render(
+            'EherVoluntariosBundle:Voluntarios:cadastrarVoluntario.html.twig',
+            array('navUrl' => $this->navUrl)
+        );
+    }
+
+    public function cadastrarEntidadeAction()
+    {
+        $this->generateNavUrl();
+        return $this->render(
+            'EherVoluntariosBundle:Voluntarios:cadastrarEntidade.html.twig',
+            array('navUrl' => $this->navUrl)
+        );
+    }
+
+    public function contatoAction()
+    {
+        $this->generateNavUrl();
+        return $this->render(
+            'EherVoluntariosBundle:Voluntarios:contato.html.twig',
+            array('navUrl' => $this->navUrl)
+        );
+    }
 }

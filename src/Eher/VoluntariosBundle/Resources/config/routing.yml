@@ -1,7 +1,23 @@
 homepage:
     pattern:  /
-    defaults: { _controller: EherVoluntariosBundle:Voluntarios:welcome }
-
-voluntarios:
-    pattern:  /voluntarios
     defaults: { _controller: EherVoluntariosBundle:Voluntarios:index }
+
+sobre:
+    pattern:  /sobre
+    defaults: { _controller: EherVoluntariosBundle:Voluntarios:sobre }
+
+buscar:
+    pattern:  /entidade/buscar
+    defaults: { _controller: EherVoluntariosBundle:Voluntarios:buscar }
+
+cadastrarVoluntario:
+    pattern:  /voluntario/cadastrar
+    defaults: { _controller: EherVoluntariosBundle:Voluntarios:cadastrarVoluntario }
+
+cadastrarEntidade:
+    pattern:  /entidade/cadastrar
+    defaults: { _controller: EherVoluntariosBundle:Voluntarios:cadastrarEntidade }
+
+contato:
+    pattern:  /contato
+    defaults: { _controller: EherVoluntariosBundle:Voluntarios:contato }
