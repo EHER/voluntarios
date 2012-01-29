@@ -2,3 +2,9 @@
 app/cache/*
 app/logs/*
 app/phpunit.xml
+app/*.cache
+web/bundles/*
+web/uploads/*
+vendor
+composer.phar
+composer.lock

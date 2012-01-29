@@ -6,8 +6,7 @@ default:
 install: depends perms
 
 depends:
-	wget http://getcomposer.org/composer.phar
-	php composer.phar install
+	bin/vendors install
 
 perms:
 	mkdir -p app/logs
