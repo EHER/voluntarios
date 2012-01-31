@@ -9,17 +9,17 @@ update: vendors-update build-bootstrap perms
 
 vendors-install:
 	@echo "Instalando vendors..."
-	@bin/vendors install
+	bin/vendors install
 	@echo "Feito!"
 
 vendors-update:
 	@echo "Atualizando vendors..."
-	@bin/vendors update
+	bin/vendors update
 	@echo "Feito!"
 
 build-bootstrap:
 	@echo "Fazendo build do bootstrap..."
-	@bin/build_bootstrap
+	bin/build_bootstrap
 	@echo "Feito!"
 
 perms:
