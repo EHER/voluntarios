@@ -5,7 +5,8 @@ namespace Eher\VoluntariosBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     Eher\VoluntariosBundle\Entity\Place,
     chegamos\rest\Curl as RestClient,
-    chegamos\entity\repository\UserRepository;
+    chegamos\entity\repository\UserRepository,
+    chegamos\entity\repository\PlaceRepository;
 
 class VoluntariosController extends Controller
 {
@@ -32,8 +33,12 @@ class VoluntariosController extends Controller
         $restClient->setAuth($key, $secret);
 
         $userRepository = new UserRepository($restClient);
-
         $user = $userRepository->get("8972911185");
+
+        $PlaceRepository = new PlaceRepository($restClient);
+        $place = $placeRepository->get("UCV34B2P");
+        var_dump($place);
+        exit;
 
         return $this->render(
             'EherVoluntariosBundle:Voluntarios:index.html.twig',
