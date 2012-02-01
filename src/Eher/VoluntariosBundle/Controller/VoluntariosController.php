@@ -4,7 +4,7 @@ namespace Eher\VoluntariosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     Eher\VoluntariosBundle\Entity\Place,
-    chegamos\rest\Curl as RestClient,
+    chegamos\rest\Guzzle as RestClient,
     chegamos\entity\repository\UserRepository,
     chegamos\entity\repository\PlaceRepository;
 
@@ -26,25 +26,24 @@ class VoluntariosController extends Controller
     {
         $this->generateNavUrl();
 
-        $key = "ImpfX7kZ3mMsEcrhBngDckmGg3FLfq5Q_hEO1tzXSjk~";
-        $secret = "fp9kMiR42NU1c-dLiDm4nVRUn4o~";
-
         $restClient = new RestClient("http://api.apontador.com.br/v1/");
-        $restClient->setAuth($key, $secret);
+        $restClient->setAuth(
+            $this->container->getParameter('apontador_consumer_key'),
+            $this->container->getParameter('apontador_consumer_secret')
+        );
 
         $userRepository = new UserRepository($restClient);
         $user = $userRepository->get("8972911185");
 
-        $PlaceRepository = new PlaceRepository($restClient);
+        $placeRepository = new PlaceRepository($restClient);
         $place = $placeRepository->get("UCV34B2P");
-        var_dump($place);
-        exit;
 
         return $this->render(
             'EherVoluntariosBundle:Voluntarios:index.html.twig',
             array(
                 'navUrl' => $this->navUrl,
                 'user' => $user,
+                'place' => $place,
             )
         );
     }
