@@ -3,7 +3,9 @@
 namespace Eher\VoluntariosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
-    Eher\VoluntariosBundle\Entity\Place,
+    chegamos\entity\Place,
+    chegamos\entity\City,
+    chegamos\entity\Address,
     chegamos\rest\Guzzle as RestClient,
     chegamos\entity\repository\UserRepository,
     chegamos\entity\repository\PlaceRepository;
@@ -26,24 +28,10 @@ class VoluntariosController extends Controller
     {
         $this->generateNavUrl();
 
-        $restClient = new RestClient("http://api.apontador.com.br/v1/");
-        $restClient->setAuth(
-            $this->container->getParameter('apontador_consumer_key'),
-            $this->container->getParameter('apontador_consumer_secret')
-        );
-
-        $userRepository = new UserRepository($restClient);
-        $user = $userRepository->get("8972911185");
-
-        $placeRepository = new PlaceRepository($restClient);
-        $place = $placeRepository->get("UCV34B2P");
-
         return $this->render(
             'EherVoluntariosBundle:Voluntarios:index.html.twig',
             array(
                 'navUrl' => $this->navUrl,
-                'user' => $user,
-                'place' => $place,
             )
         );
     }
@@ -60,9 +48,38 @@ class VoluntariosController extends Controller
     public function buscarAction()
     {
         $this->generateNavUrl();
+        $search = null;
+        $cityName = $this->getRequest()->query->get('cidade');
+        $stateName = $this->getRequest()->query->get('uf');
+
+        if (!empty($cityName) && !empty($stateName)) {
+            $restClient = new RestClient("http://api.apontador.com.br/v1/");
+            $restClient->setAuth(
+                $this->container->getParameter('apontador_consumer_key'),
+                $this->container->getParameter('apontador_consumer_secret')
+            );
+            $placeRepository = new PlaceRepository($restClient);
+
+            $city = new City();
+            $city->setName($cityName);
+            $city->setState($stateName);
+
+            $address = new Address();
+            $address->setCity($city);
+
+            $search = $placeRepository->byAddress($address)
+                ->withSubcategoryId("6661")
+                ->getAll();
+        }
+
         return $this->render(
             'EherVoluntariosBundle:Voluntarios:buscar.html.twig',
-            array('navUrl' => $this->navUrl)
+            array(
+                'navUrl' => $this->navUrl,
+                'cityName' => $cityName,
+                'stateName' => $stateName,
+                'search' => $search,
+            )
         );
     }
 
@@ -78,9 +95,13 @@ class VoluntariosController extends Controller
     public function cadastrarEntidadeAction()
     {
         $this->generateNavUrl();
+
+
         return $this->render(
             'EherVoluntariosBundle:Voluntarios:cadastrarEntidade.html.twig',
-            array('navUrl' => $this->navUrl)
+            array(
+                'navUrl' => $this->navUrl,
+            )
         );
     }
 

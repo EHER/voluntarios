@@ -3,16 +3,24 @@
 {% block content %}
     <h2>Buscar de Entidades Beneficentes em:</h2>
     <form action="">
-        <input name="cidade" type="text" value="São Paulo" />
-        <input name="uf" type="text" value="SP" />
+        <label> Cidade
+            <input name="cidade" type="text" value="{{ cityName }}" />
+        </label>
+        <label> UF 
+            <input name="uf" type="text" value="{{ stateName }}" />
+        </label>
         <input type="submit" value="Buscar" />
     </form>
-{% endblock %}
-{% block searchResult %}
-    <p>Resultador da Busca</p>
-    <ul>
-        <li>Resultado 1</li>
-        <li>Resultado 2</li>
-        <li>Resultado 3</li>
-    </ul>
+    {% if search %}
+        {% if search.getNumFound > 0 %}
+            <p>Resultado da Busca:</p>
+            <ul>
+            {% for place in search.getItems %}
+                <li>{{ place.name }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum resultado.</p>
+        {% endif %}
+    {% endif %}
 {% endblock %}
