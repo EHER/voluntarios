@@ -4,38 +4,38 @@ default:
 	@echo "update\t\tFaz a atualização dos vendors pelo Composer"
 	@echo "perms\t\tAjusta as permisões dos arquivos"
 
-install: vendors-install build-bootstrap perms
+install: vendors-install perms build-bootstrap
 
-reinstall: vendors-reinstall build-bootstrap perms
+reinstall: remove-vendors vendors-install
 
-update: vendors-update build-bootstrap perms
+update: vendors-update perms build-bootstrap
 
 vendors-install:
-	@echo "Instalando vendors..."
+	@echo "Instalando vendors"
 	bin/vendors install
 	@echo "Feito!"
 
-vendors-reinstall:
-	@echo "Forçando a instalação dos vendors..."
+remove-vendors:
+	@echo "Removendo vendors"
 	@rm -rf vendor composer.lock
-	bin/vendors install
 	@echo "Feito!"
 
 vendors-update:
-	@echo "Atualizando vendors..."
+	@echo "Atualizando vendors"
 	bin/vendors update
 	@echo "Feito!"
 
-build-bootstrap:
-	@echo "Fazendo build do bootstrap..."
-	bin/build_bootstrap
-	@echo "Feito!"
-
 perms:
-	@echo "Ajustando permissões..."
+	@echo "Ajustando permissões"
 	@mkdir -p app/logs
 	@mkdir -p app/cache
-	@chmod -R 777 app/logs
-	@chmod -R 777 app/cache
+	@chmod 777 app/logs
+	@chmod 777 app/cache
+	@echo "Feito!"
+
+build-bootstrap:
+	@echo "Fazendo build do bootstrap"
+	bin/build_bootstrap
+	cp -n app/config/parameters.ini.dist app/config/parameters.ini
 	@echo "Feito!"
 
