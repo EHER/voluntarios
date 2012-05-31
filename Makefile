@@ -27,10 +27,10 @@ vendors-update:
 
 perms:
 	@echo "Ajustando permissões"
-	@mkdir -p app/logs
-	@mkdir -p app/cache
-	@chmod 777 app/logs
-	@chmod 777 app/cache
+	mkdir -p app/logs
+	mkdir -p app/cache
+	chmod -R 777 app/logs
+	chmod -R 777 app/cache
 	@echo "Feito!"
 
 build-bootstrap:
