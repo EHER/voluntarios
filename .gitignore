@@ -7,5 +7,5 @@ web/bundles/*
 web/uploads/*
 vendor
 composer.phar
-composer.loc
+composer.lock
 parameters.ini
