@@ -1,5 +1,28 @@
 {% extends "EherVoluntariosBundle::layout.html.twig" %}
 {% block title %}Quero ser Voluntário{% endblock %}
 {% block content %}
-    <h2>Página Principal</h2>
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Quero ser voluntário!</h1>
+        <p>Se você também quer, está no lugar certo. O site <a href="{{ url('homepage') }}">{{ url('homepage') }}</a> é o ponto de encontro para voluntários e entidades que veem um futuro melhor através de pequenos gestos. Interessou? Saiba um pouco mais sobre essa iniciativa.</p>
+        <p><a href="{{ url('sobre') }}" class="btn btn-primary btn-large">Ver mais &raquo;</a></p>
+      </div>
+
+      <div class="row">
+        <div class="span4">
+          <h2>Encontre</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a href="{{ url('buscar') }}" class="btn" href="#">Ver mais &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Seja</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a href="{{ url('cadastrarVoluntario') }}" class="btn" href="#">Ver mais &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Indique</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a href="{{ url('cadastrarEntidade') }}" class="btn" href="#">Ver mais &raquo;</a></p>
+        </div>
+      </div>
 {% endblock %}

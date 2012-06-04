@@ -1,26 +1,31 @@
 {% extends "EherVoluntariosBundle::layout.html.twig" %}
 {% block title %}Quero ser Voluntário - Contato{% endblock %}
 {% block content %}
-    <h2>Buscar de Entidades Beneficentes em:</h2>
-    <form action="">
-        <label> Cidade
+    <div class="well span3">
+        <h3>Buscar de Entidades</h3>
+        <form action="" class="">
+            <label for="cidade">Cidade</label>
             <input name="cidade" type="text" value="{{ cityName }}" />
-        </label>
-        <label> UF 
+            <label for="uf">UF</label>
             <input name="uf" type="text" value="{{ stateName }}" />
-        </label>
-        <input type="submit" value="Buscar" />
-    </form>
+            <input type="submit" value="Buscar" />
+        </form>
+    </div>
     {% if search %}
-        {% if search.getNumFound > 0 %}
-            <p>Resultado da Busca:</p>
-            <ul>
-            {% for place in search.getItems %}
-                <li>{{ place.name }}</li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>Nenhum resultado.</p>
-        {% endif %}
+        <div class="span5">
+            {% if search.getNumFound > 0 %}
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                    {% for place in search.getItems %}
+                        <tr>
+                            <td>{{ place.name }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4>Nenhum resultado.</h4>
+            {% endif %}
+        </div>
     {% endif %}
 {% endblock %}

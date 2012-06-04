@@ -1,18 +1,32 @@
 {% extends "::base.html.twig" %}
 {% block title %}Quero ser Voluntário!{% endblock %}
 {% block body %}
-    <h1><a href="{{ url('homepage') }}">Quero ser Voluntário!</a></h1>
-    <nav>
-        <a href="{{ url('sobre') }}">Sobre o site</a> | 
-        <a href="{{ url('buscar') }}">Buscar entidade</a> | 
-        <a href="{{ url('cadastrarVoluntario') }}">Cadastrar Voluntário</a> | 
-        <a href="{{ url('cadastrarEntidade') }}">Cadastrar Entidade</a> | 
-        <a href="{{ url('contato') }}">Contato</a>
-    </nav>
-    <div>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="{{ url('homepage') }}">Quero ser Voluntário</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="{{ url('sobre') }}">Sobre o site</a></li>
+              <li><a href="{{ url('buscar') }}">Buscar entidade</a></li>
+              <li><a href="{{ url('cadastrarVoluntario') }}">Cadastrar Voluntário</a></li>
+              <li><a href="{{ url('cadastrarEntidade') }}">Cadastrar Entidade</a></li>
+              <li><a href="{{ url('contato') }}">Contato</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
     {% block content %}{% endblock %}
     </div>
-    <br/>
+    <hr>
     <footer>
         © 2012 www.QueroSerVoluntario.com
     </footer>
