@@ -1,6 +1,6 @@
 default:
 	@echo "install\t\tFaz a instalação dos vendors pelo Composer"
-	@echo "reinstall\t\tForça a reinstalação dos vendors (apagando /vendors)"
+	@echo "reinstall\tForça a reinstalação dos vendors (apagando /vendors)"
 	@echo "update\t\tFaz a atualização dos vendors pelo Composer"
 	@echo "perms\t\tAjusta as permisões dos arquivos"
 
