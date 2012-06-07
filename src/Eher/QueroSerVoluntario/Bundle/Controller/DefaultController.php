@@ -1,6 +1,6 @@
 <?php
 
-namespace Eher\VoluntariosBundle\Controller;
+namespace Eher\QueroSerVoluntario\Bundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     chegamos\entity\Place,
@@ -10,16 +10,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     chegamos\entity\repository\UserRepository,
     chegamos\entity\repository\PlaceRepository;
 
-class VoluntariosController extends Controller
+class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('EherVoluntariosBundle:Voluntarios:index.html.twig');
+        return $this->render('EherQueroSerVoluntarioBundle:Default:index.html.twig');
     }
 
     public function sobreAction()
     {
-        return $this->render('EherVoluntariosBundle:Voluntarios:sobre.html.twig');
+        return $this->render('EherQueroSerVoluntarioBundle:Default:sobre.html.twig');
     }
 
     public function buscarAction()
@@ -49,7 +49,7 @@ class VoluntariosController extends Controller
         }
 
         return $this->render(
-            'EherVoluntariosBundle:Voluntarios:buscar.html.twig',
+            'EherQueroSerVoluntarioBundle:Default:buscar.html.twig',
             array(
                 'cityName' => $cityName,
                 'stateName' => $stateName,
@@ -60,16 +60,16 @@ class VoluntariosController extends Controller
 
     public function cadastrarVoluntarioAction()
     {
-        return $this->render('EherVoluntariosBundle:Voluntarios:cadastrarVoluntario.html.twig');
+        return $this->render('EherQueroSerVoluntarioBundle:Default:cadastrarVoluntario.html.twig');
     }
 
     public function cadastrarEntidadeAction()
     {
-        return $this->render('EherVoluntariosBundle:Voluntarios:cadastrarEntidade.html.twig');
+        return $this->render('EherQueroSerVoluntarioBundle:Default:cadastrarEntidade.html.twig');
     }
 
     public function contatoAction()
     {
-        return $this->render('EherVoluntariosBundle:Voluntarios:contato.html.twig');
+        return $this->render('EherQueroSerVoluntarioBundle:Default:contato.html.twig');
     }
 }

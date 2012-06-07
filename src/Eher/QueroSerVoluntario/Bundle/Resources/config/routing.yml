@@ -1,0 +1,24 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:index }
+
+sobre:
+    pattern:  /sobre
+    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:sobre }
+
+buscar:
+    pattern:  /entidade/buscar
+    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:buscar }
+
+cadastrarVoluntario:
+    pattern:  /voluntario/cadastrar
+    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:cadastrarVoluntario }
+
+cadastrarEntidade:
+    pattern:  /entidade/cadastrar
+    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:cadastrarEntidade }
+
+contato:
+    pattern:  /contato
+    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:contato }
+
