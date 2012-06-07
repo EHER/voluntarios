@@ -1,5 +1,29 @@
 {% extends "EherVoluntariosBundle::layout.html.twig" %}
 {% block title %}Quero ser Voluntário - Contato{% endblock %}
 {% block content %}
-    <h2>cadastrar voluntário</h2>
+    <div class="span7">
+    <h2>Cadastrar Voluntário</h2>
+        <form action="" class="form-horizontal">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="nome">nome</label>
+                    <div class="controls">
+                        <input name="nome" type="text" value="" class="span3"/>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="email">email</label>
+                    <div class="controls">
+                        <input name="email" type="text" value="" class="span3"/>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <button class="btn">Cancelar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 {% endblock %}

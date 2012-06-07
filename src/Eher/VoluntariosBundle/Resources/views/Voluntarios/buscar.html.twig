@@ -1,14 +1,25 @@
 {% extends "EherVoluntariosBundle::layout.html.twig" %}
 {% block title %}Quero ser Voluntário - Contato{% endblock %}
 {% block content %}
-    <div class="well span3">
+    <div class="span3 well">
         <h3>Buscar de Entidades</h3>
-        <form action="" class="">
-            <label for="cidade">Cidade</label>
-            <input name="cidade" type="text" value="{{ cityName }}" />
-            <label for="uf">UF</label>
-            <input name="uf" type="text" value="{{ stateName }}" />
-            <input type="submit" value="Buscar" />
+        <form action="" class="form-inline">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="cidade">Cidade</label>
+                    <div class="controls">
+                        <input name="cidade" type="text" value="{{ cityName }}" class="span2"/>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="uf">UF</label>
+                    <div class="controls">
+                        <input name="uf" type="text" value="{{ stateName }}" class="span1"/>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </fieldset>
         </form>
     </div>
     {% if search %}
