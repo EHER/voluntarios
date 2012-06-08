@@ -23,17 +23,16 @@
         </form>
     </div>
     {% if search %}
-        <div class="span5">
+        <div class="span11">
             {% if search.getNumFound > 0 %}
-                <table class="table table-bordered table-striped">
-                    <tbody>
                     {% for place in search.getItems %}
-                        <tr>
-                            <td>{{ place.name }}</td>
-                        </tr>
+                        <div class="row well span3">
+                            <strong>{{ place.name }}</strong>
+                            <p>{{ place.address.toOneLine }}</p>
+                            <p><a>{{ place.phone }}</a></p>
+                        </div>
                     {% endfor %}
-                    </tbody>
-                </table>
+                </div>
             {% else %}
                 <h4>Nenhum resultado.</h4>
             {% endif %}
