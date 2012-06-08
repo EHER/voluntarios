@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     chegamos\entity\Place,
     chegamos\entity\City,
     chegamos\entity\Address,
-    chegamos\rest\Guzzle as RestClient,
+    chegamos\rest\client\Guzzle as RestClient,
     chegamos\entity\repository\UserRepository,
     chegamos\entity\repository\PlaceRepository;
 
