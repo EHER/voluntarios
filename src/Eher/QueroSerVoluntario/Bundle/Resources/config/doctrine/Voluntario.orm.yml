@@ -1,0 +1,42 @@
+Eher\QueroSerVoluntario\Bundle\Entity\Voluntario:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    nome:
+      type: string
+      length: '100'
+    nascimento:
+      type: datetime
+    profissao:
+      type: string
+      length: '50'
+    email:
+      type: string
+      length: '100'
+    telefone:
+      type: string
+      length: '13'
+    celular:
+      type: string
+      length: '13'
+    empresa:
+      type: string
+      length: '50'
+    ja_foi_voluntario:
+      type: boolean
+    entidade:
+      type: string
+      length: '50'
+    area_de_trabalho:
+      type: object
+    area_de_atuacao:
+      type: object
+    quer_fazer:
+      type: string
+      length: 255
+  lifecycleCallbacks: {  }
