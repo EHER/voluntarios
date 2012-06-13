@@ -3,6 +3,8 @@
 namespace Eher\QueroSerVoluntario\Bundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
+    chegamos\rest\auth\BasicAuth,
+    chegamos\entity\Config,
     chegamos\entity\Place,
     chegamos\entity\City,
     chegamos\entity\Address,
@@ -29,12 +31,19 @@ class DefaultController extends Controller
         $stateName = $this->getRequest()->query->get('uf');
 
         if (!empty($cityName) && !empty($stateName)) {
-            $restClient = new RestClient("http://api.apontador.com.br/v1/");
-            $restClient->setAuth(
-                $this->container->getParameter('apontador_consumer_key'),
-                $this->container->getParameter('apontador_consumer_secret')
+            $config = new Config();
+            $config->setBasicAuth(
+                new BasicAuth(
+                    $this->container->getParameter('apontador_consumer_key'),
+                    $this->container->getParameter('apontador_consumer_secret')
+                )
             );
-            $placeRepository = new PlaceRepository($restClient);
+            $config->setBaseUrl("http://api.apontador.com.br/v1/");
+            $config->setRestClient(
+                New RestClient()
+            );
+
+            $placeRepository = new PlaceRepository($config);
 
             $city = new City();
             $city->setName($cityName);
