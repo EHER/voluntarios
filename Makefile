@@ -35,7 +35,7 @@ perms:
 
 build-bootstrap:
 	@echo "Fazendo build do bootstrap"
-	bin/build_bootstrap
 	cp -n app/config/parameters.ini.dist app/config/parameters.ini
+	bin/build_bootstrap
 	@echo "Feito!"
 
