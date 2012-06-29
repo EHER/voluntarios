@@ -32,15 +32,15 @@ class DefaultController extends Controller
 
         if (!empty($cityName) && !empty($stateName)) {
             $config = new Config();
+            $config->setBaseUrl("http://api.apontador.com.br/v1/");
             $config->setBasicAuth(
                 new BasicAuth(
                     $this->container->getParameter('apontador_consumer_key'),
                     $this->container->getParameter('apontador_consumer_secret')
                 )
             );
-            $config->setBaseUrl("http://api.apontador.com.br/v1/");
             $config->setRestClient(
-                New RestClient()
+                new RestClient()
             );
 
             $placeRepository = new PlaceRepository($config);
