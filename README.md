@@ -6,9 +6,8 @@ entidades beneficientes a uma distância confortável do local onde vivem.
 
 ## Tecnologia utilizada
 
-- Apache 2 <http://httpd.apache.org/>
-- Apache Module mod_rewrite <http://httpd.apache.org/docs/current/mod/mod_rewrite.html>
-- PHP 5.3 <http://br.php.net/>
+- Nginx <http://wiki.nginx.org/Main>
+- PHP 5.4 <http://br.php.net/>
 - Framework Symfony 2 <http://symfony.com/>
 
 
