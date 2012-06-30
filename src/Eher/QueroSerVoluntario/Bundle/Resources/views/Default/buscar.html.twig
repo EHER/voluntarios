@@ -23,23 +23,26 @@
         </form>
     </div>
     {% if search %}
-        <div class="span11">
+        <div class="span8">
             {% if search.getNumFound > 0 %}
-                    {% for place in search.getItems %}
-                        <div class="row well span2">
-                            <figure>
-                                <img src="{{ place.smallPhotoUrl }}" alt="{{ place.name }}">
-                                <div>
-                                    <p>{{ place.name }}</p>
-                                </div>
-                            </figure>
-                            <div>
-                                <p>{{ place.phone }}</p>
-                                <p>{{ place.address.toOneLine }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+                <table class="span8 table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th class="span2">Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for place in search.getItems %}
+                            <tr>
+                                <td> {{ place.name }} </td>
+                                <td> {{ place.address.toOneLine }} </td>
+                                <td> {{ place.phone }} </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             {% else %}
                 <h4>Nenhum resultado.</h4>
             {% endif %}
