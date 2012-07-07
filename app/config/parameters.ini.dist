@@ -5,6 +5,7 @@
     database_name="voluntarios"
     database_user=""
     database_password=""
+    database_unix_socket="/tmp/mysql.sock"
     mailer_transport="smtp"
     mailer_host="localhost"
     mailer_user=""
