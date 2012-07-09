@@ -82,8 +82,9 @@ class VoluntarioController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('voluntario_show', array('id' => $entity->getId())));
-            
+            return $this->redirect(
+                $this->generateUrl('voluntario_parabens')
+            );
         }
 
         return $this->render('EherQueroSerVoluntarioBundle:Voluntario:new.html.twig', array(

@@ -67,11 +67,6 @@ class DefaultController extends Controller
         );
     }
 
-    public function cadastrarVoluntarioAction()
-    {
-        return $this->render('EherQueroSerVoluntarioBundle:Default:cadastrarVoluntario.html.twig');
-    }
-
     public function cadastrarEntidadeAction()
     {
         return $this->render('EherQueroSerVoluntarioBundle:Default:cadastrarEntidade.html.twig');
@@ -80,5 +75,10 @@ class DefaultController extends Controller
     public function contatoAction()
     {
         return $this->render('EherQueroSerVoluntarioBundle:Default:contato.html.twig');
+    }
+
+    public function voluntarioParabensAction()
+    {
+        return $this->render('EherQueroSerVoluntarioBundle:Default:voluntarioParabens.html.twig');
     }
 }

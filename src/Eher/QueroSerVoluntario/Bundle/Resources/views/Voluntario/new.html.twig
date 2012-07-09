@@ -1,20 +1,18 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
 {% block title %}Quero ser Voluntário - Cadastro de Voluntário{% endblock %}
 {% block content %}
-<h1>Voluntario creation</h1>
-
-<form action="{{ path('voluntario_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit">Create</button>
-    </p>
-</form>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('voluntario') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <div class="span6">
+        <h2>Cadastro de Voluntário</h2>
+        <p>Gostaria de contribuir com o seu tempo para ajudar alguém?</p>
+        <p>Deixe seus dados que assim que tivermos uma oportunidade 
+        com o seu perfil, entramos em contato.</p>
+        <br/>
+        <form action="{{ path('voluntario_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal">
+                {{ form_widget(form) }}
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <button type="reset" class="btn">Cancelar</button>
+                </div>
+        </form>
+    </div>
 {% endblock %}

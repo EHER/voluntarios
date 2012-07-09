@@ -1,30 +1,32 @@
-voluntario:
-    pattern:  /
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:index" }
-
-voluntario_show:
-    pattern:  /{id}/show
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:show" }
-
 voluntario_new:
-    pattern:  /new
+    pattern:  /cadastrar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:new" }
+    requirements: { _method: get }
 
 voluntario_create:
-    pattern:  /create
+    pattern:  /cadastrar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:create" }
     requirements: { _method: post }
 
-voluntario_edit:
-    pattern:  /{id}/edit
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:edit" }
+#voluntario:
+#    pattern:  /
+#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:index" }
+#
+#voluntario_show:
+#    pattern:  /{id}/show
+#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:show" }
+#
+#voluntario_edit:
+#    pattern:  /{id}/edit
+#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:edit" }
+#
+#voluntario_update:
+#    pattern:  /{id}/update
+#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:update" }
+#    requirements: { _method: post }
+#
+#voluntario_delete:
+#    pattern:  /{id}/delete
+#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:delete" }
+#    requirements: { _method: post }
 
-voluntario_update:
-    pattern:  /{id}/update
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:update" }
-    requirements: { _method: post }
-
-voluntario_delete:
-    pattern:  /{id}/delete
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:delete" }
-    requirements: { _method: post }

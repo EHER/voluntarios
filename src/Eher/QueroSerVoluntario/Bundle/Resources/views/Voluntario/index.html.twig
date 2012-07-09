@@ -5,17 +5,9 @@
         <tr>
             <th>Id</th>
             <th>Nome</th>
-            <th>Nascimento</th>
-            <th>Profissao</th>
             <th>Email</th>
-            <th>Telefone</th>
-            <th>Celular</th>
-            <th>Empresa</th>
-            <th>Ja_foi_voluntario</th>
-            <th>Entidade</th>
-            <th>Area_de_trabalho</th>
-            <th>Area_de_atuacao</th>
-            <th>Quer_fazer</th>
+            <th>Uf</th>
+            <th>Cidade</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -24,17 +16,9 @@
         <tr>
             <td><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.nome }}</td>
-            <td>{% if entity.nascimento %}{{ entity.nascimento|date('Y-m-d H:i:s') }}{% endif %}</td>
-            <td>{{ entity.profissao }}</td>
             <td>{{ entity.email }}</td>
-            <td>{{ entity.telefone }}</td>
-            <td>{{ entity.celular }}</td>
-            <td>{{ entity.empresa }}</td>
-            <td>{{ entity.jafoivoluntario }}</td>
-            <td>{{ entity.entidade }}</td>
-            <td>{{ entity.areadetrabalho }}</td>
-            <td>{{ entity.areadeatuacao }}</td>
-            <td>{{ entity.querfazer }}</td>
+            <td>{{ entity.uf }}</td>
+            <td>{{ entity.cidade }}</td>
             <td>
                 <ul>
                     <li>

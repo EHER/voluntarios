@@ -1,25 +1,23 @@
 homepage:
     pattern:  /
-    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:index }
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:index" }
 
 sobre:
     pattern:  /sobre
-    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:sobre }
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:sobre" }
 
 buscar:
     pattern:  /entidade/buscar
-    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:buscar }
-
-cadastrarVoluntario:
-    pattern:  /voluntario/cadastrar
-    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:cadastrarVoluntario }
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:buscar" }
 
 cadastrarEntidade:
     pattern:  /entidade/cadastrar
-    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:cadastrarEntidade }
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:cadastrarEntidade" }
 
 contato:
     pattern:  /contato
-    defaults: { _controller: EherQueroSerVoluntarioBundle:Default:contato }
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:contato" }
 
-
+voluntario_parabens:
+    pattern:  /voluntario/parabens
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:voluntarioParabens" }
