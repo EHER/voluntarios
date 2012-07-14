@@ -13,6 +13,7 @@
     mailer_password=""
     locale="en"
     secret=""
-    apontador_consumer_key=""
-    apontador_consumer_secret=""
+    apontador.api.base_url="http://api.apontador.com.br/v1/"
+    apontador.api.consumer_key=""
+    apontador.api.consumer_secret=""
 

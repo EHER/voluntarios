@@ -31,20 +31,6 @@ class DefaultController extends Controller
         $stateName = $this->getRequest()->query->get('uf');
 
         if (!empty($cityName) && !empty($stateName)) {
-            $config = new Config();
-            $config->setBaseUrl("http://api.apontador.com.br/v1/");
-            $config->setBasicAuth(
-                new BasicAuth(
-                    $this->container->getParameter('apontador_consumer_key'),
-                    $this->container->getParameter('apontador_consumer_secret')
-                )
-            );
-            $config->setRestClient(
-                new RestClient()
-            );
-
-            $placeRepository = new PlaceRepository($config);
-
             $city = new City();
             $city->setName($cityName);
             $city->setState($stateName);
@@ -52,7 +38,8 @@ class DefaultController extends Controller
             $address = new Address();
             $address->setCity($city);
 
-            $search = $placeRepository->byAddress($address)
+            $search = $this->get('apontador.api.place.repository')
+                ->byAddress($address)
                 ->withSubcategoryId("6661")
                 ->getAll();
         }

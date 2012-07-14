@@ -1,7 +1,29 @@
 parameters:
-#    eher_quero_ser_voluntario.example.class: Eher\QueroSerVoluntario\Bundle\Example
+    chegamos_lib.rest.class: chegamos\rest\client\Guzzle
+    chegamos_lib.user_repository.class: chegamos\entity\repository\UserRepository
+    chegamos_lib.place_repository.class: chegamos\entity\repository\PlaceRepository
+    chegamos_lib.config.class: chegamos\entity\Config
+    chegamos_lib.basic_auth.class: chegamos\rest\auth\BasicAuth
 
 services:
-#    eher_quero_ser_voluntario.example:
-#        class: %eher_quero_ser_voluntario.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    apontador.api.restclient:
+        class: %chegamos_lib.rest.class%
+
+    apontador.api.basic.auth:
+        class: %chegamos_lib.basic_auth.class%
+        arguments: [%apontador.api.consumer_key%, %apontador.api.consumer_secret%]
+
+    apontador.api.config:
+        class: %chegamos_lib.config.class%
+        calls:
+            - [setBasicAuth, [@apontador.api.basic.auth]]
+            - [setRestClient, [@apontador.api.restclient]]
+            - [setBaseUrl, [%apontador.api.base_url%]]
+
+    apontador.api.place.repository:
+        class: %chegamos_lib.place_repository.class%
+        arguments: [@apontador.api.config]
+
+    apontador.api.user.repository:
+        class: %chegamos_lib.user_repository.class%
+        arguments: [@apontador.api.config]
