@@ -68,4 +68,9 @@ class DefaultController extends Controller
     {
         return $this->render('EherQueroSerVoluntarioBundle:Default:voluntarioParabens.html.twig');
     }
+
+    public function entidadeParabensAction()
+    {
+        return $this->render('EherQueroSerVoluntarioBundle:Default:entidadeParabens.html.twig');
+    }
 }

@@ -10,10 +10,6 @@ buscar:
     pattern:  /entidade/buscar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:buscar" }
 
-cadastrarEntidade:
-    pattern:  /entidade/cadastrar
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:cadastrarEntidade" }
-
 contato:
     pattern:  /contato
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:contato" }
@@ -21,3 +17,7 @@ contato:
 voluntario_parabens:
     pattern:  /voluntario/parabens
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:voluntarioParabens" }
+
+entidade_parabens:
+    pattern:  /entidade/parabens
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:entidadeParabens" }
