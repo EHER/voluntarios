@@ -2,6 +2,7 @@ default:
 	@echo "install\t\tFaz a instalação dos vendors pelo Composer"
 	@echo "reinstall\tForça a reinstalação dos vendors (apagando /vendors)"
 	@echo "update\t\tFaz a atualização dos vendors pelo Composer"
+	@echo "clear\t\tLimpa o cache"
 	@echo "perms\t\tAjusta as permisões dos arquivos"
 
 install: vendors-install perms build-bootstrap
@@ -23,6 +24,11 @@ remove-vendors:
 vendors-update:
 	@echo "Atualizando vendors"
 	bin/vendors update
+	@echo "Feito!"
+
+clear:
+	@echo "Limpando cache"
+	app/console cache:clear
 	@echo "Feito!"
 
 perms:
