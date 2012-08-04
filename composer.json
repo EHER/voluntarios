@@ -1,18 +1,23 @@
 {
+    "name": "eher/voluntarios",
+    "description": "Site para que voluntários encontrem entidades beneficientes ao redor de um local específico",
     "require": {
-        "php":                              ">=5.3.2",
-        "symfony/symfony":                  ">=2.0.9,<2.1.0-dev",
-        "doctrine/orm":                     ">=2.1.0,<2.2.0-dev",
-        "twig/extensions":                  "*",
-        "symfony/assetic-bundle":           ">=2.0-dev,<master-dev",
-        "sensio/generator-bundle":          "2.0.*",
-        "sensio/framework-extra-bundle":    "2.0.*",
-        "sensio/distribution-bundle":       "2.0.*",
-        "jms/security-extra-bundle":        "1.0.*",
-        "symfony/finder":                   "2.0.9",
-        "EHER/Chegamos-lib":                "master-dev"
+        "symfony/symfony": "v2.0.16",
+        "doctrine/orm": "2.2.3",
+        "twig/extensions": "dev-master",
+        "eher/chegamos-lib": "1.0.9",
+        "symfony/assetic-bundle": "2.0.x-dev",
+        "jms/security-extra-bundle": "1.1.0",
+        "sensio/framework-extra-bundle": "2.0.x-dev",
+        "sensio/distribution-bundle": "2.0.x-dev",
+        "sensio/generator-bundle": "2.0.x-dev"
     },
-
+    "authors": [
+        {
+            "name": "Eher",
+            "email": "alexandre@eher.com.br"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "Eher": "src/"
