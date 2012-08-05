@@ -54,9 +54,9 @@ class DefaultController extends Controller
         );
     }
 
-    public function cadastrarEntidadeAction()
+    public function brasilAction()
     {
-        return $this->render('EherQueroSerVoluntarioBundle:Default:cadastrarEntidade.html.twig');
+        return $this->render('EherQueroSerVoluntarioBundle:Default:brasil.html.twig');
     }
 
     public function contatoAction()
