@@ -1,0 +1,10 @@
+estado:
+    pattern:  /
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:index" }
+
+estado_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:show" }
+
+
+
