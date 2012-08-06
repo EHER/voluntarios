@@ -1,0 +1,13 @@
+{% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
+{% block title %}Quero ser Voluntário - Cidades{% endblock %}
+{% block content %}
+<h2>Cidades</h2>
+<div class="span2">
+    {% for entity in entities %}
+        <a href="{{ path('cidade_show', { 'id': entity.nome }) }}">
+            {{ entity.nome }} - {{ entity.estado.nome }}
+        </a>
+        <br />
+    {% endfor %}
+</div>
+{% endblock %}

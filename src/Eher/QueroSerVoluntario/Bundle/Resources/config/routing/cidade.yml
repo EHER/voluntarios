@@ -1,0 +1,7 @@
+cidade:
+    pattern:  /
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Cidade:index" }
+
+cidade_show:
+    pattern:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Cidade:show" }

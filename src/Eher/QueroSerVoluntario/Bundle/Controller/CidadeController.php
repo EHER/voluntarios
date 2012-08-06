@@ -1,0 +1,49 @@
+<?php
+
+namespace Eher\QueroSerVoluntario\Bundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+use Eher\QueroSerVoluntario\Bundle\Entity\Cidade;
+
+/**
+ * Cidade controller.
+ *
+ */
+class CidadeController extends Controller
+{
+    /**
+     * Lists all Cidade entities.
+     *
+     */
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Cidade')->findAll();
+
+        return $this->render('EherQueroSerVoluntarioBundle:Cidade:index.html.twig', array(
+            'entities' => $entities
+        ));
+    }
+
+    /**
+     * Finds and displays a Cidade entity.
+     *
+     */
+    public function showAction($id)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Cidade')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Cidade entity.');
+        }
+
+        return $this->render('EherQueroSerVoluntarioBundle:Cidade:show.html.twig', array(
+            'entity'      => $entity,
+        ));
+    }
+
+}
