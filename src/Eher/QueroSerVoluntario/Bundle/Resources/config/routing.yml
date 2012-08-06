@@ -10,10 +10,6 @@ buscar:
     pattern:  /entidade/buscar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:buscar" }
 
-brasil:
-    pattern:  /brasil
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:brasil" }
-
 contato:
     pattern:  /contato
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:contato" }

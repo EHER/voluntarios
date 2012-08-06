@@ -54,11 +54,6 @@ class DefaultController extends Controller
         );
     }
 
-    public function brasilAction()
-    {
-        return $this->render('EherQueroSerVoluntarioBundle:Default:brasil.html.twig');
-    }
-
     public function contatoAction()
     {
         return $this->render('EherQueroSerVoluntarioBundle:Default:contato.html.twig');
