@@ -5,7 +5,7 @@
 <div class="span2">
     {% for entity in entities %}
         <a href="{{ path('cidade_show', { 'id': entity.nome }) }}">
-            {{ entity.nome }} - {{ entity.estado.nome }}
+            {{ entity.nome }}
         </a>
         <br />
     {% endfor %}
