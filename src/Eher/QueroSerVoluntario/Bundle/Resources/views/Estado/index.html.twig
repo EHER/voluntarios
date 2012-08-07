@@ -6,7 +6,7 @@
     {% set count = 0 %}
     {% for entity in entities %}
         {% set count = count + 1 %}
-        <a href="{{ path('estado_show', { 'id': entity.nome }) }}">
+        <a href="{{ path('cidade_em_estado', { 'estado': entity.nome|lower }) }}">
             {{ entity.nome }}
         </a>
         <br />

@@ -42,8 +42,20 @@ class CidadeController extends Controller
         }
 
         return $this->render('EherQueroSerVoluntarioBundle:Cidade:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
         ));
     }
 
+    public function emEstadoAction($estado)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $query = $em->createQuery("select c from EherQueroSerVoluntarioBundle:Cidade c JOIN c.estado e WHERE e.nome = ?1");
+        $query->setParameter(1, $estado);
+        $entities = $query->getResult();
+
+        return $this->render('EherQueroSerVoluntarioBundle:Cidade:em_estado.html.twig', array(
+            'entities' => $entities
+        ));
+    }
 }
