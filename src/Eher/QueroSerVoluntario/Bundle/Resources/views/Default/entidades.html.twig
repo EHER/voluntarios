@@ -1,8 +1,8 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Contato{% endblock %}
+{% block title %}Quero ser Voluntário - Entidades em {{ cityName|title }} - {{ stateName|upper }}{% endblock %}
 {% block content %}
     <h2>Entidades em {{ cityName|title }} - {{ stateName|upper }}</h2>
-    <p><a href="{{ url('cidade') }}">Mudar cidade</a></p>
+    <p><a href="{{ url('cidade_em_estado', {'estado': stateName}) }}">Mudar cidade</a></p>
     {% if search %}
         <div class="span8">
             {% if search.getNumFound > 0 %}

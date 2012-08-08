@@ -1,5 +1,6 @@
+SET NAMES UTF8;
 ALTER TABLE Cidade AUTO_INCREMENT = 0;
-insert INTO Cidade("nome", "estado_id") VALUES
+insert INTO Cidade(nome, estado_id) VALUES
  ("Mâncio Lima" ,1),
  ("Rodrigues Alves", 1),
  ("Brasiléia", 1),

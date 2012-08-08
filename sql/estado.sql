@@ -1,5 +1,6 @@
+SET NAMES UTF8;
 ALTER TABLE Estado AUTO_INCREMENT = 0;
-insert INTO Estado ("id", "nome") VALUES
+insert INTO Estado (id, nome) VALUES
  ("1", "AC"),
  ("2", "AL"),
  ("3", "AM"),
