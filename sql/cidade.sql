@@ -1,4 +1,5 @@
-insert into Cidade(nome, estado_id) values
+ALTER TABLE Cidade AUTO_INCREMENT = 0;
+insert INTO Cidade("nome", "estado_id") VALUES
  ("Mâncio Lima" ,1),
  ("Rodrigues Alves", 1),
  ("Brasiléia", 1),
