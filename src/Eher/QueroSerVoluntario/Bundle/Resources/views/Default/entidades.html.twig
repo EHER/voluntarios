@@ -1,0 +1,32 @@
+{% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
+{% block title %}Quero ser Voluntário - Contato{% endblock %}
+{% block content %}
+    <h2>Entidades em {{ cityName|title }} - {{ stateName|upper }}</h2>
+    <p><a href="{{ url('estado') }}">Mudar cidade</a></p>
+    {% if search %}
+        <div class="span8">
+            {% if search.getNumFound > 0 %}
+                <table class="span8 table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th class="span2">Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for place in search.getItems %}
+                            <tr>
+                                <td> {{ place.name }} </td>
+                                <td> {{ place.address.toOneLine }} </td>
+                                <td> {{ place.phone }} </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4>Nenhuma entidade encontrada.</h4>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

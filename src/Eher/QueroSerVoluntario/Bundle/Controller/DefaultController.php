@@ -54,6 +54,35 @@ class DefaultController extends Controller
         );
     }
 
+    public function entidadesAction($cityName, $stateName)
+    {
+        $search = null;
+        $cityName = str_replace('-', ' ', $cityName);
+
+        if (!empty($cityName) && !empty($stateName)) {
+            $city = new City();
+            $city->setName($cityName);
+            $city->setState($stateName);
+
+            $address = new Address();
+            $address->setCity($city);
+
+            $search = $this->get('apontador.api.place.repository')
+                ->byAddress($address)
+                ->withSubcategoryId("6661")
+                ->getAll();
+        }
+
+        return $this->render(
+            'EherQueroSerVoluntarioBundle:Default:entidades.html.twig',
+            array(
+                'cityName' => $cityName,
+                'stateName' => $stateName,
+                'search' => $search,
+            )
+        );
+    }
+
     public function contatoAction()
     {
         return $this->render('EherQueroSerVoluntarioBundle:Default:contato.html.twig');

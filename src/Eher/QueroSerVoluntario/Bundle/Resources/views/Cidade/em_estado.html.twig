@@ -4,7 +4,7 @@
 <h2>Cidades em {{ entities[0].estado.nome }}</h2>
 <div class="span2">
     {% for entity in entities %}
-        <a href="{{ path('cidade_show', { 'id': entity.nome }) }}">
+        <a href="{{ path('entidades', { 'cityName': entity.nome|lower|replace({' ': '-'}), 'stateName': entity.estado.nome|lower }) }}">
             {{ entity.nome }}
         </a>
         <br />
