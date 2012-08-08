@@ -1,8 +1,0 @@
-estado:
-    pattern:  /
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:index" }
-
-estado_show:
-    pattern:  /{id}
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:show" }
-

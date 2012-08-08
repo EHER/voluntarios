@@ -7,21 +7,27 @@ sobre:
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:sobre" }
 
 buscar:
-    pattern:  /entidade/buscar
+    pattern:  /entidades
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:buscar" }
 
 entidades:
     pattern:  /{stateName}/{cityName}
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:entidades" }
+    requirements:
+            stateName: \w\w
 
 contato:
     pattern:  /contato
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:contato" }
 
 voluntario_parabens:
-    pattern:  /voluntario/parabens
+    pattern:  /voluntarios/parabens
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:voluntarioParabens" }
 
 entidade_parabens:
-    pattern:  /entidade/parabens
+    pattern:  /entidades/parabens
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:entidadeParabens" }
+
+brasil:
+    pattern:  /brasil
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:index" }

@@ -4,19 +4,16 @@ EherQueroSerVoluntarioBundle:
 
 EherQueroSerVoluntarioBundle_voluntario:
     resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/voluntario.yml"
-    prefix:   /voluntario
+    prefix:   /voluntarios
 
 EherQueroSerVoluntarioBundle_entidade:
     resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/entidade.yml"
-    prefix:   /entidade
-
-EherQueroSerVoluntarioBundle_estado:
-    resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/estado.yml"
-    prefix:   /estado
+    prefix:   /entidades
 
 EherQueroSerVoluntarioBundle_cidade:
     resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/cidade.yml"
-    prefix:   /cidade
+    prefix:   /cidades
+
 
 # Internal routing configuration to handle ESI
 #_internal:

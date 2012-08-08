@@ -12,8 +12,8 @@
           <a class="brand" href="{{ url('homepage') }}">Quero ser Voluntário</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><a href="{{ url('sobre') }}">Sobre o site</a></li>
-              <li><a href="{{ url('buscar') }}">Buscar entidade</a></li>
+              <li><a href="{{ url('sobre') }}">Sobre o Site</a></li>
+              <li><a href="{{ url('buscar') }}">Buscar Entidade</a></li>
               <li><a href="{{ url('voluntario_new') }}">Cadastrar Voluntário</a></li>
               <li><a href="{{ url('entidade_new') }}">Cadastrar Entidade</a></li>
               <li><a href="{{ url('contato') }}">Contato</a></li>
@@ -28,6 +28,6 @@
     </div>
     <hr>
     <footer>
-        © 2011-{{ "now"|date("Y") }} www.QueroSerVoluntario.com
+    © 2011-{{ "now"|date("Y") }} <a href="{{ url('sobre') }}">QueroSerVoluntario</a> <a href="{{ url('brasil') }}">Brasil</a>
     </footer>
 {% endblock %}
