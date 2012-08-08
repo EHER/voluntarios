@@ -30,7 +30,7 @@ class Cidade
 
     /**
      * @var object $estado
-     * @ORM\OneToOne(targetEntity="Estado")
+     * @ORM\ManyToOne(targetEntity="Estado")
      */
     private $estado;
 
