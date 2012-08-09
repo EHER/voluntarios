@@ -3,17 +3,18 @@
 {% block content %}
 <h2>Estados do Brasil</h2>
 <div class="span1">
+    <ul class="unstyled">
     {% set count = 0 %}
     {% for entity in entities %}
+        <li>
         {% set count = count + 1 %}
-        <a href="{{ path('cidade_em_estado', { 'estado': entity.nome|lower }) }}">
-            {{ entity.nome }}
-        </a>
-        <br />
+        <a href="{{ path('cidade_em_estado', { 'estado': entity.nome|lower }) }}">{{ entity.nome }}</a>
         {% if count == 3 %}
-            </div> <div class="span1">
+            </ul></div><div class="span1"><ul class="unstyled">
             {% set count = 0 %}
         {% endif %}
+        </li>
     {% endfor %}
+    </ul>
 </div>
 {% endblock %}

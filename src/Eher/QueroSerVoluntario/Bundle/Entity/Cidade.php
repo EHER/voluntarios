@@ -29,6 +29,13 @@ class Cidade
     private $nome;
 
     /**
+     * @var string $slug
+     *
+     * @ORM\Column(name="slug", type="string", length=35)
+     */
+    private $slug;
+
+    /**
      * @var object $estado
      * @ORM\ManyToOne(targetEntity="Estado")
      */
@@ -65,6 +72,28 @@ class Cidade
     public function getNome()
     {
         return $this->nome;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Cidade
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
