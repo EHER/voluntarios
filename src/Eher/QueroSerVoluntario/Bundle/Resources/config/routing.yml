@@ -33,7 +33,7 @@ brasil:
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:index" }
 
 antigo_entidade_cadastro:
-    pattern: /entidade/cadastro
+    pattern: /entidade/cadastrar
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: entidade_new
@@ -47,7 +47,7 @@ antigo_entidade_buscar:
         permanent: true
 
 antigo_voluntario_cadastro:
-    pattern: /voluntario/cadastro
+    pattern: /voluntario/cadastrar
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: voluntario_new
