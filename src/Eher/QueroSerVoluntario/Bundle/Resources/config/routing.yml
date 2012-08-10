@@ -31,3 +31,25 @@ entidade_parabens:
 brasil:
     pattern:  /brasil
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:index" }
+
+antigo_entidade_cadastro:
+    pattern: /entidade/cadastro
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: entidade_new
+        permanent: true
+
+antigo_entidade_buscar:
+    pattern: /entidade/buscar
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: buscar
+        permanent: true
+
+antigo_voluntario_cadastro:
+    pattern: /voluntario/cadastro
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: voluntario_new
+        permanent: true
+
