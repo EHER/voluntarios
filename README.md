@@ -3,6 +3,10 @@
 Esse projeto consiste em ter um site para que potenciais voluntários encontrem
 entidades beneficientes a uma distância confortável do local onde vivem.
 
+## O site
+
+O site está no ar em [http://queroservoluntario.com/](http://queroservoluntario.com/).
+Acesse e diga o que achou! ;)
 
 ## Tecnologia utilizada
 
