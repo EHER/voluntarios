@@ -49,11 +49,11 @@ class Voluntario
     private $cidade;
 
     /**
-     * @var string $uf
+     * @var string $estado
      *
-     * @ORM\Column(name="uf", type="string", length=2)
+     * @ORM\Column(name="estado", type="string", length=2)
      */
-    private $uf;
+    private $estado;
 
 
     /**
@@ -127,22 +127,22 @@ class Voluntario
     }
 
     /**
-     * Set uf
+     * Set estado
      *
-     * @param string $uf
+     * @param string $estado
      */
-    public function setUf($uf)
+    public function setEstado($estado)
     {
-        $this->uf = $uf;
+        $this->estado = $estado;
     }
 
     /**
-     * Get uf
+     * Get estado
      *
-     * @return string 
+     * @return string
      */
-    public function getUf()
+    public function getEstado()
     {
-        return $this->uf;
+        return $this->estado;
     }
 }

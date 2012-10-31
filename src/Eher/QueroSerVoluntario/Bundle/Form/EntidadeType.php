@@ -17,7 +17,7 @@ class EntidadeType extends AbstractType
             ->add('bairro')
             ->add('cep')
             ->add('cidade')
-            ->add('uf')
+            ->add('estado')
             ->add('telefone')
         ;
     }

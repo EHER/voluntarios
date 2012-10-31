@@ -13,7 +13,7 @@ class VoluntarioType extends AbstractType
             ->add('nome')
             ->add('email')
             ->add('cidade')
-            ->add('uf')
+            ->add('estado')
         ;
     }
 
