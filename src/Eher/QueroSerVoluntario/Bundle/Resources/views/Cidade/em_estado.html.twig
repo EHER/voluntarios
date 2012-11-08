@@ -2,7 +2,7 @@
 {% block title %}Quero ser Voluntário - Cidades em {{ entities[0].estado.nome }}{% endblock %}
 {% block content %}
 <h2>Cidades em {{ entities[0].estado.nome }}</h2>
-<p><a href="{{ url('brasil') }}">Mudar estado</a></p>
+<p><a href="{{ path('brasil') }}">Mudar estado</a></p>
 <div class="span3">
     <ul>
     {% for entity in entities %}

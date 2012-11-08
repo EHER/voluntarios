@@ -3,25 +3,25 @@
 {% block content %}
       <div class="hero-unit">
         <h1>Quero ser voluntário!</h1>
-        <p>Se você também quer, está no lugar certo. O site <a href="{{ url('homepage') }}">{{ url('homepage') }}</a> é o ponto de encontro para voluntários e entidades que veem um futuro melhor através de pequenos gestos. Interessou? Saiba um pouco mais sobre essa iniciativa.</p>
-        <p><a href="{{ url('sobre') }}" class="btn btn-primary btn-large">Ver mais &raquo;</a></p>
+        <p>Se você também quer, está no lugar certo. O site <a href="{{ path('homepage') }}">{{ path('homepage') }}</a> é o ponto de encontro para voluntários e entidades que veem um futuro melhor através de pequenos gestos. Interessou? Saiba um pouco mais sobre essa iniciativa.</p>
+        <p><a href="{{ path('sobre') }}" class="btn btn-primary btn-large">Ver mais &raquo;</a></p>
       </div>
 
       <div class="row">
         <div class="span4">
           <h2>Encontre</h2>
           <p>Comece encontrando uma Entidade Beneficente na sua cidade. Basta digitar cidade e estado para ter uma lista de entidades. Atualmente temos cobertura em todo o Brasil.</p>
-          <p><a href="{{ url('buscar') }}" class="btn">Ver mais &raquo;</a></p>
+          <p><a href="{{ path('buscar') }}" class="btn">Ver mais &raquo;</a></p>
         </div>
         <div class="span4">
           <h2>Seja</h2>
           <p>Seja um voluntário agora mesmo. Deixe seu dados e assim que tivermos uma oportunidade com o seu perfil, entraremos em contato.</p>
-          <p><a href="{{ url('voluntario_new') }}" class="btn">Ver mais &raquo;</a></p>
+          <p><a href="{{ path('voluntario_new') }}" class="btn">Ver mais &raquo;</a></p>
        </div>
         <div class="span4">
           <h2>Indique</h2>
           <p>Se você já é voluntário, mas sua entidade não está disponível em nosso site, faça o cadastro. É rápido e fácil. Dessa forma encontraremos mais pessoas para ajudar a sua causa.</p>
-          <p><a href="{{ url('entidade_new') }}" class="btn">Ver mais &raquo;</a></p>
+          <p><a href="{{ path('entidade_new') }}" class="btn">Ver mais &raquo;</a></p>
         </div>
       </div>
 {% endblock %}

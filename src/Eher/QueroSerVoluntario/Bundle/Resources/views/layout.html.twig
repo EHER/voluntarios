@@ -9,14 +9,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="{{ url('homepage') }}">Quero ser Voluntário</a>
+          <a class="brand" href="{{ path('homepage') }}">Quero ser Voluntário</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><a href="{{ url('sobre') }}">Sobre o Site</a></li>
-              <li><a href="{{ url('buscar') }}">Buscar Entidade</a></li>
-              <li><a href="{{ url('voluntario_new') }}">Cadastrar Voluntário</a></li>
-              <li><a href="{{ url('entidade_new') }}">Cadastrar Entidade</a></li>
-              <li><a href="{{ url('contato') }}">Contato</a></li>
+              <li><a href="{{ path('sobre') }}">Sobre o Site</a></li>
+              <li><a href="{{ path('buscar') }}">Buscar Entidade</a></li>
+              <li><a href="{{ path('voluntario_new') }}">Cadastrar Voluntário</a></li>
+              <li><a href="{{ path('entidade_new') }}">Cadastrar Entidade</a></li>
+              <li><a href="{{ path('contato') }}">Contato</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -28,6 +28,6 @@
     </div>
     <hr>
     <footer>
-    © 2011-{{ "now"|date("Y") }} <a href="{{ url('sobre') }}">QueroSerVoluntario</a> <a href="{{ url('brasil') }}">Brasil</a>
+    © 2011-{{ "now"|date("Y") }} <a href="{{ path('sobre') }}">QueroSerVoluntario</a> <a href="{{ path('brasil') }}">Brasil</a>
     </footer>
 {% endblock %}
