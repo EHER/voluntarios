@@ -9,7 +9,12 @@ install: vendors-install perms build-bootstrap
 
 reinstall: remove-vendors vendors-install
 
-update: vendors-update perms build-bootstrap
+update: composer-update vendors-update perms build-bootstrap
+
+composer-update:
+	@echo "Atualizando Compose"
+	php composer.phar self-update
+	@echo "Feito!"
 
 vendors-install:
 	@echo "Instalando vendors"
