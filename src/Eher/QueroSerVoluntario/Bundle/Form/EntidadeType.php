@@ -3,23 +3,31 @@
 namespace Eher\QueroSerVoluntario\Bundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class EntidadeType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('nome')
             ->add('endereco')
             ->add('numero')
             ->add('complemento')
-            ->add('bairro')
             ->add('cep')
+            ->add('bairro')
             ->add('cidade')
             ->add('estado')
             ->add('telefone')
         ;
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Eher\QueroSerVoluntario\Bundle\Entity\Entidade'
+        ));
     }
 
     public function getName()
