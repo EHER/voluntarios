@@ -32,16 +32,8 @@ brasil:
     pattern:  /brasil
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Estado:index" }
 
-cidade:
-    pattern:  /
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Cidade:index" }
-
-cidade_show:
-    pattern:  /{id}
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Cidade:show" }
-
 cidade_em_estado:
-    pattern:  /em/{estado}
+    pattern:  /cidades/em/{estado}
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Cidade:emEstado" }
 
 antigo_entidade_cadastro:
