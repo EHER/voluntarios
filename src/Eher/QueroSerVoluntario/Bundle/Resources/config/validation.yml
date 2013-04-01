@@ -1,0 +1,18 @@
+Eher\QueroSerVoluntario\Bundle\Entity\Voluntario:
+    properties:
+        nome:
+            - NotBlank:
+                message: "Nome é obrigatório"
+        email:
+            - NotBlank:
+                message: "Email é obrigatório"
+            - Email:
+                message: "O email \"{{ value }}\" é inválido."
+                checkMX: true
+        cidade:
+            - NotBlank:
+                message: "Cidade é obrigatório"
+        estado:
+            - NotBlank:
+                message: "Estado é obrigatório"
+

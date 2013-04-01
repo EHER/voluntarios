@@ -3,7 +3,6 @@
 namespace Eher\QueroSerVoluntario\Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Eher\QueroSerVoluntario\Bundle\Entity\Voluntario
@@ -31,11 +30,6 @@ class Voluntario
 
     /**
      * @var string $email
-     *
-     * @Assert\Email(
-     *     message = "O email '{{ value }}' não é válido.",
-     *     checkMX = true
-     * )
      *
      * @ORM\Column(name="email", type="string", length=50)
      */
