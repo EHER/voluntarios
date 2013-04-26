@@ -1,3 +1,7 @@
+admin:
+    pattern:  /admin
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:index" }
+
 homepage:
     pattern:  /
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:index" }
@@ -57,3 +61,12 @@ antigo_voluntario_cadastro:
         route: voluntario_new
         permanent: true
 
+login:
+    pattern: /login
+    defaults: { _controller: EherQueroSerVoluntarioBundle:Security:login }
+
+login_check:
+    pattern: /login_check
+
+logout:
+    pattern:   /logout
