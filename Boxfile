@@ -3,9 +3,7 @@ web1:
     ## GENERAL SETTINGS
     ################################################
     shared_writable_dirs:
-        - app/cache
-        - app/logs
-        - app/bootstrap.php.cache
+        - app
         - vendor
 
     ################################################
