@@ -38,4 +38,4 @@ web1:
     after_build:
         - "make config"
     before_deploy:
-        - "make install"
+        - "make clear install"
