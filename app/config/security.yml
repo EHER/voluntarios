@@ -4,13 +4,16 @@ jms_security_extra:
 
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\User:
+            algorithm:   sha1
+            iterations: 1
+            encode_as_base64: false
 
     providers:
         in_memory:
             memory:
                 users:
-                    admin: { password: 123, roles: 'ROLE_ADMIN' }
+                    %admin.web.username%: { password: %admin.web.password%, roles: 'ROLE_ADMIN' }
 
     firewalls:
         secured_area:

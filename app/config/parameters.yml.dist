@@ -19,3 +19,6 @@ parameters:
     apontador.api.base_url: "http://api.apontador.com.br/v1/"
     apontador.api.consumer_key: ""
     apontador.api.consumer_secret: ""
+
+    admin.web.username: "admin"
+    admin.web.password: ""
