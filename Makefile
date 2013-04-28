@@ -6,12 +6,9 @@ default:
 	@echo "perms\t\tAjusta as permisões dos arquivos"
 	@echo "config\t\tCria configurações"
 
-install: get-composer vendors-install perms
+install: vendors-install perms
 
 update: get-composer composer-update vendors-update perms
-
-get-composer:
-	wget -nc http://getcomposer.org/composer.phar
 
 composer-update:
 	php composer.phar self-update
