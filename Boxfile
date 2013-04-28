@@ -35,4 +35,4 @@ web1:
     magic_quotes_gpc: Off
 
     after_build:
-        - "make install config"
+        - "make config install"
