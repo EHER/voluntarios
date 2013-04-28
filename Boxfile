@@ -3,9 +3,8 @@ web1:
     ## GENERAL SETTINGS
     ################################################
     shared_writable_dirs:
-        - app
-        - vendor
-        - web/bundles
+        - app/cache
+        - app/logs
 
     ################################################
     ## WEB SPECIFIC SETTINGS
@@ -36,6 +35,4 @@ web1:
     magic_quotes_gpc: Off
 
     after_build:
-        - "make config"
-    before_deploy:
-        - "make update"
+        - "make install config"
