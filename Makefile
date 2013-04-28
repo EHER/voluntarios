@@ -8,7 +8,7 @@ default:
 
 install: vendors-install perms
 
-update: get-composer composer-update vendors-update perms
+update: composer-update vendors-update perms
 
 composer-update:
 	php composer.phar self-update
