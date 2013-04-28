@@ -20,7 +20,8 @@ vendors-update:
 	php composer.phar update
 
 clear:
-	app/console cache:clear
+	app/console cache:clear --env=dev
+	app/console cache:clear --env=prod --no-debug
 
 perms:
 	mkdir -p app/logs
