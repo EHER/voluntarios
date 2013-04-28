@@ -20,6 +20,7 @@ web1:
     php_version: 5.3.5
     php_extensions:
         - curl
+        - zip
         - intl
         - mbstring
         - xsl
