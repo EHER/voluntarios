@@ -35,4 +35,4 @@ web1:
     magic_quotes_gpc: Off
 
     after_build:
-        - "make perms config install"
+        - "make perms install config"
