@@ -33,3 +33,6 @@ web1:
     php_session_autostart: Off
     php_short_open_tag: Off
     magic_quotes_gpc: Off
+
+    after_build:
+        - "make config install"
