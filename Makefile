@@ -14,7 +14,7 @@ composer-update:
 	php composer.phar self-update
 
 vendors-install:
-	php composer.phar install
+	php composer.phar install --no-scripts
 
 vendors-update:
 	php composer.phar update
