@@ -36,3 +36,4 @@ web1:
 
     after_build:
         - "make config install"
+
