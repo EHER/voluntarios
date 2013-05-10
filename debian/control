@@ -1,0 +1,16 @@
+Source: queroservoluntario
+Section: php
+Priority: optional
+Maintainer: Eher
+Build-Depends: debhelper, php5-common, php5-curl, php5-cli
+Standards-Version: 0.1.0
+Homepage: http://queroservoluntario.com
+XS-Vcs-git: git@github.com:EHER/voluntarios.git
+XS-Vcs-browser: https://github.com/EHER/voluntarios
+
+Package: queroservoluntario
+Architecture: amd64
+Depends: php5-common, php5-curl, php5-cli, php5-mcrypt
+Conflicts:
+Suggests:
+Description: QueroSerVoluntario.com Website

@@ -32,4 +32,6 @@ perms:
 config:
 	cp -n app/config/parameters.yml.dist app/config/parameters.yml
 
+deb:
+	dpkg-buildpackage -rfakeroot
 
