@@ -34,4 +34,3 @@ config:
 
 deb:
 	dpkg-buildpackage -rfakeroot
-
