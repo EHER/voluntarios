@@ -4,7 +4,7 @@ DESTDIR  := /var/www/queroservoluntario
 
 build:
 	dh_testdir
-	make install
+	make install test
 
 clean:
 	dh_testdir
