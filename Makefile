@@ -30,7 +30,7 @@ perms:
 	chmod -R 777 app/cache
 
 config:
-	cp -n app/config/parameters.yml.dist app/config/parameters.yml
+	cp -v app/config/parameters.yml.dist app/config/parameters.yml
 
 deb:
 	dpkg-buildpackage -rfakeroot
