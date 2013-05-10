@@ -20,8 +20,6 @@ binary-indep:
 	dh_installdocs
 	dh_installexamples
 	dh_install
-	mv -v debian/$(PKGNAME)/$(DESTDIR)/app/config/config_prod.yml debian/$(PKGNAME)/$(DESTDIR)/app/config/config_prod.yml.example
-	rm -rf debian/$(PKGNAME)/$(DESTDIR)/app/config/config_prod.yml
 	dh_link
 	dh_compress
 	dh_fixperms
