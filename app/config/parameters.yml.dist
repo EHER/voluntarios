@@ -8,10 +8,12 @@ parameters:
     database_unix_socket: %database.socket%
     database_path: ~
 
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: ~
-    mailer_password: ~
+    mailer_transport: gmail
+    mailer_host: ~
+    mailer_user: %mailer.user% 
+    mailer_password: %mailer.password%
+    mailer_delivery_address: %mailer.delivery.address%
+
 
     locale: en
     secret: ThisTokenIsVerySecret
@@ -22,3 +24,5 @@ parameters:
 
     admin.web.username: "admin"
     admin.web.password: ""
+
+
