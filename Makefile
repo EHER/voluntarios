@@ -14,7 +14,7 @@ composer-update:
 	php composer.phar self-update
 
 vendors-install:
-	php composer.phar install --no-scripts
+	php composer.phar install
 
 vendors-update:
 	php composer.phar update
@@ -30,6 +30,8 @@ perms:
 	chmod -R 777 app/cache
 
 config:
-	cp -n app/config/parameters.yml.dist app/config/parameters.yml
+	cp -v app/config/parameters.yml.dist app/config/parameters.yml
 
+deb:
+	dpkg-buildpackage -rfakeroot
 

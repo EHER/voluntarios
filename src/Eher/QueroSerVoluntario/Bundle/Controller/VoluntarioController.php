@@ -82,6 +82,8 @@ class VoluntarioController extends Controller
             $em->persist($entity);
             $em->flush();
 
+            $this->sendByMail($entity);
+
             return $this->redirect(
                 $this->generateUrl('voluntario_parabens')
             );
@@ -184,5 +186,14 @@ class VoluntarioController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+
+    private function sendByMail(Voluntario $entity)
+    {
+        $subject = "Cadastro de Voluntário {$entity->getNome()} ({$entity->getCidade()}, {$entity->getEstado()})";
+        $message = \Swift_Message::newInstance()
+            ->setSubject($subject)
+            ->setFrom($entity->getEmail());
+        return $this->get('mailer')->send($message);
     }
 }
