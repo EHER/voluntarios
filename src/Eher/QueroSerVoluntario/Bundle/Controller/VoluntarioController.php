@@ -193,7 +193,7 @@ class VoluntarioController extends Controller
         $subject = "Cadastro de Voluntário: {$entity->getNome()} ({$entity->getCidade()}, {$entity->getEstado()})";
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
-            ->setTo($this->container->getParameter('contact_mail'))
+            ->setTo($this->container->getParameter('contact_email'))
             ->setFrom($entity->getEmail());
         return $this->get('mailer')->send($message);
     }
