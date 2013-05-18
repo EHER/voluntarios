@@ -190,7 +190,7 @@ class VoluntarioController extends Controller
 
     private function sendByMail(Voluntario $entity)
     {
-        $subject = "Cadastro de Voluntário {$entity->getNome()} ({$entity->getCidade()}, {$entity->getEstado()})";
+        $subject = "Cadastro de Voluntário: {$entity->getNome()} ({$entity->getCidade()}, {$entity->getEstado()})";
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setFrom($entity->getEmail());
