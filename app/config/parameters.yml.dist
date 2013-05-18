@@ -16,13 +16,13 @@ parameters:
     locale: %locale% 
     secret: %secret%
 
-    apontador.api.base_url: %apontador.api.baseurl%
-    apontador.api.consumer_key: %apontador.api.consumer.key%
-    apontador.api.consumer_secret: %apontador.api.consumer.secret%
+    apontador_api_base_url: %apontador.api.baseurl%
+    apontador_api_consumer_key: %apontador.api.consumerkey%
+    apontador_api_consumer_secret: %apontador.api.consumersecret%
 
-    admin.web.username: %admin.web.user%
-    admin.web.password: %admin.web.password% 
+    admin_web_username: %admin.web.user%
+    admin_web_password: %admin.web.password% 
 
-    contact.mail: %contact.mail%
+    contact_email: %contact.email%
 
 

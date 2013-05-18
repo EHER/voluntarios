@@ -38,7 +38,7 @@ class DefaultController extends Controller
             $address = new Address();
             $address->setCity($city);
 
-            $search = $this->get('apontador.api.place.repository')
+            $search = $this->get('place_repository')
                 ->byAddress($address)
                 ->withSubcategoryId("6661")
                 ->getAll();
@@ -67,7 +67,7 @@ class DefaultController extends Controller
             $address = new Address();
             $address->setCity($city);
 
-            $search = $this->get('apontador.api.place.repository')
+            $search = $this->get('place_repository')
                 ->byAddress($address)
                 ->withSubcategoryId("6661")
                 ->getAll();
