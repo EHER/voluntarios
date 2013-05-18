@@ -194,7 +194,7 @@ class VoluntarioController extends Controller
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setTo($this->container->getParameter('contact_email'))
-            ->setFrom($entity->getEmail());
+            ->setReplyTo(array($entity->getEmail() => $entity->getNome()));
         return $this->get('mailer')->send($message);
     }
 }
