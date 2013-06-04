@@ -40,7 +40,7 @@ class DefaultController extends Controller
 
             $search = $this->get('place_repository')
                 ->byAddress($address)
-                ->withSubcategoryId("6661")
+                ->byListId(25)
                 ->getAll();
         }
 
@@ -69,7 +69,7 @@ class DefaultController extends Controller
 
             $search = $this->get('place_repository')
                 ->byAddress($address)
-                ->withSubcategoryId("6661")
+                ->byListId(25)
                 ->getAll();
         }
 
