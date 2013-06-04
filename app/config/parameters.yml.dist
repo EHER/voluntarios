@@ -1,28 +1,31 @@
 parameters:
-    database_driver: pdo_mysql
-    database_host: 127.0.0.1
-    database_port: ~
+    database_driver: %database.driver%
+    database_host: %database.host%
+    database_port: %database.port% 
     database_name: %database.name%
     database_user: %database.user%
     database_password: %database.password%
     database_unix_socket: %database.socket%
-    database_path: ~
+    database_path: %database.path% 
 
-    mailer_transport: gmail
-    mailer_host: ~
+    mailer_transport: %mailer.transport%
+    mailer_host: %mailer.host% 
+    mailer_port: %mailer.port%
     mailer_user: %mailer.user% 
     mailer_password: %mailer.password%
-    mailer_delivery_address: %mailer.delivery.address%
+    mailer_auth_mode:  %mailer.auth.mode%
+    mailer_encryption: %mailer.encryption%
 
+    locale: %locale% 
+    secret: %secret%
 
-    locale: en
-    secret: ThisTokenIsVerySecret
+    apontador_api_base_url: %apontador.api.baseurl%
+    apontador_api_consumer_key: %apontador.api.consumerkey%
+    apontador_api_consumer_secret: %apontador.api.consumersecret%
 
-    apontador.api.base_url: "http://api.apontador.com.br/v1/"
-    apontador.api.consumer_key: %apontador.api.consumer.key%
-    apontador.api.consumer_secret: %apontador.api.consumer.secret%
+    admin_web_username: %admin.web.user%
+    admin_web_password: %admin.web.password% 
 
-    admin.web.username: "admin"
-    admin.web.password: ""
+    contact_email: %contact.email%
 
 

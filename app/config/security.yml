@@ -13,7 +13,7 @@ security:
         in_memory:
             memory:
                 users:
-                    %admin.web.username%: { password: %admin.web.password%, roles: 'ROLE_ADMIN' }
+                    %admin_web_username%: { password: %admin_web_password%, roles: 'ROLE_ADMIN' }
 
     firewalls:
         secured_area:
