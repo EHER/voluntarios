@@ -1,37 +1,48 @@
 default:
-	@echo "install\t\tFaz a instalação dos vendors pelo Composer"
-	@echo "reinstall\tForça a reinstalação dos vendors (apagando /vendors)"
-	@echo "update\t\tFaz a atualização dos vendors pelo Composer"
-	@echo "clear\t\tLimpa o cache"
-	@echo "perms\t\tAjusta as permisões dos arquivos"
-	@echo "config\t\tCria configurações"
+	@echo "install\t\t"
+	@echo "update\t\t"
+	@echo "clear\t\t"
+	@echo "perms\t\t"
+	@echo "config\t\t"
+	@echo "deb\t\t"
 
-install: vendors-install perms
+install: _bower-install _composer-install perms
+update: _bower-update _composer-self-update _composer-update perms
+clear: _symfony-clear
+perms: _cache-perms _logs-perms
+config: _create-config
+deb: _debian-package
 
-update: composer-update vendors-update perms
+_bower-install:
+	bower install
 
-composer-update:
+_bower-update:
+	bower update
+
+_composer-self-update:
 	php composer.phar self-update
 
-vendors-install:
-	php composer.phar install
-
-vendors-update:
+_composer-update:
 	php composer.phar update
 
-clear:
+_composer-install:
+	php composer.phar install
+
+_symfony-clear:
 	php app/console cache:clear --env=dev
 	php app/console cache:clear --env=prod --no-debug
 
-perms:
+_logs-perms:
 	mkdir -p app/logs
-	mkdir -p app/cache
 	chmod -R 777 app/logs
+
+_cache-perms:
+	mkdir -p app/cache
 	chmod -R 777 app/cache
 
-config:
+_create-config:
 	cp -v app/config/parameters.yml.dist app/config/parameters.yml
 
-deb:
+_debian-package:
 	dpkg-buildpackage -rfakeroot
 
