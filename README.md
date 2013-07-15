@@ -1,11 +1,12 @@
-# Voluntários
+[![Stories in Ready](http://badge.waffle.io/EHER/voluntarios.png)](http://waffle.io/EHER/voluntarios)  
+# VoluntC!rios
 
-Esse projeto consiste em ter um site para que potenciais voluntários encontrem
-entidades beneficientes a uma distância confortável do local onde vivem.
+Esse projeto consiste em ter um site para que potenciais voluntC!rios encontrem
+entidades beneficientes a uma distC"ncia confortC!vel do local onde vivem.
 
 ## O site
 
-O site está no ar em [http://queroservoluntario.com/](http://queroservoluntario.com/).
+O site estC! no ar em [http://queroservoluntario.com/](http://queroservoluntario.com/).
 Acesse e diga o que achou! ;)
 
 ## Tecnologia utilizada
