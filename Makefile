@@ -6,18 +6,12 @@ default:
 	@echo "config\t\t"
 	@echo "deb\t\t"
 
-install: _bower-install _composer-install perms
-update: _bower-update _composer-self-update _composer-update perms
+install: _composer-install perms
+update: _composer-self-update _composer-update perms
 clear: _symfony-clear
 perms: _cache-perms _logs-perms
 config: _create-config
 deb: _debian-package
-
-_bower-install:
-	bower install
-
-_bower-update:
-	bower update
 
 _composer-self-update:
 	php composer.phar self-update
