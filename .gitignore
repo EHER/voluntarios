@@ -4,5 +4,4 @@
 /app/cache
 /app/logs
 /vendor
-/web/js/vendor
 /composer.phar
