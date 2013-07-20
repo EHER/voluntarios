@@ -41,5 +41,8 @@
         "branch-alias": {
             "dev-master": "2.2-dev"
         }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "1.0.3"
     }
 }

@@ -18,3 +18,7 @@ services:
     place_repository:
         class: chegamos\entity\repository\PlaceRepository
         arguments: [@chegamos_config]
+
+    mail_manager:
+        class: Eher\QueroSerVoluntario\Bundle\Model\MailManager
+        arguments: [@mailer]

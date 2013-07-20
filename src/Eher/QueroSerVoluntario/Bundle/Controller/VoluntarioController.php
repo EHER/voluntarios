@@ -75,14 +75,19 @@ class VoluntarioController extends Controller
         $entity  = new Voluntario();
         $request = $this->getRequest();
         $form    = $this->createForm(new VoluntarioType(), $entity);
-        $form->bindRequest($request);
+        $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
-            $this->sendByMail($entity);
+            $this->get("mail_manager")
+                ->setContactEmail(
+                    $this->container->getParameter("contact_email")
+                )
+                ->generateMessageWithVoluntario($entity)
+                ->send();
 
             return $this->redirect(
                 $this->generateUrl('voluntario_parabens')
@@ -186,16 +191,5 @@ class VoluntarioController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
-    }
-
-    private function sendByMail(Voluntario $entity)
-    {
-        $subject = "Cadastro de Voluntário: {$entity->getNome()} ({$entity->getCidade()}, {$entity->getEstado()})";
-        $message = \Swift_Message::newInstance()
-            ->setSubject($subject)
-            ->setTo($this->container->getParameter('contact_email'))
-            ->setFrom($this->container->getParameter('contact_email'))
-            ->setReplyTo(array($entity->getEmail() => $entity->getNome()));
-        return $this->get('mailer')->send($message);
     }
 }

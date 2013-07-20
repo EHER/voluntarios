@@ -1,6 +1,7 @@
 default:
 	@echo "install\t\t"
 	@echo "update\t\t"
+	@echo "test\t\t"
 	@echo "clear\t\t"
 	@echo "perms\t\t"
 	@echo "config\t\t"
@@ -8,6 +9,7 @@ default:
 
 install: _composer-install perms
 update: _composer-self-update _composer-update perms
+test: _run_phpspec
 clear: _symfony-clear
 perms: _cache-perms _logs-perms
 config: _create-config
@@ -21,6 +23,9 @@ _composer-update:
 
 _composer-install:
 	php composer.phar install
+
+_run_phpspec:
+	vendor/bin/phpspec --format=pretty
 
 _symfony-clear:
 	php app/console cache:clear --env=dev
