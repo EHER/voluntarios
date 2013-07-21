@@ -27,7 +27,7 @@ class MailManagerSpec extends ObjectBehavior
         $voluntario->setCidade("Sorocaba");
         $voluntario->setEstado("SP");
 
-        $this->setContactEmail("contato@queroservoluntario.com")
+        $this->setContactEmail("cadastro@queroservoluntario.com")
             ->generateMessageWithVoluntario($voluntario);
 
         $this->getMessage()->shouldHaveType('\Swift_Message');
@@ -35,10 +35,10 @@ class MailManagerSpec extends ObjectBehavior
             "Cadastro de Voluntário: Alexandre Eher (Sorocaba, SP)"
         );
         $this->getMessage()->getFrom()->shouldBeEqualTo(
-            array("contato@queroservoluntario.com" => null)
+            array("cadastro@queroservoluntario.com" => null)
         );
         $this->getMessage()->getTo()->shouldBeEqualTo(
-            array("contato@queroservoluntario.com" => null)
+            array("cadastro@queroservoluntario.com" => null)
         );
         $this->getMessage()->getReplyTo()->shouldBeEqualTo(
             array("alexandre@eher.com.br" => "Alexandre Eher")
