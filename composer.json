@@ -43,6 +43,6 @@
         }
     },
     "require-dev": {
-        "phpspec/phpspec": "1.0.3"
+        "phpspec/phpspec": "*"
     }
 }
