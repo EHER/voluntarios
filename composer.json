@@ -41,6 +41,7 @@
         }
     },
     "require-dev": {
+        "phpunit/phpunit": "*",
         "phpspec/phpspec": "*"
     }
 }

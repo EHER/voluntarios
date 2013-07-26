@@ -9,7 +9,7 @@ default:
 
 install: _composer-install perms
 update: _composer-self-update _composer-update perms
-test: _run_phpspec
+test: _run-phpunit _run_phpspec
 clear: _symfony-clear
 perms: _cache-perms _logs-perms
 config: _create-config
@@ -23,6 +23,9 @@ _composer-update:
 
 _composer-install:
 	php composer.phar install
+
+_run-phpunit:
+	vendor/bin/phpunit -c app --testdox
 
 _run_phpspec:
 	vendor/bin/phpspec --format=pretty

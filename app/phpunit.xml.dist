@@ -15,8 +15,7 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>../src/*/*Bundle/Tests</directory>
-            <directory>../src/*/Bundle/*Bundle/Tests</directory>
+            <directory>../src/*/*/Bundle/Tests</directory>
         </testsuite>
     </testsuites>
 
@@ -30,12 +29,12 @@
         <whitelist>
             <directory>../src</directory>
             <exclude>
-                <directory>../src/*/*Bundle/Resources</directory>
-                <directory>../src/*/*Bundle/Tests</directory>
-                <directory>../src/*/Bundle/*Bundle/Resources</directory>
-                <directory>../src/*/Bundle/*Bundle/Tests</directory>
+                <directory>../src/*/*/Bundle/DependencyInjection</directory>
+                <directory>../src/*/*/Bundle/Model</directory>
+                <directory>../src/*/*/Bundle/Entity</directory>
+                <directory>../src/*/*/Bundle/Resources</directory>
+                <directory>../src/*/*/Bundle/Tests</directory>
             </exclude>
         </whitelist>
     </filter>
-
 </phpunit>
