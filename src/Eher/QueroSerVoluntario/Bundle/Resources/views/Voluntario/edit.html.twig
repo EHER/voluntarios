@@ -1,22 +1,26 @@
-<h1>Voluntario edit</h1>
+{% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
+{% block title %}Quero ser Voluntário - Edição do Voluntário: {{ entity.id }}{% endblock %}
+{% block content %}
+    <h2>Edição de Voluntário</h2>
 
-<form action="{{ path('voluntario_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit">Edit</button>
-    </p>
-</form>
+    <form class="form-horizontal" action="{{ path('voluntario_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+        {{ form_widget(edit_form) }}
+        <p>
+            <button type="submit">Edit</button>
+        </p>
+    </form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('voluntario') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('voluntario_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('voluntario') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <form action="{{ path('voluntario_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    </ul>
+{% endblock %}

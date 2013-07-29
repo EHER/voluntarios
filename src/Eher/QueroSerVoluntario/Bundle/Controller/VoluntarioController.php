@@ -19,7 +19,7 @@ class VoluntarioController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->findAll();
 
@@ -34,7 +34,7 @@ class VoluntarioController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
@@ -106,7 +106,7 @@ class VoluntarioController extends Controller
      */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
@@ -130,7 +130,7 @@ class VoluntarioController extends Controller
      */
     public function updateAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
@@ -171,7 +171,7 @@ class VoluntarioController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
             if (!$entity) {

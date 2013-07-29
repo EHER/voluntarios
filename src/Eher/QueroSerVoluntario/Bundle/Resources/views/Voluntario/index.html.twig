@@ -1,43 +1,47 @@
-<h1>Voluntario list</h1>
+{% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
+{% block title %}Quero ser Voluntário - Lista de Voluntários{% endblock %}
+{% block content %}
+    <h2>Lista de Voluntários</h2>
 
-<table class="records_list">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Uf</th>
-            <th>Cidade</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for entity in entities %}
-        <tr>
-            <td><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td>{{ entity.nome }}</td>
-            <td>{{ entity.email }}</td>
-            <td>{{ entity.uf }}</td>
-            <td>{{ entity.cidade }}</td>
-            <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('voluntario_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nome }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.cidade }}</td>
+                <td>{{ entity.estado }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('voluntario_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-<ul>
-    <li>
-        <a href="{{ path('voluntario_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <a href="{{ path('voluntario_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+{% endblock %}

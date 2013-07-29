@@ -1,6 +1,6 @@
 admin:
     pattern:  /admin
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:index" }
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Admin:index" }
 
 homepage:
     pattern:  /
