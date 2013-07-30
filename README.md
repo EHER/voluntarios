@@ -1,4 +1,4 @@
-[![Stories in Ready](http://badge.waffle.io/EHER/voluntarios.png)](http://waffle.io/EHER/voluntarios)  
+[![Stories in Ready](https://badge.waffle.io/EHER/voluntarios.png)](http://waffle.io/EHER/voluntarios)  
 # VoluntC!rios
 
 Esse projeto consiste em ter um site para que potenciais voluntC!rios encontrem
