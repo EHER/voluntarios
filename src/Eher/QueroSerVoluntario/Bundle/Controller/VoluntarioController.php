@@ -159,6 +159,32 @@ class VoluntarioController extends Controller
         ));
     }
 
+    public function mailAction($id)
+    {
+        $form = $this->createDeleteForm($id);
+        $request = $this->getRequest();
+
+        $form->bindRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Voluntario entity.');
+            }
+
+            $this->get("mail_manager")
+                ->setContactEmail(
+                    $this->container->getParameter("contact_email")
+                )
+                ->generateMessageWithVoluntario($entity)
+                ->send();
+        }
+
+        return $this->redirect($this->generateUrl('voluntario'));
+    }
+
     /**
      * Deletes a Voluntario entity.
      *

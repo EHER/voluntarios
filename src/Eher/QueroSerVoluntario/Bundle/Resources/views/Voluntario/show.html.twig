@@ -28,22 +28,24 @@
         </tbody>
     </table>
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('voluntario') }}">
-                Back to the list
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">
-                Edit
-            </a>
-        </li>
-        <li>
-            <form action="{{ path('voluntario_delete', { 'id': entity.id }) }}" method="post">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav ">
+                <li>
+                    <a href="{{ path('voluntario') }}">
+                        Back to the list
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">
+                        Edit
+                    </a>
+                </li>
+            </ul>
+            <form action="{{ path('voluntario_mail', { 'id': entity.id }) }}" method="post">
                 {{ form_widget(delete_form) }}
-                <button type="submit">Delete</button>
+                <button class="btn" type="submit">Send by E-Mail</button>
             </form>
-        </li>
-    </ul>
+        </div>
+    </div>
 {% endblock %}

@@ -30,3 +30,8 @@ voluntario_delete:
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:delete" }
     requirements: { _method: post }
 
+voluntario_mail:
+    pattern:  /{id}/mail
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:mail" }
+    requirements: { _method: post }
+
