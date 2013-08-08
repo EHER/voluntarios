@@ -1,6 +1,17 @@
 {% extends "::base.html.twig" %}
 {% block title %}Quero ser Voluntário!{% endblock %}
 {% block body %}
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=288151054658648";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -24,10 +35,14 @@
     </div>
 
     <div class="container">
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
     </div>
     <hr>
+    <div style="text-align:center;">
+        <div class="fb-like" data-href="http://queroservoluntario.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="false"></div>
+    </div>
     <footer>
-    © 2011-{{ "now"|date("Y") }} <a href="{{ path('sobre') }}">QueroSerVoluntario</a> <a href="{{ path('brasil') }}">Brasil</a>
+        © 2011-{{ "now"|date("Y") }}
+        <a href="{{ path('sobre') }}">QueroSerVoluntario</a> <a href="{{ path('brasil') }}">Brasil</a>
     </footer>
 {% endblock %}
