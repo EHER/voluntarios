@@ -26,5 +26,6 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/voluntarios/cadastrar, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/voluntarios/parabens, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/voluntario, roles: ROLE_ADMIN }
+        - { path: ^/voluntarios, roles: ROLE_ADMIN }
+        - { path: ^/vagas, roles: ROLE_ADMIN }
 
