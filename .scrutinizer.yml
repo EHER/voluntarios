@@ -1,9 +1,6 @@
 tools:
     php_code_coverage:
         config_path: app
-    php_code_sniffer:
-        config:
-            standard: PSR1, PSR2
     php_cpd: true
     php_cs_fixer: true
     php_loc: true
