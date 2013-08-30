@@ -1,6 +1,4 @@
 tools:
-    php_code_coverage:
-        config_path: app
     php_cpd: true
     php_cs_fixer: true
     php_loc: true
