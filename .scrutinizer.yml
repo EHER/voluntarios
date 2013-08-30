@@ -7,6 +7,3 @@ tools:
         filter:
             excluded_paths: ["*/Tests/*","*/spec/*","*/app/*","*/web/*"]
     sensiolabs_security_checker: true
-
-before_commands:
-    - make config
