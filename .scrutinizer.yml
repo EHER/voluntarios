@@ -14,4 +14,4 @@ tools:
     sensiolabs_security_checker: true
 
 before_commands:
-    - make config install
+    - make config
