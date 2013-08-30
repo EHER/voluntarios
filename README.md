@@ -1,8 +1,8 @@
-[![Stories in Ready](https://badge.waffle.io/EHER/voluntarios.png)](http://waffle.io/EHER/voluntarios) [![Code Coverage](https://scrutinizer-ci.com/g/EHER/voluntarios/badges/coverage.png?s=166628c2776118bffd89fd4181a9d1744db60f70)](https://scrutinizer-ci.com/g/EHER/voluntarios/)
 # Voluntários - queroservoluntario.com
-
 Esse projeto consiste em ter um site para que potenciais voluntários encontrem
 entidades beneficientes a uma distância confortável do local onde vivem.
+
+[![Stories in Ready](https://badge.waffle.io/EHER/voluntarios.png)](http://waffle.io/EHER/voluntarios) [![Scrutinizer Continuous Inspections](https://scrutinizer-ci.com/g/EHER/voluntarios/badges/general.png?s=a0c22b6cb87b2432ac1410e0e5a13055a181d2e8)](https://scrutinizer-ci.com/g/EHER/voluntarios/)
 
 ## O site
 
