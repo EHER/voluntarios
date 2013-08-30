@@ -1,0 +1,19 @@
+tools:
+    php_code_coverage:
+        config_path: app
+    php_code_sniffer:
+        config:
+            standard: PSR1, PSR2
+    php_cpd: true
+    php_cs_fixer: true
+    php_loc: true
+    php_mess_detector: true
+    php_analyzer:
+        filter:
+            excluded_paths: ["*/Tests/*","*/spec/*","*/app/*","*/web/*"]
+    sensiolabs_security_checker: true
+    tools:
+        custom_commands:
+            -
+                scope: project
+                command: make config
