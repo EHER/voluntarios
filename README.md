@@ -14,3 +14,7 @@ Acesse e diga o que achou! ;)
 - Nginx <http://wiki.nginx.org/Main>
 - PHP 5.4 <http://br.php.net/>
 - Framework Symfony 2 <http://symfony.com/>
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EHER/voluntarios/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
