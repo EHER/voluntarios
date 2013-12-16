@@ -43,5 +43,5 @@ _create-config:
 	cp -v app/config/parameters.yml.dist app/config/parameters.yml
 
 _debian-package:
-	dpkg-buildpackage -rfakeroot
+	fpm -s dir -t deb -n queroservoluntario .
 
