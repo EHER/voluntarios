@@ -1,45 +1,51 @@
-<h1>Voluntario</h1>
+{% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
+{% block title %}Quero ser Voluntário - Voluntário: {{ entity.id }}{% endblock %}
+{% block content %}
+    <h2>Voluntário</h2>
 
-<table class="record_properties">
-    <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ entity.id }}</td>
-        </tr>
-        <tr>
-            <th>Nome</th>
-            <td>{{ entity.nome }}</td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>{{ entity.email }}</td>
-        </tr>
-        <tr>
-            <th>Uf</th>
-            <td>{{ entity.uf }}</td>
-        </tr>
-        <tr>
-            <th>Cidade</th>
-            <td>{{ entity.cidade }}</td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ entity.nome }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ entity.estado }}</td>
+            </tr>
+            <tr>
+                <th>Cidade</th>
+                <td>{{ entity.cidade }}</td>
+            </tr>
+        </tbody>
+    </table>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('voluntario') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('voluntario_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav ">
+                <li>
+                    <a href="{{ path('voluntario') }}">
+                        Back to the list
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">
+                        Edit
+                    </a>
+                </li>
+            </ul>
+            <form action="{{ path('voluntario_mail', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button class="btn" type="submit">Send by E-Mail</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

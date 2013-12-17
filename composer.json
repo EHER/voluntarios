@@ -1,6 +1,4 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -21,6 +19,7 @@
         "twig/extensions": "*"
     },
     "require-dev": {
+        "phpunit/phpunit": "*",
         "phpspec/phpspec": "*@dev"
     },
     "scripts": {

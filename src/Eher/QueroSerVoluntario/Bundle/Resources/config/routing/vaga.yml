@@ -1,0 +1,30 @@
+vaga:
+    pattern:  /
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:index" }
+
+vaga_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:show" }
+
+vaga_new:
+    pattern:  /new
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:new" }
+
+vaga_create:
+    pattern:  /create
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:create" }
+    requirements: { _method: post }
+
+vaga_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:edit" }
+
+vaga_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:update" }
+    requirements: { _method: post|put }
+
+vaga_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:delete" }
+    requirements: { _method: post|delete }

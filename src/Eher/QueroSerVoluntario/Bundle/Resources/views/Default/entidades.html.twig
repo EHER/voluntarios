@@ -25,8 +25,21 @@
                     </tbody>
                 </table>
             {% else %}
-                <h4>Nenhuma entidade encontrada.</h4>
+                <h4>Nenhuma entidade cadastrada</h4>
+                <p>No momento não temos entidades cadastradas em {{ cityName|title }}.</p>
+                <p>Você pode:
+                <ul>
+                    <li>
+                        Fazer o <a href="{{ path('voluntario_new') }}">Cadastro de Voluntário</a> para que possamos encontrar uma oportunidade para você</p>
+                    </li>
+                    <li>Adicionar uma entidade no <a href="{{ path('entidade_new') }}">Cadastro de Entidade</a></li>
+                </ul>
+                </br>
             {% endif %}
         </div>
     {% endif %}
+
+    <div class="span8" style="text-align:center;">
+        <div class="fb-comments" data-width="auto" data-href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}"></div>
+    </div>
 {% endblock %}
