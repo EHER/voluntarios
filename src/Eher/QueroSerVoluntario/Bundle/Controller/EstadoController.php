@@ -18,7 +18,7 @@ class EstadoController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Estado')->findAll();
 
@@ -33,7 +33,7 @@ class EstadoController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Estado')->find($id);
 

@@ -19,7 +19,7 @@ class VoluntarioController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->findAll();
 
@@ -34,7 +34,7 @@ class VoluntarioController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
@@ -106,7 +106,7 @@ class VoluntarioController extends Controller
      */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
@@ -130,7 +130,7 @@ class VoluntarioController extends Controller
      */
     public function updateAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
@@ -143,7 +143,7 @@ class VoluntarioController extends Controller
 
         $request = $this->getRequest();
 
-        $editForm->bindRequest($request);
+        $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->persist($entity);
@@ -168,10 +168,10 @@ class VoluntarioController extends Controller
         $form = $this->createDeleteForm($id);
         $request = $this->getRequest();
 
-        $form->bindRequest($request);
+        $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
             if (!$entity) {

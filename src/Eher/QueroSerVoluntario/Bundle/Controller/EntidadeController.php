@@ -19,7 +19,7 @@ class EntidadeController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->findAll();
 
@@ -34,7 +34,7 @@ class EntidadeController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
@@ -75,10 +75,10 @@ class EntidadeController extends Controller
         $entity  = new Entidade();
         $request = $this->getRequest();
         $form    = $this->createForm(new EntidadeType(), $entity);
-        $form->bindRequest($request);
+        $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
@@ -99,7 +99,7 @@ class EntidadeController extends Controller
      */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
@@ -123,7 +123,7 @@ class EntidadeController extends Controller
      */
     public function updateAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
@@ -136,7 +136,7 @@ class EntidadeController extends Controller
 
         $request = $this->getRequest();
 
-        $editForm->bindRequest($request);
+        $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->persist($entity);
@@ -161,10 +161,10 @@ class EntidadeController extends Controller
         $form = $this->createDeleteForm($id);
         $request = $this->getRequest();
 
-        $form->bindRequest($request);
+        $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
             if (!$entity) {

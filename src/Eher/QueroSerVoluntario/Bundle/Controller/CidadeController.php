@@ -18,7 +18,7 @@ class CidadeController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Cidade')->findAll();
 
@@ -33,7 +33,7 @@ class CidadeController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Cidade')->find($id);
 
@@ -48,7 +48,7 @@ class CidadeController extends Controller
 
     public function emEstadoAction($estado)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $query = $em->createQuery("select c from EherQueroSerVoluntarioBundle:Cidade c JOIN c.estado e WHERE e.nome = ?1");
         $query->setParameter(1, $estado);

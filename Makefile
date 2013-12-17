@@ -25,7 +25,7 @@ _composer-install:
 	php composer.phar install
 
 _run_phpspec:
-	vendor/bin/phpspec --format=pretty
+	vendor/bin/phpspec run --format=pretty
 
 _symfony-clear:
 	php app/console cache:clear --env=dev
