@@ -46,5 +46,4 @@ _create-config:
 	cp -v app/config/parameters.yml.dist app/config/parameters.yml
 
 _debian-package:
-	fpm -s dir -t deb -n queroservoluntario .
-
+	fpm -s dir -t deb -n queroservoluntario --prefix /var/www/queroservoluntario .
