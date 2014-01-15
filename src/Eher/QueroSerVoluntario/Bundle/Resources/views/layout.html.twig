@@ -23,6 +23,9 @@
           <a class="brand" href="{{ path('homepage') }}">Quero ser Voluntário</a>
           <div class="nav-collapse">
             <ul class="nav">
+              {% if is_granted('ROLE_ADMIN') %}
+                <li><a href="{{ path('admin') }}">Admin</a></li>
+              {% endif %}
               <li><a href="{{ path('sobre') }}">Sobre o Site</a></li>
               <li><a href="{{ path('buscar') }}">Buscar Entidade</a></li>
               <li><a href="{{ path('voluntario_new') }}">Cadastrar Voluntário</a></li>
