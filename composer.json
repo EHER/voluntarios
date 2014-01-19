@@ -20,7 +20,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "phpspec/phpspec": "*@dev"
+        "phpspec/phpspec": "*",
+        "robmorgan/phinx": "*"
     },
     "scripts": {
         "post-install-cmd": [
