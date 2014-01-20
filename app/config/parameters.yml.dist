@@ -16,8 +16,8 @@ parameters:
     mailer_auth_mode:  %mailer.auth.mode%
     mailer_encryption: %mailer.encryption%
 
-    locale: %locale% 
-    secret: %secret%
+    locale: %framework.locale% 
+    secret: %framework.secret%
 
     apontador_api_base_url: %apontador.api.baseurl%
     apontador_api_consumer_key: %apontador.api.consumerkey%
@@ -27,5 +27,3 @@ parameters:
     admin_web_password: %admin.web.password% 
 
     contact_email: %contact.email%
-
-
