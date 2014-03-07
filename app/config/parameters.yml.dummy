@@ -1,0 +1,29 @@
+parameters:
+    database_driver: pdo_sqlite
+    database_host: fake_value
+    database_port: fake_value
+    database_name: fake_value
+    database_user: fake_value
+    database_password: fake_value
+    database_unix_socket: fake_value
+    database_path: fake_value
+
+    mailer_transport: smtp
+    mailer_host: fake_value
+    mailer_port: fake_value
+    mailer_user: fake_value
+    mailer_password: fake_value
+    mailer_auth_mode:  login
+    mailer_encryption: tls
+
+    locale: fake_value
+    secret: fake_value
+
+    apontador_api_base_url: fake_value
+    apontador_api_consumer_key: fake_value
+    apontador_api_consumer_secret: fake_value
+
+    admin_web_username: fake_value
+    admin_web_password: fake_value
+
+    contact_email: fake_value

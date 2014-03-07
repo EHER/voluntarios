@@ -13,6 +13,7 @@ test: _run-phpunit _run_phpspec
 clear: _symfony-clear
 perms: _cache-perms _logs-perms
 config: _create-config
+dummy-config: _create-dummy-config
 deb: _debian-package
 
 _composer-self-update:
@@ -44,6 +45,9 @@ _cache-perms:
 
 _create-config:
 	cp -v app/config/parameters.yml.dist app/config/parameters.yml
+
+_create-dummy-config:
+	cp -v app/config/parameters.yml.dummy app/config/parameters.yml
 
 _debian-package:
 	fpm -s dir -t deb -n queroservoluntario --prefix /var/www/queroservoluntario .
