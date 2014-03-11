@@ -5,6 +5,7 @@
     "require": {
         "php": ">=5.3.3",
         "doctrine/doctrine-bundle": "*",
+        "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "doctrine/orm": "*",
         "eher/chegamos-lib": "1.0.9",
         "jms/di-extra-bundle": "*",
