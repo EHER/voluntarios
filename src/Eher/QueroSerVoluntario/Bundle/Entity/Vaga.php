@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class Vaga
 {
@@ -38,7 +39,7 @@ class Vaga
     /**
      * @var Entidade
      *
-     * @ORM\Column(name="entidade", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Entidade")
      */
     private $entidade;
 
@@ -49,6 +50,10 @@ class Vaga
      */
     private $emailTemplate;
 
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
 
     /**
      * Get id
@@ -150,5 +155,18 @@ class Vaga
     public function getEmailTemplate()
     {
         return $this->emailTemplate;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new \DateTime();
     }
 }

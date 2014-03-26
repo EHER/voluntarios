@@ -18,9 +18,9 @@ class VoluntarioController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->findAll();
+        $entities = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->findAll();
 
         return $this->render('EherQueroSerVoluntarioBundle:Voluntario:index.html.twig', array(
             'entities' => $entities
@@ -33,9 +33,9 @@ class VoluntarioController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Voluntario entity.');
@@ -77,9 +77,9 @@ class VoluntarioController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($entity);
+            $entityManager->flush();
 
             $this->get("mail_manager")
                 ->setContactEmail(
@@ -89,7 +89,7 @@ class VoluntarioController extends Controller
                 ->send();
 
             return $this->redirect(
-                $this->generateUrl('voluntario_parabens')
+                $this->generateUrl('voluntario')
             );
         }
 
@@ -105,9 +105,9 @@ class VoluntarioController extends Controller
      */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Voluntario entity.');
@@ -129,9 +129,9 @@ class VoluntarioController extends Controller
      */
     public function updateAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Voluntario entity.');
@@ -145,8 +145,8 @@ class VoluntarioController extends Controller
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
-            $em->persist($entity);
-            $em->flush();
+            $entityManager->persist($entity);
+            $entityManager->flush();
 
             return $this->redirect($this->generateUrl('voluntario_edit', array('id' => $id)));
         }
@@ -166,8 +166,8 @@ class VoluntarioController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Voluntario entity.');
@@ -196,15 +196,15 @@ class VoluntarioController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Voluntario entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            $entityManager->remove($entity);
+            $entityManager->flush();
         }
 
         return $this->redirect($this->generateUrl('voluntario'));

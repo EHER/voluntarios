@@ -41,7 +41,6 @@ class Cidade
      */
     private $estado;
 
-
     /**
      * Get id
      *
@@ -116,5 +115,10 @@ class Cidade
     public function getEstado()
     {
         return $this->estado;
+    }
+
+    public function __toString()
+    {
+        return "{$this->nome} - {$this->estado->getNome()}";
     }
 }

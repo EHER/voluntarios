@@ -9,12 +9,6 @@ Eher\QueroSerVoluntario\Bundle\Entity\Voluntario:
             - Email:
                 message: "O email \"{{ value }}\" é inválido."
                 checkMX: true
-        cidade:
-            - NotBlank:
-                message: "Cidade é obrigatório"
-        estado:
-            - NotBlank:
-                message: "Estado é obrigatório"
 
 Eher\QueroSerVoluntario\Bundle\Entity\Entidade:
     properties:
@@ -24,24 +18,12 @@ Eher\QueroSerVoluntario\Bundle\Entity\Entidade:
         endereco:
             - NotBlank:
                 message: "Endereço é obrigatório"
-        numero:
-            - NotBlank:
-                message: "Número é obrigatório"
-        complemento:
-            - NotBlank:
-                message: "Complemento é obrigatório"
-        cep:
-            - NotBlank:
-                message: "CEP é obrigatório"
         bairro:
             - NotBlank:
                 message: "Bairro é obrigatório"
-        cidade:
+
+Eher\QueroSerVoluntario\Bundle\Entity\Vaga:
+    properties:
+        nome:
             - NotBlank:
-                message: "Cidade é obrigatório"
-        estado:
-            - NotBlank:
-                message: "Estado é obrigatório"
-        telefone:
-            - NotBlank:
-                message: "Telefone é obrigatório"
+                message: "Nome é obrigatório"

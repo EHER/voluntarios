@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class Entidade
 {
@@ -36,20 +37,6 @@ class Entidade
     private $endereco;
 
     /**
-     * @var string $numero
-     *
-     * @ORM\Column(name="numero", type="string", length=10)
-     */
-    private $numero;
-
-    /**
-     * @var string $complemento
-     *
-     * @ORM\Column(name="complemento", type="string", length=10)
-     */
-    private $complemento;
-
-    /**
      * @var string $cep
      *
      * @ORM\Column(name="cep", type="string", length=8)
@@ -64,18 +51,11 @@ class Entidade
     private $bairro;
 
     /**
-     * @var string $cidade
+     * @var Cidade
      *
-     * @ORM\Column(name="cidade", type="string", length=50)
+     * @ORM\ManyToOne(targetEntity="Cidade")
      */
     private $cidade;
-
-    /**
-     * @var string $estado
-     *
-     * @ORM\Column(name="estado", type="string", length=2)
-     */
-    private $estado;
 
     /**
      * @var string $telefone
@@ -84,11 +64,14 @@ class Entidade
      */
     private $telefone;
 
-
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -108,7 +91,7 @@ class Entidade
     /**
      * Get nome
      *
-     * @return string 
+     * @return string
      */
     public function getNome()
     {
@@ -128,51 +111,11 @@ class Entidade
     /**
      * Get endereco
      *
-     * @return string 
+     * @return string
      */
     public function getEndereco()
     {
         return $this->endereco;
-    }
-
-    /**
-     * Set numero
-     *
-     * @param string $numero
-     */
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-    }
-
-    /**
-     * Get numero
-     *
-     * @return string 
-     */
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
-    /**
-     * Set complemento
-     *
-     * @param string $complemento
-     */
-    public function setComplemento($complemento)
-    {
-        $this->complemento = $complemento;
-    }
-
-    /**
-     * Get complemento
-     *
-     * @return string 
-     */
-    public function getComplemento()
-    {
-        return $this->complemento;
     }
 
     /**
@@ -188,7 +131,7 @@ class Entidade
     /**
      * Get cep
      *
-     * @return string 
+     * @return string
      */
     public function getCep()
     {
@@ -208,7 +151,7 @@ class Entidade
     /**
      * Get bairro
      *
-     * @return string 
+     * @return string
      */
     public function getBairro()
     {
@@ -248,7 +191,7 @@ class Entidade
     /**
      * Get estado
      *
-     * @return string 
+     * @return string
      */
     public function getEstado()
     {
@@ -268,10 +211,33 @@ class Entidade
     /**
      * Get telefone
      *
-     * @return string 
+     * @return string
      */
     public function getTelefone()
     {
         return $this->telefone;
+    }
+
+    /**
+     * toString
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return "{$this->nome} ({$this->cidade})";
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new \DateTime();
     }
 }

@@ -10,7 +10,7 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Cidade</th>
-                <th>Estado</th>
+                <th>Cadastro</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,7 +21,7 @@
                 <td>{{ entity.nome }}</td>
                 <td>{{ entity.email }}</td>
                 <td>{{ entity.cidade }}</td>
-                <td>{{ entity.estado }}</td>
+                <td>{{ entity.createdAt|date }}</td>
                 <td>
                     <ul>
                         <li>

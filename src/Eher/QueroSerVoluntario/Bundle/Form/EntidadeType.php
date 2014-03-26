@@ -13,12 +13,9 @@ class EntidadeType extends AbstractType
         $builder
             ->add('nome')
             ->add('endereco')
-            ->add('numero')
-            ->add('complemento')
             ->add('cep')
             ->add('bairro')
             ->add('cidade')
-            ->add('estado')
             ->add('telefone')
         ;
     }

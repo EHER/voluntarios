@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class Voluntario
 {
@@ -36,24 +37,22 @@ class Voluntario
     private $email;
 
     /**
-     * @var string $cidade
+     * @var Cidade $cidade
      *
-     * @ORM\Column(name="cidade", type="string", length=50)
+     * @ORM\ManyToOne(targetEntity="Cidade")
+     *
      */
     private $cidade;
 
     /**
-     * @var string $estado
-     *
-     * @ORM\Column(name="estado", type="string", length=2)
+     * @ORM\Column(name="created_at", type="datetime")
      */
-    private $estado;
-
+    private $createdAt;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -138,5 +137,18 @@ class Voluntario
     public function getEstado()
     {
         return $this->estado;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new \DateTime();
     }
 }

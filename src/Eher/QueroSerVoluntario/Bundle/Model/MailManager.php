@@ -23,7 +23,7 @@ class MailManager
 
     public function generateMessageWithVoluntario(Voluntario $entity)
     {
-        $subject = "Cadastro de Voluntário: {$entity->getNome()} ({$entity->getCidade()}, {$entity->getEstado()})";
+        $subject = "Cadastro de Voluntário: {$entity->getNome()} ({$entity->getCidade()})";
         $this->message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setTo($this->contactEmail)
