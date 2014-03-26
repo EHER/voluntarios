@@ -68,6 +68,7 @@ class Entidade
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
+
     /**
      * Get id
      *

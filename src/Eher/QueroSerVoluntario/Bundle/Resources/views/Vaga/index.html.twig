@@ -10,6 +10,7 @@
                 <th>Entidade</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th>Cadastro</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ entity.entidade }}</td>
                 <td>{{ entity.nome }}</td>
                 <td>{{ entity.descricao }}</td>
+                <td>{{ entity.createdAt|date }}</td>
                 <td>
                 <ul>
                     <li>
