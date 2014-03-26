@@ -6,7 +6,7 @@
         <p>Conhece alguma entidade que não está cadastrada?</p>
         <p>Preencha o formulário abaixo que em breve adicionaremos ao nosso site.</p>
         <br/>
-        <form action="{{ path('entidade_criar') }}" method="post" {{ form_enctype(form) }} class="form-horizontal">
+        <form action="{{ path('entidade_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal">
                 {{ form_widget(form) }}
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>

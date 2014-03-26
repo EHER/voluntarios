@@ -2,11 +2,10 @@
 
 namespace Eher\QueroSerVoluntario\Bundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Eher\QueroSerVoluntario\Bundle\Entity\Vaga;
 use Eher\QueroSerVoluntario\Bundle\Form\VagaType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Vaga controller.
@@ -20,9 +19,9 @@ class VagaController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Vaga')->findAll();
+        $entities = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Vaga')->findAll();
 
         return $this->render('EherQueroSerVoluntarioBundle:Vaga:index.html.twig', array(
             'entities' => $entities,
@@ -40,9 +39,9 @@ class VagaController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($entity);
+            $entityManager->flush();
 
             return $this->redirect($this->generateUrl('vaga_show', array('id' => $entity->getId())));
         }
@@ -74,9 +73,9 @@ class VagaController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Vaga entity.');
@@ -95,9 +94,9 @@ class VagaController extends Controller
      */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Vaga entity.');
@@ -119,9 +118,9 @@ class VagaController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Vaga entity.');
@@ -132,8 +131,8 @@ class VagaController extends Controller
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
-            $em->persist($entity);
-            $em->flush();
+            $entityManager->persist($entity);
+            $entityManager->flush();
 
             return $this->redirect($this->generateUrl('vaga_edit', array('id' => $id)));
         }
@@ -155,15 +154,15 @@ class VagaController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Vaga')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Vaga entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            $entityManager->remove($entity);
+            $entityManager->flush();
         }
 
         return $this->redirect($this->generateUrl('vaga'));

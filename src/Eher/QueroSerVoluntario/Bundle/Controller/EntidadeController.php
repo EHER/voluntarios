@@ -2,10 +2,9 @@
 
 namespace Eher\QueroSerVoluntario\Bundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Eher\QueroSerVoluntario\Bundle\Entity\Entidade;
 use Eher\QueroSerVoluntario\Bundle\Form\EntidadeType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Entidade controller.
@@ -19,9 +18,9 @@ class EntidadeController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->findAll();
+        $entities = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Entidade')->findAll();
 
         return $this->render('EherQueroSerVoluntarioBundle:Entidade:index.html.twig', array(
             'entities' => $entities
@@ -34,9 +33,9 @@ class EntidadeController extends Controller
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Entidade entity.');
@@ -78,12 +77,12 @@ class EntidadeController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($entity);
+            $entityManager->flush();
 
             return $this->redirect(
-                $this->generateUrl('entidade_parabens')
+                $this->generateUrl('entidade')
             );
         }
 
@@ -99,9 +98,9 @@ class EntidadeController extends Controller
      */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Entidade entity.');
@@ -123,9 +122,9 @@ class EntidadeController extends Controller
      */
     public function updateAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Entidade entity.');
@@ -139,8 +138,8 @@ class EntidadeController extends Controller
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
-            $em->persist($entity);
-            $em->flush();
+            $entityManager->persist($entity);
+            $entityManager->flush();
 
             return $this->redirect($this->generateUrl('entidade_edit', array('id' => $id)));
         }
@@ -164,15 +163,15 @@ class EntidadeController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entity = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Entidade')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Entidade entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            $entityManager->remove($entity);
+            $entityManager->flush();
         }
 
         return $this->redirect($this->generateUrl('entidade'));

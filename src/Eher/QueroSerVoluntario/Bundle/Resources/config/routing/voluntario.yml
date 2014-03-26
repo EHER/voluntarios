@@ -4,31 +4,34 @@ voluntario_new:
     requirements: { _method: get }
 
 voluntario_create:
-    pattern:  /cadastrar
+    pattern:  /
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:create" }
     requirements: { _method: post }
 
 voluntario:
     pattern:  /
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:index" }
+    requirements: { _method: get }
 
 voluntario_show:
-    pattern:  /{id}/show
+    pattern:  /{id}
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:show" }
+    requirements: { _method: get }
 
 voluntario_edit:
-    pattern:  /{id}/edit
+    pattern:  /{id}/editar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:edit" }
+    requirements: { _method: get }
 
 voluntario_update:
-    pattern:  /{id}/update
+    pattern:  /{id}
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:update" }
-    requirements: { _method: post }
+    requirements: { _method: post|put }
 
 voluntario_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Voluntario:delete" }
-    requirements: { _method: post }
+    requirements: { _method: delete }
 
 voluntario_mail:
     pattern:  /{id}/mail

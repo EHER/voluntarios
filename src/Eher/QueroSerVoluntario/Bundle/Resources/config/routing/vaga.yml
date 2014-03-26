@@ -1,30 +1,33 @@
+vaga_new:
+    pattern:  /cadastrar
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:new" }
+    requirements: { _method: get }
+
+vaga_create:
+    pattern:  /
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:create" }
+    requirements: { _method: post }
+
 vaga:
     pattern:  /
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:index" }
 
 vaga_show:
-    pattern:  /{id}/show
+    pattern:  /{id}
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:show" }
-
-vaga_new:
-    pattern:  /new
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:new" }
-
-vaga_create:
-    pattern:  /create
-    defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:create" }
-    requirements: { _method: post }
+    requirements: { _method: get }
 
 vaga_edit:
-    pattern:  /{id}/edit
+    pattern:  /{id}/editar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:edit" }
+    requirements: { _method: get }
 
 vaga_update:
-    pattern:  /{id}/update
+    pattern:  /{id}
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:update" }
     requirements: { _method: post|put }
 
 vaga_delete:
-    pattern:  /{id}/delete
+    pattern:  /{id}
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Vaga:delete" }
-    requirements: { _method: post|delete }
+    requirements: { _method: delete }

@@ -16,9 +16,16 @@ sobre:
         _controller: "FrameworkBundle:Template:template"
         template: "EherQueroSerVoluntarioBundle:Default:sobre.html.twig"
 
+contato:
+    pattern:  /contato
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioBundle:Default:contato.html.twig"
+
 buscar:
     pattern:  /entidades
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:buscarEntidade" }
+    requirements: { _method: get }
 
 entidades:
     pattern:  /{stateName}/{cityName}
@@ -26,19 +33,12 @@ entidades:
     requirements:
             stateName: \w\w
 
-contato:
-    pattern:  /contato
-    defaults:
-        _controller: "FrameworkBundle:Template:template"
-        template: "EherQueroSerVoluntarioBundle:Default:contato.html.twig"
-
 voluntario_cadastrar:
     pattern:  /voluntarios/cadastrar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:newVoluntarioForm" }
-    requirements: { _method: get }
 
 voluntario_criar:
-    pattern:  /voluntarios/cadastrar
+    pattern:  /voluntarios
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:createVoluntario" }
     requirements: { _method: post }
 
@@ -51,10 +51,9 @@ voluntario_parabens:
 entidade_cadastrar:
     pattern:  /entidades/cadastrar
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:newEntidadeForm" }
-    requirements: { _method: get }
 
 entidade_criar:
-    pattern:  /entidades/cadastrar
+    pattern:  /entidades
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Default:createEntidade" }
     requirements: { _method: post }
 
@@ -74,7 +73,7 @@ cidade_em_estado:
 
 login:
     pattern: /login
-    defaults: { _controller: EherQueroSerVoluntarioBundle:Security:login }
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Security:login" }
 
 login_check:
     pattern: /login_check
