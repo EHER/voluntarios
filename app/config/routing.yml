@@ -4,15 +4,15 @@ EherQueroSerVoluntarioBundle:
 
 EherQueroSerVoluntarioBundle_voluntario:
     resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/voluntario.yml"
-    prefix:   /voluntarios
+    prefix:   /admin/voluntarios
 
 EherQueroSerVoluntarioBundle_entidade:
     resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/entidade.yml"
-    prefix:   /entidades
+    prefix:   /admin/entidades
 
 EherQueroSerVoluntarioBundle_vaga:
     resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/vaga.yml"
-    prefix:   /vagas
+    prefix:   /admin/vagas
 
 # Internal routing configuration to handle ESI
 #_internal:

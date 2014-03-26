@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AdminController extends Controller
 {
-    public function indexAction()
+    public function homeAction()
     {
-        return $this->render('EherQueroSerVoluntarioBundle:Admin:index.html.twig');
+        return $this->render('EherQueroSerVoluntarioBundle:Admin:home.html.twig');
     }
 }

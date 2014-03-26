@@ -30,16 +30,12 @@
                 <p>Você pode:
                 <ul>
                     <li>
-                        Fazer o <a href="{{ path('voluntario_new') }}">Cadastro de Voluntário</a> para que possamos encontrar uma oportunidade para você</p>
+                        Fazer o <a href="{{ path('voluntario_cadastrar') }}">Cadastro de Voluntário</a> para que possamos encontrar uma oportunidade para você</p>
                     </li>
-                    <li>Adicionar uma entidade no <a href="{{ path('entidade_new') }}">Cadastro de Entidade</a></li>
+                    <li>Adicionar uma entidade no <a href="{{ path('entidade_cadastrar') }}">Cadastro de Entidade</a></li>
                 </ul>
                 </br>
             {% endif %}
         </div>
     {% endif %}
-
-    <div class="span8" style="text-align:center;">
-        <div class="fb-comments" data-width="auto" data-href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}"></div>
-    </div>
 {% endblock %}

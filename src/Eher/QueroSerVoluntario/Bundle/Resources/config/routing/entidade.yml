@@ -8,25 +8,24 @@ entidade_create:
     defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:create" }
     requirements: { _method: post }
 
-#entidade:
-#    pattern:  /
-#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:index" }
-#
-#entidade_show:
-#    pattern:  /{id}
-#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:show" }
-#
-#
-#entidade_edit:
-#    pattern:  /{id}/edit
-#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:edit" }
-#
-#entidade_update:
-#    pattern:  /{id}/update
-#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:update" }
-#    requirements: { _method: post }
-#
-#entidade_delete:
-#    pattern:  /{id}/delete
-#    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:delete" }
-#    requirements: { _method: post }
+entidade:
+    pattern:  /
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:index" }
+
+entidade_show:
+    pattern:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:show" }
+
+entidade_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:edit" }
+
+entidade_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:update" }
+    requirements: { _method: post }
+
+entidade_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EherQueroSerVoluntarioBundle:Entidade:delete" }
+    requirements: { _method: post }

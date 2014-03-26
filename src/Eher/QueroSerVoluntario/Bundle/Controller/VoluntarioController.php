@@ -2,10 +2,9 @@
 
 namespace Eher\QueroSerVoluntario\Bundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Eher\QueroSerVoluntario\Bundle\Entity\Voluntario;
 use Eher\QueroSerVoluntario\Bundle\Form\VoluntarioType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Voluntario controller.
