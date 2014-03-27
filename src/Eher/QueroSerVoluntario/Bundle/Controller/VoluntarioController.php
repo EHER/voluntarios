@@ -163,7 +163,7 @@ class VoluntarioController extends Controller
         $form = $this->createDeleteForm($id);
         $request = $this->getRequest();
 
-        $form->bindRequest($request);
+        $form->bind($request);
 
         if ($form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
