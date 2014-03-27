@@ -9,6 +9,7 @@
                 <th>Id</th>
                 <th>Nome</th>
                 <th>Endereço</th>
+                <th>Cidade</th>
                 <th>Telefone</th>
                 <th>Cadastro</th>
                 <th>Actions</th>
@@ -24,6 +25,9 @@
                 <td>
                     {{ entity.endereco }} - {{ entity.bairro }}<br>
                     CEP: {{ entity.cep }}
+                </td>
+                <td>
+                    {{ entity.cidade }}
                 </td>
                 <td>
                     <a href="tel:{{ entity.telefone }}">{{ entity.telefone }}</a>
