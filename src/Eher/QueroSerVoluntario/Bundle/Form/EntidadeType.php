@@ -13,8 +13,8 @@ class EntidadeType extends AbstractType
         $builder
             ->add('nome')
             ->add('endereco')
-            ->add('cep')
             ->add('bairro')
+            ->add('cep')
             ->add('cidade')
             ->add('telefone')
         ;

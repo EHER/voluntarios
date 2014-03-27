@@ -11,7 +11,25 @@
             </tr>
             <tr>
                 <th>Nome</th>
-                <td>{{ entity.nome }}</td>
+                <td>
+                    <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">{{ entity.nome }}</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Endereço</th>
+                <td>{{ entity.endereco }}</td>
+            </tr>
+            <tr>
+                <th>Bairro</th>
+                <td>{{ entity.bairro }}</td>
+            </tr>
+            <tr>
+                <th>CEP</th>
+                <td>{{ entity.cep }}</td>
+            </tr>
+            <tr>
+                <th>Cidade</th>
+                <td>{{ entity.cidade }}</td>
             </tr>
         </tbody>
     </table>

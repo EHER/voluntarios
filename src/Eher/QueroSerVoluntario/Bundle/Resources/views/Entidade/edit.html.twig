@@ -12,6 +12,12 @@
 
     <ul class="record_actions">
         <li>
+            <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">google pelo nome</a>
+        </li>
+        <li>
+            <a href="http://www.buscacep.correios.com.br/servicos/dnec/consultaEnderecoAction.do?relaxation={{ entity.endereco }}+{{ entity.bairro }}&TipoCep=ALL&semelhante=N&cfm=1&Metodo=listaLogradouro&TipoConsulta=relaxation&StartRow=1&EndRow=10" target=_blank">buscar cep</a>
+        </li>
+        <li>
             <a href="{{ path('entidade') }}">
                 Back to the list
             </a>

@@ -8,6 +8,8 @@
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
                 <th>Cadastro</th>
                 <th>Actions</th>
             </tr>
@@ -16,7 +18,16 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('entidade_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nome }}</td>
+                <td>
+                    {{ entity.nome }}
+                </td>
+                <td>
+                    {{ entity.endereco }} - {{ entity.bairro }}<br>
+                    CEP: {{ entity.cep }}
+                </td>
+                <td>
+                    <a href="tel:{{ entity.telefone }}">{{ entity.telefone }}</a>
+                </td>
                 <td>{{ entity.createdAt|date }}</td>
                 <td>
                     <ul>
@@ -25,6 +36,12 @@
                         </li>
                         <li>
                             <a href="{{ path('entidade_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">google pelo nome</a>
+                        </li>
+                        <li>
+                            <a href="http://www.buscacep.correios.com.br/servicos/dnec/consultaEnderecoAction.do?relaxation={{ entity.endereco }}+{{ entity.bairro }}&TipoCep=ALL&semelhante=N&cfm=1&Metodo=listaLogradouro&TipoConsulta=relaxation&StartRow=1&EndRow=10" target=_blank">buscar cep</a>
                         </li>
                     </ul>
                 </td>
