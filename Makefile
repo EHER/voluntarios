@@ -10,7 +10,7 @@ default:
 install: _composer-install perms
 update: _composer-self-update _composer-update perms
 test: _run-phpunit _run_phpspec
-clear: _symfony-clear
+clear: _remove-cache-files
 perms: _cache-perms _logs-perms
 config: _create-config
 dummy-config: _create-dummy-config
@@ -34,6 +34,9 @@ _run_phpspec:
 _symfony-clear:
 	php app/console cache:clear --env=dev
 	php app/console cache:clear --env=prod --no-debug
+
+_remove-cache-files:
+	rm -rf app/cache/*
 
 _logs-perms:
 	mkdir -p app/logs
