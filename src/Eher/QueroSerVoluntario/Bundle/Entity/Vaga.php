@@ -69,13 +69,10 @@ class Vaga
      * Set nome
      *
      * @param string $nome
-     * @return Vaga
      */
     public function setNome($nome)
     {
         $this->nome = $nome;
-
-        return $this;
     }
 
     /**
@@ -92,13 +89,10 @@ class Vaga
      * Set descricao
      *
      * @param string $descricao
-     * @return Vaga
      */
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
-
-        return $this;
     }
 
     /**
@@ -114,20 +108,17 @@ class Vaga
     /**
      * Set entidade
      *
-     * @param \stdClass $entidade
-     * @return Vaga
+     * @param Entidade $entidade
      */
-    public function setEntidade($entidade)
+    public function setEntidade(Entidade $entidade)
     {
         $this->entidade = $entidade;
-
-        return $this;
     }
 
     /**
      * Get entidade
      *
-     * @return \stdClass 
+     * @return Entidade
      */
     public function getEntidade()
     {
@@ -138,13 +129,10 @@ class Vaga
      * Set emailTemplate
      *
      * @param string $emailTemplate
-     * @return Vaga
      */
     public function setEmailTemplate($emailTemplate)
     {
         $this->emailTemplate = $emailTemplate;
-
-        return $this;
     }
 
     /**
@@ -157,16 +145,16 @@ class Vaga
         return $this->emailTemplate;
     }
 
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
     /**
      * @ORM\PrePersist
      */
     public function setCreatedAtValue()
     {
         $this->createdAt = new \DateTime();
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }

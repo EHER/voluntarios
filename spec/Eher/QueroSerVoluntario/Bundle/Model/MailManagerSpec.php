@@ -2,9 +2,11 @@
 
 namespace spec\Eher\QueroSerVoluntario\Bundle\Model;
 
+use Eher\QueroSerVoluntario\Bundle\Entity\Cidade;
+use Eher\QueroSerVoluntario\Bundle\Entity\Estado;
+use Eher\QueroSerVoluntario\Bundle\Entity\Voluntario;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Eher\QueroSerVoluntario\Bundle\Entity\Voluntario;
 
 class MailManagerSpec extends ObjectBehavior
 {
@@ -21,18 +23,24 @@ class MailManagerSpec extends ObjectBehavior
 
     function it_should_generate_a_message_with_a_voluntario()
     {
+        $estado = new Estado();
+        $estado->setNome("SP");
+
+        $cidade = new Cidade();
+        $cidade->setNome("Sorocaba");
+        $cidade->setEstado($estado);
+
         $voluntario = new Voluntario();
         $voluntario->setNome("Alexandre Eher");
         $voluntario->setEmail("alexandre@eher.com.br");
-        $voluntario->setCidade("Sorocaba");
-        $voluntario->setEstado("SP");
+        $voluntario->setCidade($cidade);
 
         $this->setContactEmail("cadastro@queroservoluntario.com")
             ->generateMessageWithVoluntario($voluntario);
 
         $this->getMessage()->shouldHaveType('\Swift_Message');
         $this->getMessage()->getSubject()->shouldBeEqualTo(
-            "Cadastro de Voluntário: Alexandre Eher (Sorocaba, SP)"
+            "Cadastro de Voluntário: Alexandre Eher (Sorocaba - SP)"
         );
         $this->getMessage()->getFrom()->shouldBeEqualTo(
             array("cadastro@queroservoluntario.com" => null)

@@ -44,7 +44,7 @@ class Cidade
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -66,7 +66,7 @@ class Cidade
     /**
      * Get nome
      *
-     * @return string 
+     * @return string
      */
     public function getNome()
     {
@@ -88,7 +88,7 @@ class Cidade
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -99,9 +99,9 @@ class Cidade
      * Set estado
      *
      * @param object $estado
-     * @return Cidade
+     * @return Estado
      */
-    public function setEstado($estado)
+    public function setEstado(Estado $estado)
     {
         $this->estado = $estado;
         return $this;
@@ -110,7 +110,7 @@ class Cidade
     /**
      * Get estado
      *
-     * @return object 
+     * @return object
      */
     public function getEstado()
     {

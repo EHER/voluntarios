@@ -72,7 +72,7 @@ class Voluntario
     /**
      * Get nome
      *
-     * @return string 
+     * @return string
      */
     public function getNome()
     {
@@ -92,7 +92,7 @@ class Voluntario
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -102,9 +102,9 @@ class Voluntario
     /**
      * Set cidade
      *
-     * @param string $cidade
+     * @param Cidade $cidade
      */
-    public function setCidade($cidade)
+    public function setCidade(Cidade $cidade)
     {
         $this->cidade = $cidade;
     }
@@ -112,7 +112,7 @@ class Voluntario
     /**
      * Get cidade
      *
-     * @return string 
+     * @return Cidade
      */
     public function getCidade()
     {
@@ -122,9 +122,9 @@ class Voluntario
     /**
      * Set estado
      *
-     * @param string $estado
+     * @param Estado $estado
      */
-    public function setEstado($estado)
+    public function setEstado(Estado $estado)
     {
         $this->estado = $estado;
     }
@@ -132,16 +132,11 @@ class Voluntario
     /**
      * Get estado
      *
-     * @return string
+     * @return Estado
      */
     public function getEstado()
     {
         return $this->estado;
-    }
-
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
     }
 
     /**
@@ -150,5 +145,10 @@ class Voluntario
     public function setCreatedAtValue()
     {
         $this->createdAt = new \DateTime();
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }

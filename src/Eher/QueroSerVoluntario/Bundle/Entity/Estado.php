@@ -32,7 +32,7 @@ class Estado
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -54,7 +54,7 @@ class Estado
     /**
      * Get nome
      *
-     * @return string 
+     * @return string
      */
     public function getNome()
     {

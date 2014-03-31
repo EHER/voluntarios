@@ -220,6 +220,24 @@ class Entidade
     }
 
     /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
      * toString
      *
      * @return string
@@ -227,18 +245,5 @@ class Entidade
     public function __toString()
     {
         return "{$this->nome} ({$this->cidade})";
-    }
-
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @ORM\PrePersist
-     */
-    public function setCreatedAtValue()
-    {
-        $this->createdAt = new \DateTime();
     }
 }
