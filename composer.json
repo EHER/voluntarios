@@ -2,21 +2,20 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
         "doctrine/doctrine-bundle": "*",
-        "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "doctrine/orm": "*",
         "eher/chegamos-lib": "1.0.9",
         "jms/di-extra-bundle": "*",
-        "jms/security-extra-bundle": "*",
         "sensio/distribution-bundle": "*",
         "sensio/framework-extra-bundle": "*",
         "sensio/generator-bundle": "*",
         "symfony/assetic-bundle": "*",
         "symfony/monolog-bundle": "*",
         "symfony/swiftmailer-bundle": "*",
-        "symfony/symfony": "*",
+        "symfony/symfony": "2.4.*",
         "twig/extensions": "*"
     },
     "require-dev": {
