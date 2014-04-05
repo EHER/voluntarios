@@ -1,0 +1,116 @@
+# Desc: /admin
+admin: /admin/en
+
+# Desc: /brasil
+brasil: /brazil
+
+# Desc: /entidades
+buscar: /entities
+
+# Desc: /cidades/em/{estado}
+cidade_em_estado: '/cidades/in/{estado}'
+
+# Desc: /contato
+contato: /contact
+
+# Desc: /admin/entidades/
+entidade: /admin/entities
+
+# Desc: /entidades/cadastrar
+entidade_cadastrar: /entities/new
+
+# Desc: /admin/entidades/
+entidade_create: /admin/entities/
+
+# Desc: /entidades
+entidade_criar: /entities
+
+# Desc: /admin/entidades/{id}
+entidade_delete: '/admin/entities/{id}'
+
+# Desc: /admin/entidades/{id}/editar
+entidade_edit: '/admin/entities/{id}/new'
+
+# Desc: /admin/entidades/cadastrar
+entidade_new: /admin/entities/new
+
+# Desc: /entidades/parabens
+entidade_parabens: /entities/congratulations
+
+# Desc: /admin/entidades/{id}
+entidade_show: '/admin/entities/{id}'
+
+# Desc: /admin/entidades/{id}
+entidade_update: '/admin/entities/{id}'
+
+# Desc: /{stateName}/{cityName}
+entidades: '/{stateName}/{cityName}/en'
+
+# Desc: /
+homepage: /en
+
+# Desc: /login
+login: /login/en
+
+# Desc: /login_check
+login_check: /login_check
+
+# Desc: /logout
+logout: /logout
+
+# Desc: /sobre
+sobre: /about
+
+# Desc: /admin/vagas/
+vaga: /admin/en/vagas/
+
+# Desc: /admin/vagas/
+vaga_create: /admin/en/vagas/
+
+# Desc: /admin/vagas/{id}
+vaga_delete: '/admin/en/vagas/{id}'
+
+# Desc: /admin/vagas/{id}/editar
+vaga_edit: '/admin/en/vagas/{id}/editar'
+
+# Desc: /admin/vagas/cadastrar
+vaga_new: /admin/en/vagas/cadastrar
+
+# Desc: /admin/vagas/{id}
+vaga_show: '/admin/en/vagas/{id}'
+
+# Desc: /admin/vagas/{id}
+vaga_update: '/admin/en/vagas/{id}'
+
+# Desc: /admin/voluntarios/
+voluntario: /admin/volunteers/
+
+# Desc: /voluntarios/cadastrar
+voluntario_cadastrar: /volunteers/new
+
+# Desc: /admin/voluntarios/
+voluntario_create: /admin/volunteers/
+
+# Desc: /voluntarios
+voluntario_criar: /volunteers
+
+# Desc: /admin/voluntarios/{id}/delete
+voluntario_delete: '/admin/volunteers/{id}/delete'
+
+# Desc: /admin/voluntarios/{id}/editar
+voluntario_edit: '/admin/volunteers/{id}/edit'
+
+# Desc: /admin/voluntarios/{id}/mail
+voluntario_mail: '/admin/volunteers/{id}/mail'
+
+# Desc: /admin/voluntarios/cadastrar
+voluntario_new: /admin/volunteers/new
+
+# Desc: /voluntarios/parabens
+voluntario_parabens: /volunteers/congratulations
+
+# Desc: /admin/voluntarios/{id}
+voluntario_show: '/admin/volunteers/{id}'
+
+# Desc: /admin/voluntarios/{id}
+voluntario_update: '/admin/volunteers/{id}'

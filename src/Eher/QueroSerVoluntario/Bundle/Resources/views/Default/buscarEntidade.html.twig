@@ -1,24 +1,24 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Busca de Entidades{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Busca de Entidades{% endtrans %}{% endblock %}
 {% block content %}
     <div class="span3 well">
-        <h3>Busca de Entidades</h3>
+        <h3>{% trans %}Busca de Entidades{% endtrans %}</h3>
         <form action="" class="form-inline">
             <fieldset>
                 <div class="control-group">
-                    <label class="control-label" for="cidade">Cidade</label>
+                    <label class="control-label" for="cidade">{% trans %}Cidade{% endtrans %}</label>
                     <div class="controls">
                         <input name="cidade" type="text" value="{{ cityName }}" placeholder="São Paulo" class="span2"/>
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="uf">Estado</label>
+                    <label class="control-label" for="uf">{% trans %}Estado{% endtrans %}</label>
                     <div class="controls">
                         <input name="uf" type="text" value="{{ stateName }}" placeholder="SP" class="span1"/>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Buscar</button>
+                <button type="submit" class="btn btn-primary">{% trans %}Buscar{% endtrans %}</button>
             </fieldset>
         </form>
     </div>

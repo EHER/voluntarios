@@ -1,5 +1,5 @@
 {% extends "::base.html.twig" %}
-{% block title %}Quero ser Voluntário!{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário!{% endtrans %}{% endblock %}
 {% block body %}
     <div id="fb-root"></div>
     <script>
@@ -20,17 +20,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="{{ path('homepage') }}">Quero ser Voluntário</a>
+          <a class="brand" href="{{ path('homepage') }}">{% trans %}Quero ser Voluntário{% endtrans %}</a>
           <div class="nav-collapse">
             <ul class="nav">
               {% if is_granted('ROLE_ADMIN') %}
-                <li><a href="{{ path('admin') }}">Admin</a></li>
+                <li><a href="{{ path('admin') }}">{% trans %}Admin{% endtrans %}</a></li>
               {% endif %}
-              <li><a href="{{ path('sobre') }}">Sobre o Site</a></li>
-              <li><a href="{{ path('buscar') }}">Buscar Entidade</a></li>
-              <li><a href="{{ path('voluntario_cadastrar') }}">Cadastrar Voluntário</a></li>
-              <li><a href="{{ path('entidade_cadastrar') }}">Cadastrar Entidade</a></li>
-              <li><a href="{{ path('contato') }}">Contato</a></li>
+              <li><a href="{{ path('sobre') }}">{% trans %}Sobre o Site{% endtrans %}</a></li>
+              <li><a href="{{ path('buscar') }}">{% trans %}Buscar Entidade{% endtrans %}</a></li>
+              <li><a href="{{ path('voluntario_cadastrar') }}">{% trans %}Cadastrar Voluntário{% endtrans %}</a></li>
+              <li><a href="{{ path('entidade_cadastrar') }}">{% trans %}Cadastrar Entidade{% endtrans %}</a></li>
+              <li><a href="{{ path('contato') }}">{% trans %}Contato{% endtrans %}</a></li>
+            </ul>
+            <ul class="lang-menu nav">
+                <li>
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'pt_BR'})) }}" rel="alternate" hreflang="pt-br">
+                        <img src="{{ asset('img/blank.gif') }}" class="flag flag-br" alt="Site em Português" />
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}" rel="alternate" hreflang="en">
+                        <img src="{{ asset('img/blank.gif') }}" class="flag flag-us" alt="Website in English" />
+                    </a>
+                </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -46,6 +58,6 @@
     </div>
     <footer>
         © 2011-{{ "now"|date("Y") }}
-        <a href="{{ path('sobre') }}">QueroSerVoluntario</a> <a href="{{ path('brasil') }}">Brasil</a>
+        <a href="{{ path('sobre') }}">{% trans %}QueroSerVoluntario{% endtrans %}</a> <a href="{{ path('brasil') }}">{% trans %}Brasil{% endtrans %}</a>
     </footer>
 {% endblock %}

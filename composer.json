@@ -9,6 +9,7 @@
         "doctrine/orm": "*",
         "eher/chegamos-lib": "1.0.9",
         "jms/di-extra-bundle": "*",
+        "jms/i18n-routing-bundle": "dev-master",
         "sensio/distribution-bundle": "*",
         "sensio/framework-extra-bundle": "*",
         "sensio/generator-bundle": "*",

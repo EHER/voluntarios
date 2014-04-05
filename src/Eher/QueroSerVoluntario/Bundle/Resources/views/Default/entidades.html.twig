@@ -1,17 +1,17 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Entidades em {{ cityName|title }} - {{ stateName|upper }}{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Entidades em{% endtrans %} {{ cityName|title }} - {{ stateName|upper }}{% endblock %}
 {% block content %}
-    <h2>Entidades em {{ cityName|title }} - {{ stateName|upper }}</h2>
-    <p><a href="{{ path('cidade_em_estado', {'estado': stateName}) }}">Mudar cidade</a></p>
+    <h2>{% trans %}Entidades em{% endtrans %} {{ cityName|title }} - {{ stateName|upper }}</h2>
+    <p><a href="{{ path('cidade_em_estado', {'estado': stateName}) }}">{% trans %}Mudar cidade{% endtrans %}</a></p>
     {% if search %}
         <div class="span8">
             {% if search.getNumFound > 0 %}
                 <table class="span8 table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Endereço</th>
-                            <th class="span2">Telefone</th>
+                            <th>{% trans %}Nome{% endtrans %}</th>
+                            <th>{% trans %}Endereço{% endtrans %}</th>
+                            <th class="span2">{% trans %}Telefone{% endtrans %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,14 +25,14 @@
                     </tbody>
                 </table>
             {% else %}
-                <h4>Nenhuma entidade cadastrada</h4>
-                <p>No momento não temos entidades cadastradas em {{ cityName|title }}.</p>
-                <p>Você pode:
+                <h4>{% trans %}Nenhuma entidade cadastrada{% endtrans %}</h4>
+                <p>{% trans %}No momento não temos entidades cadastradas em{% endtrans %} {{ cityName|title }}.</p>
+                <p>{% trans %}Você pode{% endtrans %}:
                 <ul>
                     <li>
-                        Fazer o <a href="{{ path('voluntario_cadastrar') }}">Cadastro de Voluntário</a> para que possamos encontrar uma oportunidade para você</p>
+                        {% trans %}Fazer o{% endtrans %} <a href="{{ path('voluntario_cadastrar') }}">{% trans %}Cadastro de Voluntário{% endtrans %}</a> {% trans %}para que possamos encontrar uma oportunidade para você{% endtrans %}</p>
                     </li>
-                    <li>Adicionar uma entidade no <a href="{{ path('entidade_cadastrar') }}">Cadastro de Entidade</a></li>
+                    <li>{% trans %}Adicionar uma entidade no{% endtrans %} <a href="{{ path('entidade_cadastrar') }}">{% trans %}Cadastro de Entidade{% endtrans %}</a></li>
                 </ul>
                 </br>
             {% endif %}

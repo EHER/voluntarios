@@ -1,27 +1,27 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %}{% endblock %}
 {% block content %}
       <div class="hero-unit">
-        <h1>Quero ser voluntário!</h1>
-        <p>Se você também quer, está no lugar certo. O site <a href="{{ path('homepage') }}">QueroSerVoluntario.com</a> é o ponto de encontro para voluntários e entidades que veem um futuro melhor através de pequenos gestos. Interessou? Saiba um pouco mais sobre essa iniciativa.</p>
-        <p><a href="{{ path('sobre') }}" class="btn btn-primary btn-large">Ver mais &raquo;</a></p>
+        <h1>{% trans %}Quero ser voluntário!{% endtrans %}</h1>
+        <p>{% trans %}Se você também quer, está no lugar certo{% endtrans %}. {% trans %}O site{% endtrans %} <a href="{{ path('homepage') }}">QueroSerVoluntario.com</a> {% trans %}é o ponto de encontro para voluntários e entidades que veem um futuro melhor através de pequenos gestos{% endtrans %}. {% trans %}Interessou{% endtrans %}? {% trans %}Saiba um pouco mais sobre essa iniciativa{% endtrans %}.</p>
+        <p><a href="{{ path('sobre') }}" class="btn btn-primary btn-large">{% trans %}Ver mais{% endtrans %} &raquo;</a></p>
       </div>
 
       <div class="row">
         <div class="span4">
-          <h2>Encontre</h2>
-          <p>Comece encontrando uma Entidade Beneficente na sua cidade. Basta digitar cidade e estado para ter uma lista de entidades. Atualmente temos cobertura em todo o Brasil.</p>
-          <p><a href="{{ path('buscar') }}" class="btn">Ver mais &raquo;</a></p>
+          <h2>{% trans %}Encontre{% endtrans %}</h2>
+          <p>{% trans %}Comece encontrando uma Entidade Beneficente na sua cidade{% endtrans %}. {% trans %}Basta digitar cidade e estado para ter uma lista de entidades{% endtrans %}. {% trans %}Atualmente temos cobertura em todo o Brasil{% endtrans %}.</p>
+          <p><a href="{{ path('buscar') }}" class="btn">{% trans %}Ver mais{% endtrans %} &raquo;</a></p>
         </div>
         <div class="span4">
-          <h2>Seja</h2>
-          <p>Seja um voluntário agora mesmo. Deixe seu dados e assim que tivermos uma oportunidade com o seu perfil, entraremos em contato.</p>
-          <p><a href="{{ path('voluntario_cadastrar') }}" class="btn">Ver mais &raquo;</a></p>
+          <h2>{% trans %}Seja{% endtrans %}</h2>
+          <p>{% trans %}Seja um voluntário agora mesmo{% endtrans %}. {% trans %}Deixe seu dados e assim que tivermos uma oportunidade com o seu perfil, entraremos em contato{% endtrans %}.</p>
+          <p><a href="{{ path('voluntario_cadastrar') }}" class="btn">{% trans %}Ver mais{% endtrans %} &raquo;</a></p>
        </div>
         <div class="span4">
-          <h2>Indique</h2>
-          <p>Se você já é voluntário, mas sua entidade não está disponível em nosso site, faça o cadastro. É rápido e fácil. Dessa forma encontraremos mais pessoas para ajudar a sua causa.</p>
-          <p><a href="{{ path('entidade_cadastrar') }}" class="btn">Ver mais &raquo;</a></p>
+          <h2>{% trans %}Indique{% endtrans %}</h2>
+          <p>{% trans %}Se você já é voluntário, mas sua entidade não está disponível em nosso site, faça o cadastro{% endtrans %}. {% trans %}É rápido e fácil{% endtrans %}. {% trans %}Dessa forma encontraremos mais pessoas para ajudar a sua causa{% endtrans %}.</p>
+          <p><a href="{{ path('entidade_cadastrar') }}" class="btn">{% trans %}Ver mais{% endtrans %} &raquo;</a></p>
         </div>
       </div>
 {% endblock %}

@@ -2,6 +2,11 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+jms_i18n_routing:
+    default_locale: pt_BR
+    locales: [pt_BR, en]
+    strategy: custom
+
 framework:
     #esi:             ~
     #translator:      { fallback: %locale% }
@@ -19,6 +24,7 @@ framework:
     trusted_proxies: ~
     session:         ~
     fragments:       ~
+    translator: { fallback: pt_BR }
 
 # Twig Configuration
 twig:

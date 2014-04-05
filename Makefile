@@ -2,6 +2,7 @@ default:
 	@echo "install\t\t"
 	@echo "update\t\t"
 	@echo "test\t\t"
+	@echo "translation\t\t"
 	@echo "clear\t\t"
 	@echo "perms\t\t"
 	@echo "config\t\t"
@@ -10,6 +11,7 @@ default:
 install: _composer-install perms
 update: _composer-self-update _composer-update perms
 test: _run-phpunit _run_phpspec
+translation: _extract-translation-for-locale
 clear: _remove-cache-files
 perms: _cache-perms _logs-perms
 config: _create-config
@@ -54,3 +56,6 @@ _create-dummy-config:
 
 _debian-package:
 	fpm -s dir -t deb -n queroservoluntario --prefix /var/www/queroservoluntario .
+
+_extract-translation-for-locale:
+	php app/console translation:extract en --output-dir=app/Resources/translations/  --enable-extractor=jms_i18n_routing -d src

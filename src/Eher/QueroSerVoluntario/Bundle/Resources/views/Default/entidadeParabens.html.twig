@@ -1,11 +1,11 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Parabéns pelo Cadastro{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Parabéns pelo Cadastro{% endtrans %}{% endblock %}
 {% block content %}
-    <h2>Parabéns pelo Cadastro</h2>
-    <p>Em breve essa entidade também estará disponível em nosso site.</p>
-    <p>Aproveite para:</p>
+    <h2>{% trans %}Parabéns pelo Cadastro{% endtrans %}</h2>
+    <p>{% trans %}Em breve essa entidade também estará disponível em nosso site{% endtrans %}.</p>
+    <p>{% trans %}Aproveite para{% endtrans %}:</p>
     <ul>
-        <li><a href="{{ path('entidade_cadastrar') }}">Cadastrar outra entidade</a></li>
-        <li><a href="{{ path('voluntario_cadastrar') }}">Cadastrar um voluntário</a></li>
+        <li><a href="{{ path('entidade_cadastrar') }}">{% trans %}Cadastrar outra entidade{% endtrans %}</a></li>
+        <li><a href="{{ path('voluntario_cadastrar') }}">{% trans %}Cadastrar um voluntário{% endtrans %}</a></li>
     </ul>
 {% endblock %}

@@ -2,28 +2,28 @@ Eher\QueroSerVoluntario\Bundle\Entity\Voluntario:
     properties:
         nome:
             - NotBlank:
-                message: "Nome é obrigatório"
+                message: "O campo Nome é obrigatório"
         email:
             - NotBlank:
-                message: "Email é obrigatório"
+                message: "O campo Email é obrigatório"
             - Email:
-                message: "O email \"{{ value }}\" é inválido."
+                message: "O email digitado não é válido"
                 checkMX: true
 
 Eher\QueroSerVoluntario\Bundle\Entity\Entidade:
     properties:
         nome:
             - NotBlank:
-                message: "Nome é obrigatório"
+                message: "O campo Nome é obrigatório"
         endereco:
             - NotBlank:
-                message: "Endereço é obrigatório"
+                message: "O campo Endereço é obrigatório"
         bairro:
             - NotBlank:
-                message: "Bairro é obrigatório"
+                message: "O campo Bairro é obrigatório"
 
 Eher\QueroSerVoluntario\Bundle\Entity\Vaga:
     properties:
         nome:
             - NotBlank:
-                message: "Nome é obrigatório"
+                message: "O campo Nome é obrigatório"
