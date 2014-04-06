@@ -21,7 +21,9 @@ class VagaController extends Controller
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $entities = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Vaga')->findAll();
+        $entities = $entityManager
+            ->getRepository('EherQueroSerVoluntarioBundle:Vaga')
+            ->findAll();
 
         return $this->render('EherQueroSerVoluntarioBundle:Vaga:index.html.twig', array(
             'entities' => $entities,

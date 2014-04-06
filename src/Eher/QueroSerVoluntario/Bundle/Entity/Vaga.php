@@ -51,6 +51,13 @@ class Vaga
     private $emailTemplate;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="online", type="boolean")
+     */
+    private $online;
+
+    /**
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
@@ -58,7 +65,7 @@ class Vaga
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -78,7 +85,7 @@ class Vaga
     /**
      * Get nome
      *
-     * @return string 
+     * @return string
      */
     public function getNome()
     {
@@ -98,7 +105,7 @@ class Vaga
     /**
      * Get descricao
      *
-     * @return string 
+     * @return string
      */
     public function getDescricao()
     {
@@ -138,11 +145,31 @@ class Vaga
     /**
      * Get emailTemplate
      *
-     * @return string 
+     * @return string
      */
     public function getEmailTemplate()
     {
         return $this->emailTemplate;
+    }
+
+    /**
+     * Set online
+     *
+     * @param boolean $online
+     */
+    public function setOnline($online)
+    {
+        $this->online = $online;
+    }
+
+    /**
+     * Get online
+     *
+     * @return boolean
+     */
+    public function getOnline()
+    {
+        return $this->online;
     }
 
     /**

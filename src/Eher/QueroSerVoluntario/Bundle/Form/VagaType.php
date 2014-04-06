@@ -15,6 +15,7 @@ class VagaType extends AbstractType
             ->add('nome')
             ->add('descricao')
             ->add('emailTemplate')
+            ->add('online')
         ;
     }
 
