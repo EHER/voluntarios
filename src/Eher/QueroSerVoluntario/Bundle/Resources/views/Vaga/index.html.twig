@@ -1,17 +1,18 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Lista de Vagas{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Lista de Vagas{% endtrans %}{% endblock %}
 {% block content %}
-    <h1>Lista de Vagas</h1>
+    <h1>{% trans %}Lista de Vagas{% endtrans %}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Entidade</th>
-                <th>Nome</th>
-                <th>Descrição</th>
-                <th>Cadastro</th>
-                <th>Actions</th>
+                <th>{{ knp_pagination_sortable(entities, 'Id', 'vaga.id') }}</th>
+                <th{% if entities.isSorted('entidade.nome') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Entidade'|trans, 'entidade.nome') }}</th>
+                <th{% if entities.isSorted('vaga.nome') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Nome'|trans, 'vaga.nome') }}</th>
+                <th>{% trans %}Descrição{% endtrans %}</th>
+                <th>{% trans %}Como aplicar{% endtrans %}</th>
+                <th{% if entities.isSorted('vaga.createdAt') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cadastro'|trans, 'vaga.createdAt') }}</th>
+                <th>{% trans %}Ações{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
@@ -21,14 +22,15 @@
                 <td><a href="{{ path('entidade_show', { 'id': entity.entidade.id }) }}">{{ entity.entidade }}</a></td>
                 <td>{{ entity.nome }}</td>
                 <td>{{ entity.descricao }}</td>
+                <td>{{ entity.comoAplicar }}</td>
                 <td>{{ entity.createdAt|date }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('vaga_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('vaga_show', { 'id': entity.id }) }}">{% trans %}ver{% endtrans %}</a>
                     </li>
                     <li>
-                        <a href="{{ path('vaga_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('vaga_edit', { 'id': entity.id }) }}">{% trans %}editar{% endtrans %}</a>
                     </li>
                 </ul>
                 </td>
@@ -37,10 +39,14 @@
         </tbody>
     </table>
 
-        <ul>
+    <div class="navigation">
+        {{ knp_pagination_render(entities) }}
+    </div>
+
+    <ul>
         <li>
             <a href="{{ path('vaga_new') }}">
-                Create a new entry
+                {% trans %}Novo cadastro{% endtrans %}
             </a>
         </li>
     </ul>

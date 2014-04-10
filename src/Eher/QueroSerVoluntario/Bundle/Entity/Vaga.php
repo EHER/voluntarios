@@ -46,9 +46,9 @@ class Vaga
     /**
      * @var string
      *
-     * @ORM\Column(name="email_template", type="text")
+     * @ORM\Column(name="como_aplicar", type="text")
      */
-    private $emailTemplate;
+    private $comoAplicar;
 
     /**
      * @var string
@@ -133,23 +133,23 @@ class Vaga
     }
 
     /**
-     * Set emailTemplate
+     * Set comoAplicar
      *
-     * @param string $emailTemplate
+     * @param string $comoAplicar
      */
-    public function setEmailTemplate($emailTemplate)
+    public function setComoAplicar($comoAplicar)
     {
-        $this->emailTemplate = $emailTemplate;
+        $this->comoAplicar = $comoAplicar;
     }
 
     /**
-     * Get emailTemplate
+     * Get comoAplicar
      *
      * @return string
      */
-    public function getEmailTemplate()
+    public function getComoAplicar()
     {
-        return $this->emailTemplate;
+        return $this->comoAplicar;
     }
 
     /**
@@ -167,7 +167,7 @@ class Vaga
      *
      * @return boolean
      */
-    public function getOnline()
+    public function isOnline()
     {
         return $this->online;
     }

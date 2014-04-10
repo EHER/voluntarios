@@ -1,18 +1,18 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Lista de Entidades{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Lista de Entidades{% endtrans %}{% endblock %}
 {% block content %}
-    <h2>Lista de Entidades</h2>
+    <h2>{% trans %}Lista de Entidades{% endtrans %}</h2>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Endereço</th>
-                <th>Cidade</th>
-                <th>Telefone</th>
-                <th>Cadastro</th>
-                <th>Actions</th>
+                <th>{% trans %}Id{% endtrans %}</th>
+                <th>{% trans %}Nome{% endtrans %}</th>
+                <th>{% trans %}Endereço{% endtrans %}</th>
+                <th>{% trans %}Cidade{% endtrans %}</th>
+                <th>{% trans %}Telefone{% endtrans %}</th>
+                <th>{% trans %}Cadastro{% endtrans %}</th>
+                <th>{% trans %}Ações{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
@@ -39,13 +39,13 @@
                             <a href="{{ path('entidade_show', { 'id': entity.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('entidade_edit', { 'id': entity.id }) }}">edit</a>
+                            <a href="{{ path('entidade_edit', { 'id': entity.id }) }}">{% trans %}editar{% endtrans %}</a>
                         </li>
                         <li>
-                            <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">google pelo nome</a>
+                            <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">{% trans %}google pelo nome{% endtrans %}</a>
                         </li>
                         <li>
-                            <a href="http://www.buscacep.correios.com.br/servicos/dnec/consultaEnderecoAction.do?relaxation={{ entity.endereco }}+{{ entity.bairro }}&TipoCep=ALL&semelhante=N&cfm=1&Metodo=listaLogradouro&TipoConsulta=relaxation&StartRow=1&EndRow=10" target=_blank">buscar cep</a>
+                            <a href="http://www.buscacep.correios.com.br/servicos/dnec/consultaEnderecoAction.do?relaxation={{ entity.enderecoSoTextoSemAcento }}+{{ entity.bairro }}&TipoCep=ALL&semelhante=N&cfm=1&Metodo=listaLogradouro&TipoConsulta=relaxation&StartRow=1&EndRow=10" target=_blank">{% trans %}buscar cep{% endtrans %}</a>
                         </li>
                     </ul>
                 </td>
@@ -57,7 +57,7 @@
     <ul>
         <li>
             <a href="{{ path('entidade_new') }}">
-                Create a new entry
+                {% trans %}Novo cadastro{% endtrans %}
             </a>
         </li>
     </ul>

@@ -1,46 +1,53 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Lista de Voluntários{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Lista de Voluntários{% endtrans %}{% endblock %}
 {% block content %}
-    <h2>Lista de Voluntários</h2>
+    <h2>{% trans %}Lista de Voluntários{% endtrans %}</h2>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Cidade</th>
-                <th>Cadastro</th>
-                <th>Actions</th>
+                <th>{{ knp_pagination_sortable(entities, 'Id', 'voluntario.id') }}</th>
+                <th{% if entities.isSorted('voluntario.nome') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Nome'|trans, 'voluntario.nome') }}</th>
+                <th{% if entities.isSorted('voluntario.email') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Email'|trans, 'voluntario.email') }}</th>
+                <th>{% trans %}Telefone{% endtrans %}</th>
+                <th{% if entities.isSorted('voluntario.cidade') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cidade'|trans, 'voluntario.cidade.nome') }}</th>
+                <th{% if entities.isSorted('voluntario.createdAt') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cadastro'|trans, 'voluntario.createdAt') }}</th>
+                <th>{% trans %}Actions{% endtrans %}</th>
             </tr>
         </thead>
-        <tbody>
         {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+        <tbody>
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td>{{ entity.id }}</td>
                 <td>{{ entity.nome }}</td>
-                <td>{{ entity.email }}</td>
+                <td>
+                    <a href="mailto:{{ entity.email }}">{{ entity.email }}</a>
+                </td>
+                <td>
+                    <a href="tel:{{ entity.telefone }}">{{ entity.telefone }}</a>
+                </td>
                 <td>{{ entity.cidade }}</td>
                 <td>{{ entity.createdAt|date }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('voluntario_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
+                        <li><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{% trans %}ver{% endtrans %}</a></li>
+                        <li><a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">{% trans %}editar{% endtrans %}</a></li>
+                        <li><a href="{{ path('vaga', { 'cidade': entity.cidade.nome, 'online': true }) }}">{% trans %}vagas{% endtrans %}</a></li>
                     </ul>
                 </td>
             </tr>
-        {% endfor %}
         </tbody>
+        {% endfor %}
     </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(entities) }}
+    </div>
 
     <ul>
         <li>
             <a href="{{ path('voluntario_new') }}">
-                Create a new entry
+                {% trans %}Novo cadastro{% endtrans %}
             </a>
         </li>
     </ul>

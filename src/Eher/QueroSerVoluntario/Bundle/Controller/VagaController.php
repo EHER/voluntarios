@@ -20,10 +20,32 @@ class VagaController extends Controller
     public function indexAction()
     {
         $entityManager = $this->getDoctrine()->getManager();
+        $repository = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Vaga');
+        $queryBuilder = $repository->createQueryBuilder('vaga')
+            ->join('vaga.entidade', 'entidade')
+            ->join('entidade.cidade', 'cidade')
+            ;
 
-        $entities = $entityManager
-            ->getRepository('EherQueroSerVoluntarioBundle:Vaga')
-            ->findAll();
+        $cidade = $this->get('request')->query->get('cidade');
+        if (!empty($cidade)) {
+            $queryBuilder->orWhere('cidade.nome = :cidade')
+                ->setParameter('cidade', $cidade);
+        }
+
+        $online = $this->get('request')->query->get('online');
+        if (!empty($online)) {
+            $queryBuilder->orWhere('vaga.online = :online')
+                ->setParameter('online', $online);
+        }
+
+        $query = $queryBuilder->getQuery();
+
+        $paginator  = $this->get('knp_paginator');
+        $entities = $paginator->paginate(
+            $query,
+            $this->get('request')->query->get('page', 1),
+            10
+        );
 
         return $this->render('EherQueroSerVoluntarioBundle:Vaga:index.html.twig', array(
             'entities' => $entities,

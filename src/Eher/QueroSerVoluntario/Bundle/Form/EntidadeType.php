@@ -17,6 +17,8 @@ class EntidadeType extends AbstractType
             ->add('cep')
             ->add('cidade')
             ->add('telefone')
+            ->add('site')
+            ->add('email')
         ;
     }
 

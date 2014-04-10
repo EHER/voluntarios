@@ -37,6 +37,13 @@ class Voluntario
     private $email;
 
     /**
+     * @var string $email
+     *
+     * @ORM\Column(name="telefone", type="string", length=50)
+     */
+    private $telefone;
+
+    /**
      * @var Cidade $cidade
      *
      * @ORM\ManyToOne(targetEntity="Cidade")
@@ -97,6 +104,26 @@ class Voluntario
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set telefone
+     *
+     * @param string $telefone
+     */
+    public function setTelefone($telefone)
+    {
+        $this->telefone = $telefone;
+    }
+
+    /**
+     * Get telefone
+     *
+     * @return string
+     */
+    public function getTelefone()
+    {
+        return $this->telefone;
     }
 
     /**

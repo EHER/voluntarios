@@ -13,6 +13,7 @@ class VoluntarioType extends AbstractType
         $builder
             ->add('nome')
             ->add('email')
+            ->add('telefone')
             ->add('cidade')
         ;
     }

@@ -17,7 +17,9 @@
         "symfony/monolog-bundle": "*",
         "symfony/swiftmailer-bundle": "*",
         "symfony/symfony": "2.4.*",
-        "twig/extensions": "*"
+        "twig/extensions": "*",
+        "knplabs/knp-paginator-bundle": "*",
+        "fp/jsformvalidator-bundle": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",

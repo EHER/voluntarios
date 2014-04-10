@@ -9,6 +9,9 @@ Eher\QueroSerVoluntario\Bundle\Entity\Voluntario:
             - Email:
                 message: "O email digitado não é válido"
                 checkMX: true
+        cidade:
+            - NotBlank:
+                message: "O campo Cidade é obrigatório"
 
 Eher\QueroSerVoluntario\Bundle\Entity\Entidade:
     properties:
@@ -21,6 +24,21 @@ Eher\QueroSerVoluntario\Bundle\Entity\Entidade:
         bairro:
             - NotBlank:
                 message: "O campo Bairro é obrigatório"
+        cidade:
+            - NotBlank:
+                message: "O campo Cidade é obrigatório"
+        cep:
+            - NotBlank:
+                message: "O campo CEP é obrigatório"
+            - Regex:
+                pattern: "/\d{5}-\d{3}/"
+                message: "O CEP digitado não é válido (Tente digitar no formato 00000-000)"
+        email:
+            - NotBlank:
+                message: "O campo Email é obrigatório"
+            - Email:
+                message: "O email digitado não é válido"
+                checkMX: true
 
 Eher\QueroSerVoluntario\Bundle\Entity\Vaga:
     properties:

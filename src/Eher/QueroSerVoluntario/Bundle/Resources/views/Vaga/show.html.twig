@@ -1,29 +1,29 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Vaga {{ entity.id }}{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Vaga{% endtrans %} {{ entity.id }}{% endblock %}
 {% block content %}
-    <h2>Vaga</h2>
+    <h2>{% trans %}Vaga{% endtrans %}</h2>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{% trans %}Id{% endtrans %}</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Entidade</th>
+                <th>{% trans %}Entidade{% endtrans %}</th>
                 <td>{{ entity.entidade }}</td>
             </tr>
             <tr>
-                <th>Nome</th>
+                <th>{% trans %}Nome{% endtrans %}</th>
                 <td>{{ entity.nome }}</td>
             </tr>
             <tr>
-                <th>Descricao</th>
+                <th>{% trans %}Descrição{% endtrans %}</th>
                 <td>{{ entity.descricao }}</td>
             </tr>
             <tr>
-                <th>Emailtemplate</th>
-                <td>{{ entity.emailTemplate }}</td>
+                <th>{% trans %}Como aplicar{% endtrans %}</th>
+                <td>{{ entity.comoAplicar }}</td>
             </tr>
         </tbody>
     </table>
@@ -31,19 +31,19 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('vaga') }}">
-            Back to the list
+            {% trans %}Voltar para a lista{% endtrans %}
         </a>
     </li>
     <li>
         <a href="{{ path('vaga_edit', { 'id': entity.id }) }}">
-            Edit
+            {% trans %}Editar{% endtrans %}
         </a>
     </li>
     <li>
         <form action="{{ path('vaga_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
+            <button type="submit">{% trans %}Apagar{% endtrans %}</button>
         </form>
     </li>
 </ul>

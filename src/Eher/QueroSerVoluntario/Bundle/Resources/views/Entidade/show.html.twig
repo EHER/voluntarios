@@ -6,30 +6,46 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{% trans %}Id{% endtrans %}</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Nome</th>
-                <td>
-                    <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">{{ entity.nome }}</a>
-                </td>
+                <th>{% trans %}Nome{% endtrans %}</th>
+                <td>{{ entity.nome }}</td>
             </tr>
             <tr>
-                <th>Endereço</th>
+                <th>{% trans %}Endereço{% endtrans %}</th>
                 <td>{{ entity.endereco }}</td>
             </tr>
             <tr>
-                <th>Bairro</th>
+                <th>{% trans %}Bairro{% endtrans %}</th>
                 <td>{{ entity.bairro }}</td>
             </tr>
             <tr>
-                <th>CEP</th>
+                <th>{% trans %}CEP{% endtrans %}</th>
                 <td>{{ entity.cep }}</td>
             </tr>
             <tr>
-                <th>Cidade</th>
+                <th>{% trans %}Cidade{% endtrans %}</th>
                 <td>{{ entity.cidade }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Telefone{% endtrans %}</th>
+                <td>
+                    <a href="tel:{{ entity.telefone }}">{{ entity.telefone }}</a>
+                </td>
+            </tr>
+            <tr>
+                <th>{% trans %}Site{% endtrans %}</th>
+                <td>
+                    <a href="{{ entity.site }}" taget="_blank">{{ entity.site }}</a>
+                </td>
+            </tr>
+            <tr>
+                <th>{% trans %}Email{% endtrans %}</th>
+                <td>
+                    <a href="mailto:{{ entity.email }}">{{ entity.email }}</a>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -37,18 +53,18 @@
     <ul class="record_actions">
         <li>
             <a href="{{ path('entidade') }}">
-                Back to the list
+                {% trans %}Voltar para a lista{% endtrans %}
             </a>
         </li>
         <li>
             <a href="{{ path('entidade_edit', { 'id': entity.id }) }}">
-                Edit
+                Salvar
             </a>
         </li>
         <li>
             <form action="{{ path('entidade_delete', { 'id': entity.id }) }}" method="post">
                 {{ form_widget(delete_form) }}
-                <button type="submit">Delete</button>
+                <button type="submit">{% trans %}Apagar{% endtrans %}</button>
             </form>
         </li>
     </ul>

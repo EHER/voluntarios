@@ -19,8 +19,15 @@ class VoluntarioController extends Controller
     public function indexAction()
     {
         $entityManager = $this->getDoctrine()->getManager();
+        $dql = "SELECT voluntario FROM EherQueroSerVoluntarioBundle:Voluntario voluntario JOIN voluntario.cidade cidade";
+        $query = $entityManager->createQuery($dql);
 
-        $entities = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Voluntario')->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $entities = $paginator->paginate(
+            $query,
+            $this->get('request')->query->get('page', 1),
+            10
+        );
 
         return $this->render('EherQueroSerVoluntarioBundle:Voluntario:index.html.twig', array(
             'entities' => $entities

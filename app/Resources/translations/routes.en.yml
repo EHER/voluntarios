@@ -29,7 +29,7 @@ entidade_criar: /entities
 entidade_delete: '/admin/entities/{id}'
 
 # Desc: /admin/entidades/{id}/editar
-entidade_edit: '/admin/entities/{id}/new'
+entidade_edit: '/admin/entities/{id}/edit'
 
 # Desc: /admin/entidades/cadastrar
 entidade_new: /admin/entities/new

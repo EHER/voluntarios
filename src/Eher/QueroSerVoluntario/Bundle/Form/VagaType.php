@@ -14,8 +14,10 @@ class VagaType extends AbstractType
             ->add('entidade')
             ->add('nome')
             ->add('descricao')
-            ->add('emailTemplate')
-            ->add('online')
+            ->add('comoAplicar')
+            ->add('online', 'checkbox', array(
+                'required'  => false,
+            ));
         ;
     }
 

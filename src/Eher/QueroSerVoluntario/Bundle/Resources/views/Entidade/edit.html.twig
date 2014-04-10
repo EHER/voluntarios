@@ -1,32 +1,32 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
-{% block title %}Quero ser Voluntário - Edição do Voluntário: {{ entity.id }}{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Edição do Voluntário{% endtrans %}: {{ entity.id }}{% endblock %}
 {% block content %}
-    <h2>Entidade edit</h2>
+    <h2>{% trans %}Editar Entidade{% endtrans %}: {{ entity.id }}</h2>
 
     <form action="{{ path('entidade_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
         {{ form_widget(edit_form) }}
         <p>
-            <button type="submit">Edit</button>
+            <button type="submit">{% trans %}Salvar{% endtrans %}</button>
         </p>
     </form>
 
     <ul class="record_actions">
         <li>
-            <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">google pelo nome</a>
+            <a href="https://www.google.com.br/#q={{ entity.nome }}" target="_blank">{% trans %}google pelo nome{% endtrans %}</a>
         </li>
         <li>
-            <a href="http://www.buscacep.correios.com.br/servicos/dnec/consultaEnderecoAction.do?relaxation={{ entity.endereco }}+{{ entity.bairro }}&TipoCep=ALL&semelhante=N&cfm=1&Metodo=listaLogradouro&TipoConsulta=relaxation&StartRow=1&EndRow=10" target=_blank">buscar cep</a>
+            <a href="http://www.buscacep.correios.com.br/servicos/dnec/consultaEnderecoAction.do?relaxation={{ entity.enderecoSoTextoSemAcento }}+{{ entity.bairro }}&TipoCep=ALL&semelhante=N&cfm=1&Metodo=listaLogradouro&TipoConsulta=relaxation&StartRow=1&EndRow=10" target=_blank">{% trans %}buscar cep{% endtrans %}</a>
         </li>
         <li>
             <a href="{{ path('entidade') }}">
-                Back to the list
+                {% trans %}Voltar para a lista{% endtrans %}
             </a>
         </li>
         <li>
             <form action="{{ path('entidade_delete', { 'id': entity.id }) }}" method="post">
                 <input type="hidden" name="_method" value="DELETE" />
                 {{ form_widget(delete_form) }}
-                <button type="submit">Delete</button>
+                <button type="submit">{% trans %}Apagar{% endtrans %}</button>
             </form>
         </li>
     </ul>

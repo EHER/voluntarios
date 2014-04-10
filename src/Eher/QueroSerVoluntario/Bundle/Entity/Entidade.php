@@ -39,7 +39,7 @@ class Entidade
     /**
      * @var string $cep
      *
-     * @ORM\Column(name="cep", type="string", length=8)
+     * @ORM\Column(name="cep", type="string", length=9)
      */
     private $cep;
 
@@ -63,6 +63,20 @@ class Entidade
      * @ORM\Column(name="telefone", type="string", length=50)
      */
     private $telefone;
+
+    /**
+     * @var string $site
+     *
+     * @ORM\Column(name="site", type="string", length=50)
+     */
+    private $site;
+
+    /**
+     * @var string $email
+     *
+     * @ORM\Column(name="email", type="string", length=50)
+     */
+    private $email;
 
     /**
      * @ORM\Column(name="created_at", type="datetime")
@@ -220,6 +234,46 @@ class Entidade
     }
 
     /**
+     * Set site
+     *
+     * @param string $site
+     */
+    public function setSite($site)
+    {
+        $this->site = $site;
+    }
+
+    /**
+     * Get site
+     *
+     * @return string
+     */
+    public function getSite()
+    {
+        return $this->site;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
      * @ORM\PrePersist
      */
     public function setCreatedAtValue()
@@ -235,6 +289,13 @@ class Entidade
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    public function getEnderecoSoTextoSemAcento()
+    {
+        $pattern = ["/\d|,-/", "/á|à|â|ã/", "/é|ê/", "/í/", "/ó|õ|ô/", "/ú|û/", "/ç/"];
+        $replacement = ["", "a", "e", "i", "o", "u", "c"];
+        return preg_replace($pattern, $replacement, $this->endereco);
     }
 
     /**
