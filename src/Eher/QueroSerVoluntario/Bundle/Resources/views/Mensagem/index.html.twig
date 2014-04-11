@@ -1,0 +1,12 @@
+{% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Lista de Mensagens{% endtrans %}{% endblock %}
+{% block content %}
+    <h2>{% trans %}Lista de Mensagens{% endtrans %}</h2>
+    <ul class="nav nav-pills">
+        <li>
+            <a href="{{ path('mensagem_welcome', {'voluntarioId': app.request.get('voluntarioId') }) }}">{% trans %}Bem-vindo{% endtrans %}</a>
+            <a href="{{ path('mensagem_recomendation', {'voluntarioId': app.request.get('voluntarioId') }) }}">{% trans %}Sugestões{% endtrans %}</a>
+            <a href="{{ path('mensagem_news', {'voluntarioId': app.request.get('voluntarioId') }) }}">{% trans %}Novidades{% endtrans %}</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Mensagem Sugestões{% endtrans %}{% endblock %}
+{% block content %}
+    <h2>{% trans %}Mensagem Sugestões{% endtrans %}</h2>
+    <textarea autofocus rows="20" class="span6">
+Olá {{ nome|split(' ')|first|title|default('Voluntário') }},
+
+{% if cidade == "Sorocaba" %}
+Eu também sou de Sorocaba e é onde eu tenho feito um trabalho mais próximo às entidades. Dessa forma, tenho muito interesse em acompanhar sua experiência aplicando para quaisquer vagas de voluntariado.
+
+{% endif %}
+Essas são as vagas que tenho disponíveis para você{{ cidade ? " em " }}{{ cidade|default("") }}:
+
+{% for vaga in vagas %}
+Entidade: {{ vaga.entidade.nome }}
+Vaga: {{ vaga.nome }}
+Pode ser feito online: {{ vaga.online ? 'Sim' : 'Não' }}
+Descrição: {{ vaga.descricao }}
+Como aplicar para a vaga: {{ vaga.comoAplicar }}
+
+{% endfor %}
+Qualquer coisa é só chamar.
+</textarea>
+{% endblock %}
+

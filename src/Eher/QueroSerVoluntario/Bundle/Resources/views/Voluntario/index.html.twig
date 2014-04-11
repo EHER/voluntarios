@@ -33,6 +33,7 @@
                         <li><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{% trans %}ver{% endtrans %}</a></li>
                         <li><a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">{% trans %}editar{% endtrans %}</a></li>
                         <li><a href="{{ path('vaga', { 'cidade': entity.cidade.nome, 'online': true }) }}">{% trans %}vagas{% endtrans %}</a></li>
+                        <li><a href="{{ path('mensagem', { 'voluntarioId': entity.id }) }}">{% trans %}mensagens{% endtrans %}</a></li>
                     </ul>
                 </td>
             </tr>

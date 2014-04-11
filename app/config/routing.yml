@@ -14,6 +14,10 @@ EherQueroSerVoluntarioBundle_vaga:
     resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/vaga.yml"
     prefix:   /admin/vagas
 
+EherQueroSerVoluntarioBundle_mensagem:
+    resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/mensagem.yml"
+    prefix:   /admin/mensagens
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
