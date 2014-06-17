@@ -19,7 +19,7 @@ class VoluntarioController extends Controller
     public function indexAction()
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $dql = "SELECT voluntario FROM EherQueroSerVoluntarioBundle:Voluntario voluntario JOIN voluntario.cidade cidade";
+        $dql = "SELECT voluntario FROM EherQueroSerVoluntarioBundle:Voluntario voluntario JOIN voluntario.cidade cidade order by voluntario.id desc";
         $query = $entityManager->createQuery($dql);
 
         $paginator  = $this->get('knp_paginator');
