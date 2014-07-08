@@ -67,7 +67,7 @@ class Entidade
     /**
      * @var string $site
      *
-     * @ORM\Column(name="site", type="string", length=50)
+     * @ORM\Column(name="site", type="string", length=200)
      */
     private $site;
 
