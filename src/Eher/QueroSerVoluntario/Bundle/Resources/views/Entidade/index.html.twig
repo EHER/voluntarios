@@ -6,13 +6,13 @@
     <table class="table">
         <thead>
             <tr>
-                <th>{% trans %}Id{% endtrans %}</th>
-                <th>{% trans %}Nome{% endtrans %}</th>
+                <th>{{ knp_pagination_sortable(entities, 'Id', 'entidade.id') }}</th>
+                <th{% if entities.isSorted('entidade.nome') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Nome'|trans, 'entidade.nome') }}</th>
                 <th>{% trans %}Endereço{% endtrans %}</th>
-                <th>{% trans %}Cidade{% endtrans %}</th>
+                <th{% if entities.isSorted('cidade.nome') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cidade'|trans, 'cidade.nome') }}</th>
                 <th>{% trans %}Telefone{% endtrans %}</th>
-                <th>{% trans %}Cadastro{% endtrans %}</th>
-                <th>{% trans %}Ações{% endtrans %}</th>
+                <th{% if entities.isSorted('entidade.createdAt') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cadastro'|trans, 'entidade.createdAt') }}</th>
+                <th>{% trans %}Actions{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
@@ -53,6 +53,10 @@
         {% endfor %}
         </tbody>
     </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(entities) }}
+    </div>
 
     <ul>
         <li>

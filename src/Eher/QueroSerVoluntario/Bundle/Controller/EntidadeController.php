@@ -19,8 +19,15 @@ class EntidadeController extends Controller
     public function indexAction()
     {
         $entityManager = $this->getDoctrine()->getManager();
+        $dql = "SELECT entidade FROM EherQueroSerVoluntarioBundle:Entidade entidade JOIN entidade.cidade cidade order by entidade.id desc";
+        $query = $entityManager->createQuery($dql);
 
-        $entities = $entityManager->getRepository('EherQueroSerVoluntarioBundle:Entidade')->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $entities = $paginator->paginate(
+            $query,
+            $this->get('request')->query->get('page', 1),
+            10
+        );
 
         return $this->render('EherQueroSerVoluntarioBundle:Entidade:index.html.twig', array(
             'entities' => $entities
