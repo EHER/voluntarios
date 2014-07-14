@@ -9,7 +9,18 @@ Olá {{ nome|split(' ')|first|title|default('Voluntário') }},
 Eu também sou de Sorocaba e é onde eu tenho feito um trabalho mais próximo às entidades. Dessa forma, tenho muito interesse em acompanhar sua experiência aplicando para quaisquer vagas de voluntariado.
 
 {% endif %}
-Essas são as vagas que tenho disponíveis para você{{ cidade ? " em " }}{{ cidade|default("") }}:
+{% if vagas|length == 0 %}
+No momento não temos vagas disponíveis{{ cidade ? " para " }}{{ cidade|default("") }}.
+
+Assim que aparecer alguma coisa entramos em contato.
+{% endif %}
+{%- if vagas|length == 1 -%}
+Tenho uma vaga disponível
+{%- endif -%}
+{%- if vagas|length > 1 -%}
+Essas são as vagas que tenho disponíveis
+{%- endif -%}
+{{ cidade ? " para " }}{{ cidade|default("") }}:
 
 {% for vaga in vagas %}
 Entidade: {{ vaga.entidade.nome }}
