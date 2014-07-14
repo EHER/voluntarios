@@ -9,6 +9,12 @@ Eher\QueroSerVoluntario\Bundle\Entity\Voluntario:
             - Email:
                 message: "O email digitado não é válido"
                 checkMX: true
+        telefone:
+            - NotBlank:
+                message: "O campo Telefone é obrigatório"
+            - Regex:
+                pattern: "/\(\d{2}\)\ \d{4,5}-\d{4}/"
+                message: "O Telefone digitado não é válido. Tente digitar no formato (00) 0000-0000"
         cidade:
             - NotBlank:
                 message: "O campo Cidade é obrigatório"
