@@ -52,7 +52,7 @@ class MensagemController extends Controller
             }
         }
 
-        $dql = "select vaga from EherQueroSerVoluntarioBundle:Vaga vaga join vaga.entidade entidade join entidade.cidade cidade where cidade.id in (select c.id from EherQueroSerVoluntarioBundle:Voluntario voluntario join voluntario.cidade c where voluntario.id = :voluntarioId) or vaga.online = true";
+        $dql = "select vaga from EherQueroSerVoluntarioBundle:Vaga vaga join vaga.entidade entidade join entidade.cidade cidade where cidade.id in (select c.id from EherQueroSerVoluntarioBundle:Voluntario voluntario join voluntario.cidade c where voluntario.id = :voluntarioId) or vaga.online = true order by entidade.nome";
         $query = $entityManager->createQuery($dql)
             ->setParameter('voluntarioId', $voluntarioId);
         $vagas = $query->getResult();
