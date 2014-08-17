@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "requirejs": "^2.1.14"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha web/spec/*spec.js"
+  }
+}

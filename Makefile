@@ -10,7 +10,7 @@ default:
 
 install: _composer-install perms
 update: _composer-self-update _composer-update perms
-test: _run-phpunit _run_phpspec
+test: _run-phpunit _run-phpspec _run-npm_test
 translation: _extract-translation-for-locale
 clear: _remove-cache-files
 perms: _cache-perms _logs-perms
@@ -30,8 +30,11 @@ _composer-install:
 _run-phpunit:
 	vendor/bin/phpunit -c app --testdox
 
-_run_phpspec:
+_run-phpspec:
 	vendor/bin/phpspec run --format=pretty
+
+_run-npm_test:
+	npm test
 
 _symfony-clear:
 	php app/console cache:clear --env=dev

@@ -1,9 +1,10 @@
 require.config({
-    baseUrl: "/vendor",
+    baseUrl: "/js",
     paths: {
         "jquery": "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min",
-        "jquery.mask": "jQuery-Mask-Plugin/jquery.mask.min",
-        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min"
+        "jquery.mask": "../vendor/jQuery-Mask-Plugin/jquery.mask.min",
+        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min",
+        "mousetrap": "../vendor/mousetrap/mousetrap.min"
     },
     shim: {
         "bootstrap":{ deps: ["jquery"] }

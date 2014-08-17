@@ -30,7 +30,11 @@ Descrição: {{ vaga.descricao }}
 Como aplicar para a vaga: {{ vaga.comoAplicar }}
 
 {% endfor %}
-Qualquer coisa é só chamar.
-</textarea>
+Qualquer coisa é só chamar.</textarea>
 {% endblock %}
 
+{% block javascripts %}
+    <script type="text/javascript">
+        require(['shortcut/admin-messages-details']);
+    </script>
+{% endblock %}
