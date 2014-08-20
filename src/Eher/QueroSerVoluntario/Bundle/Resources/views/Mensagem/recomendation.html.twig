@@ -2,7 +2,7 @@
 {% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Mensagem Sugestões{% endtrans %}{% endblock %}
 {% block content %}
     <h2>{% trans %}Mensagem Sugestões{% endtrans %}</h2>
-    <textarea rows="20" class="span6">
+    <textarea id="message" rows="20" class="span6">
 Olá {{ nome|split(' ')|first|title|default('Voluntário') }},
 
 {% if cidade == "Sorocaba" %}
