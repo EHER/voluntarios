@@ -2,7 +2,7 @@
 {% block title %}Quero ser Voluntário - Estados do Brasil{% endblock %}
 {% block content %}
 <h2>{% trans %}Estados do Brasil{% endtrans %}</h2>
-<div class="span1">
+<div class="col-md-1">
     <ul class="unstyled">
     {% set count = 0 %}
     {% for entity in entities %}
@@ -10,7 +10,7 @@
         {% set count = count + 1 %}
         <a href="{{ path('cidade_em_estado', { 'estado': entity.nome|lower }) }}">{{ entity.nome }}</a>
         {% if count == 3 %}
-            </ul></div><div class="span1"><ul class="unstyled">
+            </ul></div><div class="col-md-1"><ul class="unstyled">
             {% set count = 0 %}
         {% endif %}
         </li>

@@ -9,13 +9,13 @@ Apagar: Delete
 Ações: Actions
 Bairro: District
 'Basta digitar cidade e estado para ter uma lista de entidades': 'Just type the city and state to have an entities list'
+Bem-vindo: Welcome
 Blog: Blog
 Brasil: Brazil
 'Busca de Entidades': 'Search for Entities'
 Buscar: Search
 'Buscar Entidade': 'Find Entity'
 CEP: Zipcode
-Cadastrar: Register
 'Cadastrar Entidade': 'Register as Entity'
 'Cadastrar Voluntário': 'Register as Volunteer'
 'Cadastrar outra entidade': 'Register another entity'
@@ -25,7 +25,6 @@ Cadastrar: Register
 Cadastro: Register
 'Cadastro de Entidade': 'Entity Registration'
 'Cadastro de Voluntário': 'Volunteer Registration'
-Cancelar: Cancel
 Cidade: City
 'Cidades em': 'Cities in'
 'Comece encontrando uma Entidade Beneficente na sua cidade': 'Start finding an Charity Entity at your city'
@@ -51,10 +50,10 @@ Entidades: Entities
 'Entidades em': 'Entities in'
 Estado: State
 'Estados do Brasil': 'States of Brazil'
-'Este site é o ponto de encontro para voluntários e entidades que veem um futuro melhor através de pequenos gestos': 'This website can put together volunteers and charity entities that believes into a better future built with simple actions.'
+'Este site é o ponto de encontro para voluntários e entidades que veem um futuro melhor através de pequenos gestos': 'The website that put together volunteers and charity entities that believes into a better future built with simple actions'
+Exemplo: Example
 'Fazer o': 'Do the'
-'Fique a vontade para entrar em contato pelo e-mail': 'Feel free to get in contact by the e-mail'
-Fone: Phone
+'Fique a vontade para entrar em contato pelo': 'Feel free to get in touch by'
 'Gostaria de contribuir com o seu tempo para ajudar alguém': 'Wanna to contribute with your time to help somebody'
 Id: Id
 Indique: Indicate
@@ -62,13 +61,18 @@ Interessou: Interested
 'Já que está sem nada para fazer, por que não empreender em uma causa nobre': 'As you have nothing to do, why do not spend that time in a good cause'
 'Links Úteis': 'Useful Links'
 'Lista de Entidades': 'Entities List'
+'Lista de Mensagens': 'Messages List'
 'Lista de Vagas': 'Positions List'
 'Lista de Voluntários': 'Lista de Voluntários'
+'Mensagem Bem-vindo': 'Welcome Message'
+'Mensagem Sugestões': 'Suggestion Message'
+Mensagens: Messages
 'Mudar cidade': 'Change city'
 'Mudar estado': 'Change state'
 'Nenhuma entidade cadastrada': 'Nenhuma entidade cadastrada'
 'No momento não temos entidades cadastradas em': 'No momento não temos entidades cadastradas em'
 Nome: Name
+Novidades: News
 'Novo cadastro': 'Create a new entry'
 'O site foi feito com o objetivo de colocar voluntários e entidades beneficentes em contato': 'The website was made to put together volunteers and charity entities'
 'Painel de Administração': 'Administration Panel'
@@ -78,21 +82,21 @@ Projeto: Project
 'Página no Facebook': 'Facebook Page'
 'Quadro de tarefas': 'Task Board'
 'Quem nunca fez a pergunta "O que tem para fazer hoje"': 'Who never asked "what have to do today"'
-'Quero ser Voluntário': 'Wanna be Volunteer'
-'Quero ser Voluntário!': 'Wanna be Volunteer!'
-'Quero ser voluntário!': 'Wanna be volunteer!'
-QueroSerVoluntario: WannaBeVolunteer
-Responsável: Founder
-'Saiba um pouco mais sobre essa iniciativa': 'Know more about that initiative'
+'Quero ser Voluntário': 'I wanna be Volunteer'
+'Quero ser Voluntário!': 'I wanna be Volunteer!'
+'Quero ser voluntário!': 'I wanna be volunteer!'
+QueroSerVoluntario: IWannaBeVolunteer
+'Saiba um pouco mais sobre essa iniciativa': 'Learn more about the initiative'
 Sair: Logout
 Salvar: Save
 'Se você já é voluntário, mas sua entidade não está disponível em nosso site, faça o cadastro': 'If you are a volunteer, but your entity is not available on our website, register'
-'Se você também quer, está no lugar certo': 'If you wanna too, it is the right place'
+'Se você também quer, está no lugar certo': 'If you wanna too you are on the right place'
 Seja: Be
 'Seja um voluntário agora mesmo': 'Be a volunteer right now'
 Site: Website
 'Sobre o Site': About
 'Sua opinião é muito importante para manter esse trabalho': 'Your opinion is very important to keep this work'
+Sugestões: Suggestions
 Telefone: Phone
 Vaga: Position
 Vagas: Positions
@@ -103,6 +107,8 @@ Voluntários: Volunteers
 'buscar cep': 'find zipcode'
 editar: edit
 'google pelo nome': 'google by name'
+mensagens: messages
+'ou pelo': 'or by'
 'para que possamos encontrar uma oportunidade para você': 'to enable us to find and oportunity for you'
 vagas: positions
 ver: show

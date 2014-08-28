@@ -1,44 +1,38 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
 {% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Busca de Entidades{% endtrans %}{% endblock %}
 {% block content %}
-    <div class="span3 well">
-        <h3>{% trans %}Busca de Entidades{% endtrans %}</h3>
-        <form action="" class="form-inline">
-            <fieldset>
-                <div class="control-group">
-                    <label class="control-label" for="cidade">{% trans %}Cidade{% endtrans %}</label>
-                    <div class="controls">
-                        <input name="cidade" type="text" value="{{ cityName }}" placeholder="São Paulo" class="span2"/>
-                    </div>
-                </div>
+    <h2>{% trans %}Busca de Entidades{% endtrans %}</h2>
+    <div class="col-md-3 well">
+        <form role="form">
+            <div class="form-group">
+                    <label for="cidade">{% trans %}Cidade{% endtrans %}</label>
+                    <input name="cidade" type="text" class="form-control" value="{{ cityName }}" placeholder="{% trans %}Exemplo{% endtrans %}: São Paulo"/>
+            </div>
 
-                <div class="control-group">
-                    <label class="control-label" for="uf">{% trans %}Estado{% endtrans %}</label>
-                    <div class="controls">
-                        <input name="uf" type="text" value="{{ stateName }}" placeholder="SP" class="span1"/>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">{% trans %}Buscar{% endtrans %}</button>
-            </fieldset>
+            <div class="form-group">
+                    <label for="estado">{% trans %}Estado{% endtrans %}</label>
+                    <input name="estado" type="text" class="form-control" value="{{ stateName }}" placeholder="{% trans %}Exemplo{% endtrans %}: SP"/>
+            </div>
+            <button type="submit" class="btn btn-primary">{% trans %}Buscar{% endtrans %}</button>
         </form>
     </div>
     {% if search %}
-        <div class="span8">
+        <div class="col-md-8">
             {% if search.getNumFound > 0 %}
-                <table class="span8 table table-bordered table-striped">
+                <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>Nome</th>
                             <th>Endereço</th>
-                            <th class="span2">Telefone</th>
+                            <th class="col-md-2">Telefone</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for place in search.getItems %}
                             <tr>
-                                <td> {{ place.name }} </td>
-                                <td> {{ place.address.toOneLine }} </td>
-                                <td> {{ place.phone }} </td>
+                                <td>{{ place.name }}</td>
+                                <td>{{ place.address.toOneLine}} </td>
+                                <td>{{ place.phone }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>

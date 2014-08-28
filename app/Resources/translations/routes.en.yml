@@ -58,6 +58,18 @@ login_check: /login_check
 # Desc: /logout
 logout: /logout
 
+# Desc: /admin/mensagens/
+mensagem: /admin/messages/
+
+# Desc: /admin/mensagens/novidades
+mensagem_news: /admin/messages/news
+
+# Desc: /admin/mensagens/recomendacao
+mensagem_recomendation: /admin/messages/recomendation
+
+# Desc: /admin/mensagens/bem-vindo
+mensagem_welcome: /admin/messages/welcome
+
 # Desc: /sobre
 sobre: /about
 

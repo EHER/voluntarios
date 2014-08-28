@@ -1,0 +1,30 @@
+{
+  "author": "@nekman (http://nekman.se)",
+  "description": "Keynavigator plugin for jQuery / Zepto",
+  "url": "https://github.com/nekman/keynavigator",
+  "name": "Keynavigator",
+  "version": "2.1.3",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nekman/keynavigator.git"
+  },
+  "dependencies": {
+    "jquery": "*",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-template-jasmine-requirejs": "~0.1.6"
+  },
+  "engines": {
+    "node": "~0.10.15"
+  },
+  "devDependencies": {
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-template-jasmine-requirejs": "~0.1.6",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.4"
+  },
+  "scripts": {
+    "test": "grunt --verbose"
+  }
+}

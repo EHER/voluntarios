@@ -12,12 +12,12 @@
                 <th>{% trans %}Telefone{% endtrans %}</th>
                 <th{% if entities.isSorted('voluntario.cidade') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cidade'|trans, 'voluntario.cidade.nome') }}</th>
                 <th{% if entities.isSorted('voluntario.createdAt') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cadastro'|trans, 'voluntario.createdAt') }}</th>
-                <th>{% trans %}Actions{% endtrans %}</th>
+                <th></th>
             </tr>
         </thead>
         {% for entity in entities %}
         <tbody>
-            <tr {% if loop.index is odd %}class="color"{% endif %}>
+            <tr data-id="{{ entity.id }}">
                 <td>{{ entity.id }}</td>
                 <td>{{ entity.nome }}</td>
                 <td>
@@ -29,19 +29,23 @@
                 <td>{{ entity.cidade }}</td>
                 <td>{{ entity.createdAt|date }}</td>
                 <td>
-                    <ul>
-                        <li><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{% trans %}ver{% endtrans %}</a></li>
-                        <li><a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">{% trans %}editar{% endtrans %}</a></li>
-                        <li><a href="{{ path('vaga', { 'cidade': entity.cidade.nome, 'online': true }) }}">{% trans %}vagas{% endtrans %}</a></li>
-                        <li><a href="{{ path('mensagem', { 'voluntarioId': entity.id }) }}">{% trans %}mensagens{% endtrans %}</a></li>
-                    </ul>
+                    <div class="dropdown enum-dropdown">
+                        <a data-toggle="dropdown" href="#">{% trans %}Ações{% endtrans %} <span class="caret"></a>
+                        <ol class="dropdown-menu enum-dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li><a href="{{ path('voluntario_show', { 'id': entity.id }) }}">{% trans %}ver{% endtrans %}</a></li>
+                            <li><a href="{{ path('voluntario_edit', { 'id': entity.id }) }}">{% trans %}editar{% endtrans %}</a></li>
+                            <li><a href="{{ path('vaga', { 'cidade': entity.cidade.nome, 'online': true }) }}">{% trans %}vagas{% endtrans %}</a></li>
+                            <li><a href="{{ path('mensagem', { 'voluntarioId': entity.id }) }}">{% trans %}mensagens{% endtrans %}</a></li>
+                            <li><a href="https://www.facebook.com/search/str/{{ entity.nome }}/users-named" target="_blank">facebook</a></li>
+                        </ol>
+                    </div>
                 </td>
             </tr>
         </tbody>
         {% endfor %}
     </table>
 
-    <div class="navigation">
+    <div class="navigation text-center">
         {{ knp_pagination_render(entities) }}
     </div>
 
@@ -52,4 +56,14 @@
             </a>
         </li>
     </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        require([
+            'shortcut/action-menu',
+            'shortcut/pagination',
+            'shortcut/table'
+        ]);
+    </script>
 {% endblock %}

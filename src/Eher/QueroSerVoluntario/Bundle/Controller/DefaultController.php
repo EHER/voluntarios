@@ -22,7 +22,7 @@ class DefaultController extends Controller
     {
         $search = null;
         $cityName = $this->getRequest()->query->get('cidade');
-        $stateName = $this->getRequest()->query->get('uf');
+        $stateName = $this->getRequest()->query->get('estado');
 
         if (!empty($cityName) && !empty($stateName)) {
             $city = new City();
@@ -40,11 +40,11 @@ class DefaultController extends Controller
 
         return $this->render(
             'EherQueroSerVoluntarioBundle:Default:buscarEntidade.html.twig',
-            array(
+            [
                 'cityName' => $cityName,
                 'stateName' => $stateName,
                 'search' => $search,
-            )
+            ]
         );
     }
 

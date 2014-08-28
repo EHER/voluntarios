@@ -1,0 +1,14 @@
+{
+  "name": "keynavigator",
+  "homepage": "https://github.com/nekman/keynavigator",
+  "version": "2.1.3",
+  "_release": "2.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.1.3",
+    "commit": "32bcdc8c88be35125035e262f97256101dd14b55"
+  },
+  "_source": "git://github.com/nekman/keynavigator.git",
+  "_target": "~2.1.3",
+  "_originalSource": "nekman/keynavigator"
+}

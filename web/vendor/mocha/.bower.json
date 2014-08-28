@@ -29,6 +29,5 @@
   },
   "_source": "git://github.com/visionmedia/mocha.git",
   "_target": "~1.21.4",
-  "_originalSource": "mocha",
-  "_direct": true
+  "_originalSource": "mocha"
 }

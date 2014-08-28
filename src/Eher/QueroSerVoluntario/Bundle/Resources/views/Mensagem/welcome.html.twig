@@ -2,7 +2,7 @@
 {% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Mensagem Bem-vindo{% endtrans %}{% endblock %}
 {% block content %}
     <h2>{% trans %}Mensagem Bem-vindo{% endtrans %}</h2>
-    <textarea id="message" rows="20" class="span6">
+    <textarea id="message"  class="form-control" rows="10">
 Olá {{ nome|split(' ')|first|title|default('Voluntário') }},
 
 Fico muito feliz que tenha feito o cadastro no site Quero ser Voluntário!
@@ -16,7 +16,7 @@ Seguem algumas perguntas:
 - Qual o melhor horário para você se dedicar a alguma necessidade?
 - Uma lista de entidades na sua cidade com endereço e telefone te ajuda? 
 - Gostaria de poder fazer trabalho voluntário online?
-- Você indicaria o site queroservoluntario.com para alguém que queira ser voluntário? 
+- Você indicaria o site queroservoluntario.com para alguém que queira ser voluntário?
 - Como descobriu o site queroservoluntario.com?
 
 Fique à vontade para ignorar quaisquer perguntas.

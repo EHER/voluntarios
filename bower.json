@@ -10,6 +10,7 @@
     "jQuery-Mask-Plugin": "~1.6.5",
     "requirejs": "~2.1.14",
     "mousetrap": "~1.4.6",
-    "mocha": "~1.21.4"
+    "mocha": "~1.21.4",
+    "keynavigator": "nekman/keynavigator#~2.1.3"
   }
 }

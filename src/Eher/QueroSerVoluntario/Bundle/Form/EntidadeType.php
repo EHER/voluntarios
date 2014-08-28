@@ -16,9 +16,10 @@ class EntidadeType extends AbstractType
             ->add('bairro')
             ->add('cep')
             ->add('cidade')
-            ->add('telefone')
+            ->add('telefone', 'text', ['attr' => ['class' => 'js-phone']])
             ->add('site')
             ->add('email')
+            ->add('cadastrar', 'submit')
         ;
     }
 

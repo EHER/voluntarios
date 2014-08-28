@@ -1,17 +1,10 @@
 {% extends "EherQueroSerVoluntarioBundle::layout.html.twig" %}
 {% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Cadastro de Entidade{% endtrans %}{% endblock %}
 {% block content %}
-    <div class="span6">
-        <h2>{% trans %}Cadastro de Entidade{% endtrans %}</h2>
-        <p>{% trans %}Conhece alguma entidade que não está cadastrada{% endtrans %}?</p>
-        <p>{% trans %}Preencha o formulário abaixo que em breve adicionaremos ao nosso site{% endtrans %}.</p>
-        <br/>
-        <form action="{{ path('entidade_criar') }}" method="post" {{ form_enctype(form) }} class="form-horizontal">
-                {{ form_widget(form) }}
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">{% trans %}Cadastrar{% endtrans %}</button>
-                    <button type="reset" class="btn">{% trans %}Cancelar{% endtrans %}</button>
-                </div>
-        </form>
+    <h2>{% trans %}Cadastro de Entidade{% endtrans %}</h2>
+    <p>{% trans %}Conhece alguma entidade que não está cadastrada{% endtrans %}?</p>
+    <p>{% trans %}Preencha o formulário abaixo que em breve adicionaremos ao nosso site{% endtrans %}.</p>
+    <div class="col-md-4 well">
+        {{ form(form) }}
     </div>
 {% endblock %}

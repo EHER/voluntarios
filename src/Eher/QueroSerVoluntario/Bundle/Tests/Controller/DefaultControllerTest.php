@@ -38,7 +38,7 @@ class DefaultControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals(
             "Busca de Entidades",
-            $crawler->filter('body > div > div > h3')->text()
+            $crawler->filter('body > div > h2')->text()
         );
     }
 
@@ -50,7 +50,7 @@ class DefaultControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals(
             "Cadastro de Voluntário",
-            $crawler->filter('body > div > div > h2')->text()
+            $crawler->filter('body > div > h2')->text()
         );
     }
 
@@ -62,7 +62,7 @@ class DefaultControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals(
             "Cadastro de Entidade",
-            $crawler->filter('body > div > div > h2')->text()
+            $crawler->filter('body > div > h2')->text()
         );
     }
 

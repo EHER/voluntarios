@@ -15,6 +15,7 @@ class VoluntarioType extends AbstractType
             ->add('email')
             ->add('telefone', 'text', ['attr' => ['class' => 'js-phone']])
             ->add('cidade')
+            ->add('cadastrar', 'submit')
         ;
     }
 

@@ -1,13 +1,15 @@
 require.config({
     baseUrl: "/js",
     paths: {
-        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min",
+        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min",
         "jquery.mask": "../vendor/jQuery-Mask-Plugin/jquery.mask.min",
         "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min",
-        "mousetrap": "../vendor/mousetrap/mousetrap.min"
+        "mousetrap": "../vendor/mousetrap/mousetrap.min",
+        "keynavigator": "../vendor/keynavigator/keynavigator-min"
     },
     shim: {
-        "bootstrap":{ deps: ["jquery"] }
+        "bootstrap": { deps: ["jquery"] },
+        "keynavigator": { deps: ["jquery"] }
     }
 });
 
@@ -24,3 +26,5 @@ require(['jquery', 'jquery.mask'], function ($) {
         }
     });
 });
+
+require(['bootstrap', 'shortcut/global']);

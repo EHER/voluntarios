@@ -4,14 +4,14 @@
     <h2>{% trans %}Entidades em{% endtrans %} {{ cityName|title }} - {{ stateName|upper }}</h2>
     <p><a href="{{ path('cidade_em_estado', {'estado': stateName}) }}">{% trans %}Mudar cidade{% endtrans %}</a></p>
     {% if search %}
-        <div class="span8">
+        <div class="col-md-8">
             {% if search.getNumFound > 0 %}
-                <table class="span8 table table-bordered table-striped">
+                <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>{% trans %}Nome{% endtrans %}</th>
                             <th>{% trans %}Endereço{% endtrans %}</th>
-                            <th class="span2">{% trans %}Telefone{% endtrans %}</th>
+                            <th class="col-md-2">{% trans %}Telefone{% endtrans %}</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -2,13 +2,18 @@
 {% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Painel de Administração{% endtrans %}{% endblock %}
 {% block content %}
     <h2>{% trans %}Painel de Administração{% endtrans %}</h2>
-    <ul class="nav nav-pills">
-        <li>
-            <a href="{{ path('entidade') }}">{% trans %}Entidades{% endtrans %}</a>
-            <a href="{{ path('vaga') }}">{% trans %}Vagas{% endtrans %}</a>
-            <a href="{{ path('voluntario') }}">{% trans %}Voluntários{% endtrans %}</a>
-            <a href="{{ path('mensagem') }}">{% trans %}Mensagens{% endtrans %}</a>
-            <a href="{{ path('logout') }}">{% trans %}Sair{% endtrans %}</a>
-        </li>
-    </ul>
+
+    <ol class="admin-menu nav nav-pills nav-stacked col-md-2">
+        <li><a href="{{ path('entidade') }}">{% trans %}Entidades{% endtrans %}</a></li>
+        <li><a href="{{ path('vaga') }}">{% trans %}Vagas{% endtrans %}</a></li>
+        <li><a href="{{ path('voluntario') }}">{% trans %}Voluntários{% endtrans %}</a></li>
+        <li><a href="{{ path('mensagem') }}">{% trans %}Mensagens{% endtrans %}</a></li>
+        <li><a href="{{ path('logout') }}">{% trans %}Sair{% endtrans %}</a></li>
+    </ol>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        require(['shortcut/admin-panel']);
+    </script>
 {% endblock %}
