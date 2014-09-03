@@ -1,11 +1,18 @@
 require.config({
+    config: {
+         'GA': {
+             'id': 'UA-33570679-1'
+         }
+    },
     baseUrl: "/js",
     paths: {
+        "EventEmitter": '../vendor/event-emitter/dist/EventEmitter',
+        "GA": '../vendor/requirejs-google-analytics/dist/GoogleAnalytics',
+        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min",
         "jquery": "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min",
         "jquery.mask": "../vendor/jQuery-Mask-Plugin/jquery.mask.min",
-        "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min",
-        "mousetrap": "../vendor/mousetrap/mousetrap.min",
-        "keynavigator": "../vendor/keynavigator/keynavigator-min"
+        "keynavigator": "../vendor/keynavigator/keynavigator-min",
+        "mousetrap": "../vendor/mousetrap/mousetrap.min"
     },
     shim: {
         "bootstrap": { deps: ["jquery"] },
@@ -24,6 +31,13 @@ require(['jquery', 'jquery.mask'], function ($) {
         function(val, e, field, options) {
             field.mask(maskBehavior(val, e, field, options), options);
         }
+    });
+});
+
+require(['GA'], function (GA) {
+    GA.ready(function (ga) {
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
     });
 });
 

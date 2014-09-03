@@ -80,7 +80,11 @@ class DefaultController extends Controller
     public function newVoluntarioFormAction()
     {
         $entity = new Voluntario();
-        $form   = $this->createForm(new VoluntarioType(), $entity);
+        $form   = $this->createForm(
+            new VoluntarioType(),
+            $entity,
+            ['action' => $this->generateUrl('voluntario_criar')]
+        );
 
         return $this->render('EherQueroSerVoluntarioBundle:Default:newVoluntarioForm.html.twig', array(
             'entity' => $entity,
@@ -90,9 +94,9 @@ class DefaultController extends Controller
 
     public function createVoluntarioAction()
     {
-        $entity  = new Voluntario();
+        $entity = new Voluntario();
         $request = $this->getRequest();
-        $form    = $this->createForm(new VoluntarioType(), $entity);
+        $form = $this->createForm(new VoluntarioType(), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -121,7 +125,11 @@ class DefaultController extends Controller
     public function newEntidadeFormAction()
     {
         $entity = new Entidade();
-        $form   = $this->createForm(new EntidadeType(), $entity);
+        $form   = $this->createForm(
+            new EntidadeType(),
+            $entity,
+            ['action' => $this->generateUrl('entidade_criar')]
+        );
 
         return $this->render('EherQueroSerVoluntarioBundle:Default:newEntidadeForm.html.twig', array(
             'entity' => $entity,

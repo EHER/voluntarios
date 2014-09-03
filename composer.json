@@ -16,7 +16,7 @@
         "symfony/assetic-bundle": "*",
         "symfony/monolog-bundle": "*",
         "symfony/swiftmailer-bundle": "*",
-        "symfony/symfony": "2.4.*",
+        "symfony/symfony": "2.5.*",
         "twig/extensions": "*",
         "knplabs/knp-paginator-bundle": "*",
         "fp/jsformvalidator-bundle": "*"

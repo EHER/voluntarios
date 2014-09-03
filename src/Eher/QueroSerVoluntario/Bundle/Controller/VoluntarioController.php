@@ -64,7 +64,11 @@ class VoluntarioController extends Controller
     public function newAction()
     {
         $entity = new Voluntario();
-        $form   = $this->createForm(new VoluntarioType(), $entity);
+        $form   = $this->createForm(
+            new VoluntarioType(),
+            $entity,
+            ['action' => $this->generateUrl('voluntario_create')]
+        );
 
         return $this->render('EherQueroSerVoluntarioBundle:Voluntario:new.html.twig', array(
             'entity' => $entity,

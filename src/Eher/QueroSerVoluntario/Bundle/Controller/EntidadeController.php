@@ -64,7 +64,11 @@ class EntidadeController extends Controller
     public function newAction()
     {
         $entity = new Entidade();
-        $form   = $this->createForm(new EntidadeType(), $entity);
+        $form   = $this->createForm(
+            new EntidadeType(),
+            $entity,
+            ['action' => $this->generateUrl('entidade_create')]
+        );
 
         return $this->render('EherQueroSerVoluntarioBundle:Entidade:new.html.twig', array(
             'entity' => $entity,

@@ -32,23 +32,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script data-main="/js/require.config" src="/vendor/requirejs/require.js"></script>
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-33570679-1']);
-        _gaq.push(['_setDomainName', 'queroservoluntario.com']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-         })();
-    </script>
+    <script data-main="/js/require.config" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
   </head>
   <body>
     {% block body %}{% endblock %}
     {% block javascripts %}{% endblock %}
-    {{ include('FpJsFormValidatorBundle::javascripts.html.twig') }}
   </body>
 </html>
