@@ -28,10 +28,10 @@ _composer-install:
 	php composer.phar install
 
 _run-phpunit:
-	vendor/bin/phpunit -c app --testdox
+	phpunit -c app --testdox
 
 _run-phpspec:
-	vendor/bin/phpspec run --format=pretty
+	phpspec run --format=pretty
 
 _run-npm_test:
 	npm test

@@ -4,27 +4,26 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.3.3",
+        "php": "~5.5",
         "doctrine/doctrine-bundle": "*",
         "doctrine/orm": "*",
-        "eher/chegamos-lib": "1.0.9",
+        "eher/chegamos-lib": "~2.0",
         "jms/di-extra-bundle": "*",
-        "jms/i18n-routing-bundle": "dev-master",
+        "jms/i18n-routing-bundle": "*",
         "sensio/distribution-bundle": "*",
         "sensio/framework-extra-bundle": "*",
         "sensio/generator-bundle": "*",
         "symfony/assetic-bundle": "*",
         "symfony/monolog-bundle": "*",
         "symfony/swiftmailer-bundle": "*",
-        "symfony/symfony": "2.5.*",
+        "symfony/symfony": "*",
         "twig/extensions": "*",
         "knplabs/knp-paginator-bundle": "*",
         "fp/jsformvalidator-bundle": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
-        "phpspec/phpspec": "*",
-        "robmorgan/phinx": "*"
+        "phpunit/phpunit": "4.3",
+        "phpspec/phpspec": "*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -43,9 +42,6 @@
     "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
-        "symfony-web-dir": "web",
-        "branch-alias": {
-            "dev-master": "2.2-dev"
-        }
+        "symfony-web-dir": "web"
     }
 }

@@ -1,29 +1,28 @@
 parameters:
     database_driver: %database.driver%
     database_host: %database.host%
-    database_port: %database.port% 
+    database_port: %database.port%
     database_name: %database.name%
     database_user: %database.user%
     database_password: %database.password%
     database_unix_socket: %database.socket%
-    database_path: %database.path% 
+    database_path: %database.path%
 
     mailer_transport: %mailer.transport%
-    mailer_host: %mailer.host% 
+    mailer_host: %mailer.host%
     mailer_port: %mailer.port%
-    mailer_user: %mailer.user% 
+    mailer_user: %mailer.user%
     mailer_password: %mailer.password%
     mailer_auth_mode:  %mailer.auth.mode%
     mailer_encryption: %mailer.encryption%
 
-    locale: %framework.locale% 
+    locale: %framework.locale%
     secret: %framework.secret%
 
     apontador_api_base_url: %apontador.api.baseurl%
-    apontador_api_consumer_key: %apontador.api.consumerkey%
-    apontador_api_consumer_secret: %apontador.api.consumersecret%
+    apontador_api_access_token: %apontador.api.accesstoken%
 
     admin_web_username: %admin.web.user%
-    admin_web_password: %admin.web.password% 
+    admin_web_password: %admin.web.password%
 
     contact_email: %contact.email%
