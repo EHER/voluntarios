@@ -717,16 +717,16 @@
         },
         {
             "name": "eher/chegamos-lib",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EHER/chegamos-lib.git",
-                "reference": "0a778a403913ec18caf07f38ffb6bb9e66aec593"
+                "reference": "bc6f330fd36c6b5af1c4a8222849a5054534eb9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EHER/chegamos-lib/zipball/0a778a403913ec18caf07f38ffb6bb9e66aec593",
-                "reference": "0a778a403913ec18caf07f38ffb6bb9e66aec593",
+                "url": "https://api.github.com/repos/EHER/chegamos-lib/zipball/bc6f330fd36c6b5af1c4a8222849a5054534eb9f",
+                "reference": "bc6f330fd36c6b5af1c4a8222849a5054534eb9f",
                 "shasum": ""
             },
             "require": {
@@ -755,7 +755,7 @@
                 }
             ],
             "description": "Core do Chegamos (https://github.com/EHER/chegamos) para ser usado em outros projetos :D",
-            "time": "2014-12-22 00:09:45"
+            "time": "2014-12-25 21:24:28"
         },
         {
             "name": "fp/jsformvalidator-bundle",
@@ -2382,16 +2382,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.16.2",
+            "version": "v1.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
                 "shasum": ""
             },
             "require": {
@@ -2426,7 +2426,7 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -2435,7 +2435,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-10-17 12:53:44"
+            "time": "2014-12-25 19:58:19"
         }
     ],
     "packages-dev": [
