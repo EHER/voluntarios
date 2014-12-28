@@ -6,3 +6,4 @@
 /app/logs
 /vendor
 /composer.phar
+.DS_Store

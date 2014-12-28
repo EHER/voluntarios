@@ -19,7 +19,10 @@
         "symfony/symfony": "*",
         "twig/extensions": "*",
         "knplabs/knp-paginator-bundle": "*",
-        "fp/jsformvalidator-bundle": "*"
+        "fp/jsformvalidator-bundle": "*",
+        "doctrine/migrations": "*@dev",
+        "doctrine/doctrine-migrations-bundle": "*@dev",
+        "h4cc/alice-fixtures-bundle": "0.5.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3",

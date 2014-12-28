@@ -7,6 +7,9 @@ default:
 	@echo "perms\t\t"
 	@echo "config\t\t"
 	@echo "deb\t\t"
+	@echo "migrations\t\t"
+	@echo "fixtures\t\t"
+	@echo "setup_db\t\t"
 
 install: _composer-install perms
 update: _composer-self-update _composer-update perms
@@ -17,6 +20,9 @@ perms: _cache-perms _logs-perms
 config: _create-config
 dummy-config: _create-dummy-config
 deb: _debian-package
+migrations: _run-migrations
+fixtures: _load-fixtures
+setup_db: _drop-database _create-database migrations fixtures
 
 _composer-self-update:
 	php composer.phar self-update
@@ -62,3 +68,15 @@ _debian-package:
 
 _extract-translation-for-locale:
 	php app/console translation:extract en --output-dir=app/Resources/translations/  --enable-extractor=jms_i18n_routing -d src
+
+_drop-database:
+	php app/console doctrine:database:drop --force
+
+_create-database:
+	php app/console doctrine:database:create
+
+_run-migrations:
+	php app/console doctrine:migrations:migrate --no-interaction
+
+_load-fixtures:
+	php app/console h4cc:load:sets
