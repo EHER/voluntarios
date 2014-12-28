@@ -1,0 +1,5 @@
+mysql:
+    root_password: 1234
+    user: qrvuser
+    password: 4321
+    database: voluntarios
