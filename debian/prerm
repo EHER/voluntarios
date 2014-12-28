@@ -1,2 +1,0 @@
-#!/bin/bash
-rm -rf /var/www/queroservoluntario.com/app/cache

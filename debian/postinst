@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-chown -R www-data. /var/www/queroservoluntario.com/web
-chown -R www-data. /var/www/queroservoluntario.com/app/cache
-chown -R www-data. /var/www/queroservoluntario.com/app/logs
