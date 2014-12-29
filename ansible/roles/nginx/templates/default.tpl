@@ -2,12 +2,12 @@ server {
     listen  80;
 
     root {{ doc_root }};
-    index index.html index.php;
+    index index.html index.php app.php;
 
     server_name {{ servername }};
 
     location / {
-        try_files $uri $uri/ /index.php?$query_string;
+        try_files $uri $uri/ /app.php?$query_string;
     }
 
     error_page 404 /404.html;

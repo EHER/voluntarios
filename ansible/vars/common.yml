@@ -4,4 +4,4 @@
     sys_packages: ["vim","git"]
     dist: precise
     php_packages: ["php5-mysql","php5-curl","php5-cli","php5-sqlite","php5-xdebug"]
-    pecl_packages: ["APC"]
+    pecl_packages: []
