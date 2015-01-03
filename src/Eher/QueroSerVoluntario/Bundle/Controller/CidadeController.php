@@ -50,8 +50,10 @@ class CidadeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $query = $em->createQuery("select c from EherQueroSerVoluntarioBundle:Cidade c JOIN c.estado e WHERE e.nome = ?1");
-        $query->setParameter(1, $estado);
+        $query = $em->createQuery(
+            "select c from EherQueroSerVoluntarioBundle:Cidade c JOIN c.estado e WHERE e.nome = ?1"
+        );
+        $query->setParameter(1, strtoupper($estado));
         $entities = $query->getResult();
 
         return $this->render('EherQueroSerVoluntarioBundle:Cidade:em_estado.html.twig', array(
