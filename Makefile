@@ -6,23 +6,23 @@ default:
 	@echo "clear\t\t"
 	@echo "perms\t\t"
 	@echo "config\t\t"
+	@echo "dummy-config\t\t"
 	@echo "deb\t\t"
+	@echo "database\t\t"
 	@echo "migrations\t\t"
-	@echo "fixtures\t\t"
-	@echo "setup_db\t\t"
 
+clear: _remove-cache-files
+config: _create-config
+database: _create-database _load-fixtures
+deb: _debian-package
+dummy-config: _create-dummy-config
+fixtures: _load-fixtures
 install: _composer-install perms
-update: _composer-self-update _composer-update perms
+migrations: _run-migrations
+perms: _cache-perms _logs-perms
 test: _run-phpunit _run-phpspec _run-npm_test
 translation: _extract-translation-for-locale
-clear: _remove-cache-files
-perms: _cache-perms _logs-perms
-config: _create-config
-dummy-config: _create-dummy-config
-deb: _debian-package
-migrations: _run-migrations
-fixtures: _load-fixtures
-setup_db: _drop-database _create-database migrations fixtures
+update: _composer-self-update _composer-update perms
 
 _composer-self-update:
 	php composer.phar self-update
