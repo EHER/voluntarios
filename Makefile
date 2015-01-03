@@ -13,7 +13,7 @@ default:
 
 clear: _remove-cache-files
 config: _create-config
-database: _create-database _load-fixtures
+database: _create-database _create-schema _load-fixtures
 deb: _debian-package
 dummy-config: _create-dummy-config
 fixtures: _load-fixtures
@@ -74,6 +74,9 @@ _drop-database:
 
 _create-database:
 	php app/console doctrine:database:create
+
+_create-schema:
+	php app/console doctrine:schema:create
 
 _run-migrations:
 	php app/console doctrine:migrations:migrate --no-interaction
