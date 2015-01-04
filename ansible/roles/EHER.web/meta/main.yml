@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Alexandre Eher
+  description: Role to manage a simple web server with nginx and php
+  license: BSD
+  min_ansible_version: 1.5
+  platforms:
+  - name: Ubuntu
+    versions:
+      - all
+  categories:
+  - development
+  - web
+dependencies: []

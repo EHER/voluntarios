@@ -1,0 +1,12 @@
+---
+eher_web_name: 'queroservoluntario'
+eher_web_server_name: 'dev.queroservoluntario.com'
+eher_web_root: '/vagrant/web'
+eher_web_try_files: "$uri $uri/ /app.php?url=$uri&$args"
+eher_web_rewrite: []
+eher_web_php_enabled: true
+eher_web_php_params:
+    - SYMFONY__DATABASE__HOST localhost
+    - SYMFONY__DATABASE__NAME voluntarios
+    - SYMFONY__DATABASE__USER dev_user
+    - SYMFONY__DATABASE__PASSWORD {{ lookup('password', '../../../credentials/mysql/voluntarios/dev_user_password') }}

@@ -1,5 +1,2 @@
-mysql:
-    root_password: 1234
-    user: qsvuser
-    password: 4321
-    database: voluntarios
+eher_mysql_db: voluntarios
+eher_mysql_user: dev_user
