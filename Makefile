@@ -9,7 +9,7 @@ default:
 	@echo "deb\t\t"
 
 install: _composer-install perms
-update: _composer-self-update _composer-update perms
+update: _composer-self-update _composer-update _update-galaxy-roles perms
 test: _run-phpunit _run-phpspec _run-npm_test
 translation: _extract-translation-for-locale
 clear: _remove-cache-files
@@ -62,3 +62,6 @@ _debian-package:
 
 _extract-translation-for-locale:
 	php app/console translation:extract en --output-dir=app/Resources/translations/  --enable-extractor=jms_i18n_routing -d src
+
+_update-galaxy-roles:
+	ansible-galaxy install -r ansible/ROLES_FILE -p ansible/roles/
