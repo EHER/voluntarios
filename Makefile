@@ -53,6 +53,8 @@ _cache-perms:
 
 _create-config:
 	cp -v app/config/parameters.yml.dist app/config/parameters.yml
+	cp -v app/config/parameters.sh.dist app/config/parameters.sh
+	cp -v app/config/parameters.fish.dist app/config/parameters.fish
 
 _create-dummy-config:
 	cp -v app/config/parameters.yml.dummy app/config/parameters.yml

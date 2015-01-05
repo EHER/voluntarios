@@ -6,7 +6,27 @@ eher_web_try_files: "$uri $uri/ /app.php?url=$uri&$args"
 eher_web_rewrite: []
 eher_web_php_enabled: true
 eher_web_php_params:
+    - SYMFONY__DATABASE__DRIVER pdo_mysql
     - SYMFONY__DATABASE__HOST localhost
+    - SYMFONY__DATABASE__PORT 3306
     - SYMFONY__DATABASE__NAME voluntarios
     - SYMFONY__DATABASE__USER dev_user
     - SYMFONY__DATABASE__PASSWORD {{ lookup('password', '../../../credentials/mysql/voluntarios/dev_user_password') }}
+    - SYMFONY__DATABASE__SOCKET ""
+    - SYMFONY__DATABASE__PATH "%kernel.root_dir%/../database.db3"
+    - SYMFONY__MAILER__TRANSPORT smtp
+    - SYMFONY__MAILER__HOST localhost
+    - SYMFONY__MAILER__PORT 25
+    - SYMFONY__MAILER__USER mailer_user
+    - SYMFONY__MAILER__PASSWORD mailer_password
+    - SYMFONY__MAILER__AUTH__MODE login
+    - SYMFONY__MAILER__ENCRYPTION ssl
+    - SYMFONY__FRAMEWORK__LOCALE pt
+    - SYMFONY__FRAMEWORK__SECRET 1234
+    - SYMFONY__APONTADOR__API__BASEURL https://api.apontador.com.br/v2/
+    - SYMFONY__APONTADOR__API__CONSUMERKEY consumerkey
+    - SYMFONY__APONTADOR__API__CONSUMERSECRET consumersecret
+    - SYMFONY__APONTADOR__API__ACCESSTOKEN {{ lookup('password', '../../../credentials/apontador/access_token') }}
+    - SYMFONY__ADMIN__WEB__USER admin
+    - SYMFONY__ADMIN__WEB__PASSWORD 81dc9bdb52d04dc20036dbd8313ed055
+    - SYMFONY__CONTACT__EMAIL tequeremosvoluntario@gmail.com

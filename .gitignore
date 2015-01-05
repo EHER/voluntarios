@@ -4,6 +4,8 @@
 .vagrant/
 /app/bootstrap.php.cache
 /app/cache
+/app/config/parameters.fish
+/app/config/parameters.sh
 /app/config/parameters.yml
 /app/logs
 /composer.phar
