@@ -6,17 +6,23 @@ default:
 	@echo "clear\t\t"
 	@echo "perms\t\t"
 	@echo "config\t\t"
+	@echo "dummy-config\t\t"
 	@echo "deb\t\t"
+	@echo "database\t\t"
+	@echo "migrations\t\t"
 
+clear: _remove-cache-files
+config: _create-config
+database: _create-database _create-schema _load-fixtures
+deb: _debian-package
+dummy-config: _create-dummy-config
+fixtures: _load-fixtures
 install: _composer-install perms
-update: _composer-self-update _composer-update _update-galaxy-roles perms
+migrations: _run-migrations
+perms: _cache-perms _logs-perms
 test: _run-phpunit _run-phpspec _run-npm_test
 translation: _extract-translation-for-locale
-clear: _remove-cache-files
-perms: _cache-perms _logs-perms
-config: _create-config
-dummy-config: _create-dummy-config
-deb: _debian-package
+update: _composer-self-update _composer-update _update-galaxy-roles perms
 
 _composer-self-update:
 	php composer.phar self-update
@@ -28,10 +34,10 @@ _composer-install:
 	php composer.phar install
 
 _run-phpunit:
-	vendor/bin/phpunit -c app --testdox
+	phpunit -c app --testdox
 
 _run-phpspec:
-	vendor/bin/phpspec run --format=pretty
+	phpspec run --format=pretty
 
 _run-npm_test:
 	npm test
@@ -67,3 +73,18 @@ _extract-translation-for-locale:
 
 _update-galaxy-roles:
 	ansible-galaxy install -r ansible/ROLES_FILE -p ansible/roles/
+
+_drop-database:
+	php app/console doctrine:database:drop --force
+
+_create-database:
+	php app/console doctrine:database:create
+
+_create-schema:
+	php app/console doctrine:schema:create
+
+_run-migrations:
+	php app/console doctrine:migrations:migrate --no-interaction
+
+_load-fixtures:
+	php app/console h4cc:load:sets

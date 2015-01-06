@@ -1,0 +1,82 @@
+Eher\QueroSerVoluntario\Bundle\Entity\Estado:
+    estado.ac:
+        nome: AC
+
+    estado.al:
+        nome: AL
+
+    estado.am:
+        nome: AM
+
+    estado.ap:
+        nome: AP
+
+    estado.ba:
+        nome: BA
+
+    estado.ce:
+        nome: CE
+
+    estado.df:
+        nome: DF
+
+    estado.es:
+        nome: ES
+
+    estado.go:
+        nome: GO
+
+    estado.ma:
+        nome: MA
+
+    estado.mg:
+        nome: MG
+
+    estado.ms:
+        nome: MS
+
+    estado.mt:
+        nome: MT
+
+    estado.pa:
+        nome: PA
+
+    estado.pb:
+        nome: PB
+
+    estado.pe:
+        nome: PE
+
+    estado.pi:
+        nome: PI
+
+    estado.pr:
+        nome: PR
+
+    estado.rj:
+        nome: RJ
+
+    estado.rn:
+        nome: RN
+
+    estado.ro:
+        nome: RO
+
+    estado.rr:
+        nome: RR
+
+    estado.rs:
+        nome: RS
+
+    estado.sc:
+        nome: SC
+
+    estado.se:
+        nome: SE
+
+    estado.sp:
+        nome: SP
+
+    estado.to:
+        nome: TO
+

@@ -1,17 +1,21 @@
 services:
+    guzzle_client:
+        class: GuzzleHttp\Client
+
     rest_client:
         class: chegamos\rest\client\Guzzle
+        arguments:
+            - @guzzle_client
 
-    apontador_api_basic_auth:
-        class: chegamos\rest\auth\BasicAuth
+    apontador_api_access_token:
+        class: chegamos\rest\auth\AccessToken
         arguments: 
-            - %apontador_api_consumer_key%
-            - %apontador_api_consumer_secret%
+            - %apontador_api_access_token%
 
     chegamos_config:
         class: chegamos\entity\Config
         calls:
-            - [setBasicAuth, [@apontador_api_basic_auth]]
+            - [setAccessToken, [@apontador_api_access_token]]
             - [setRestClient, [@rest_client]]
             - [setBaseUrl, [%apontador_api_base_url%]]
 
