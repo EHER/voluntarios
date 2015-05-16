@@ -8,33 +8,31 @@ jms_i18n_routing:
     strategy: custom
 
 framework:
-    #esi:             ~
-    #translator:      { fallback: %locale% }
-    secret:          %secret%
+    #esi: ~
+    #translator: { fallback: %locale% }
+    secret: %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: %kernel.debug%
-    form:            ~
+    form: ~
     csrf_protection: ~
-    validation:      { enable_annotations: true }
+    validation: { enable_annotations: true }
     templating:
         engines: ['twig']
         #assets_version: SomeVersionScheme
-    default_locale:  "%locale%"
+    default_locale: "%locale%"
     trusted_proxies: ~
-    session:         ~
-    fragments:       ~
+    session: ~
+    fragments: ~
     translator: { fallback: pt_BR }
 
-# Twig Configuration
 twig:
-    debug:            %kernel.debug%
+    debug: %kernel.debug%
     strict_variables: %kernel.debug%
     form:
         resources:
             - "::forms.html.twig"
 
-# Assetic Configuration
 assetic:
     debug:          %kernel.debug%
     use_controller: false
@@ -47,7 +45,6 @@ assetic:
         #yui_css:
         #    jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
 
-# Doctrine Configuration
 doctrine:
     dbal:
         driver:   %database_driver%
@@ -57,34 +54,37 @@ doctrine:
         user:     %database_user%
         password: %database_password%
         charset:  UTF8
-        # if using pdo_sqlite as your database driver, add the path in parameters.yml
-        # e.g. database_path: %kernel.root_dir%/data/data.db3
-        path:     %database_path%
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
 
-# Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%
-    host:      %mailer_host%
-    port:      %mailer_port%
-    username:  %mailer_user%
-    password:  %mailer_password%
-    auth_mode:  %mailer_auth_mode%
-    encryption: %mailer_encryption%
-    logging:  "%kernel.debug%"
-    spool:
-        type: memory
+    host: %mailer_host%
+    port: %mailer_port%
+    username: %mailer_user%
+    password: %mailer_password%
+    #auth_mode: %mailer_auth_mode%
+    #encryption: %mailer_encryption%
+    #logging:  "%kernel.debug%"
+    #spool:
+    #    type: memory
 
 knp_paginator:
-    page_range: 5                      # default page range used in pagination control
+    page_range: 5
     default_options:
-        page_name: page                # page query parameter name
-        sort_field_name: sort          # sort field query parameter name
-        sort_direction_name: direction # sort direction query parameter name
-        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+        page_name: page
+        sort_field_name: sort
+        sort_direction_name: direction
+        distinct: true
     template:
         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+
+fos_oauth_server:
+    db_driver: orm
+    client_class: Eher\QueroSerVoluntario\Bundle\SecurityBundle\Entity\Client
+    access_token_class: Eher\QueroSerVoluntario\Bundle\SecurityBundle\Entity\AccessToken
+    refresh_token_class: Eher\QueroSerVoluntario\Bundle\SecurityBundle\Entity\RefreshToken
+    auth_code_class: Eher\QueroSerVoluntario\Bundle\SecurityBundle\Entity\AuthCode

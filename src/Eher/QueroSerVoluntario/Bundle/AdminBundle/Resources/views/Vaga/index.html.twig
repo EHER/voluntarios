@@ -1,0 +1,62 @@
+{% extends "EherQueroSerVoluntarioFrontendBundle::layout.html.twig" %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Lista de Vagas{% endtrans %}{% endblock %}
+{% block content %}
+    <h1>{% trans %}Lista de Vagas{% endtrans %}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(entities, 'Id', 'vaga.id') }}</th>
+                <th{% if entities.isSorted('vaga.nome') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Nome'|trans, 'vaga.nome') }}</th>
+                <th{% if entities.isSorted('entidade.nome') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Entidade'|trans, 'entidade.nome') }}</th>
+                <th{% if entities.isSorted('vaga.createdAt') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(entities, 'Cadastro'|trans, 'vaga.createdAt') }}</th>
+                <th class="col-md-1">{% trans %}Ações{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('vaga_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nome }}</td>
+                <td><a href="{{ path('entidade_show', { 'id': entity.entidade.id }) }}">{{ entity.entidade }}</a></td>
+                <td>{{ entity.createdAt|date }}</td>
+                <td>
+                    <div class="dropdown enum-dropdown">
+                        <a data-toggle="dropdown" href="#">{% trans %}Ações{% endtrans %} <span class="caret"></a>
+                        <ol class="dropdown-menu enum-dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li>
+                                <a href="{{ path('vaga_show', { 'id': entity.id }) }}">{% trans %}ver{% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('vaga_edit', { 'id': entity.id }) }}">{% trans %}editar{% endtrans %}</a>
+                            </li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation text-center">
+        {{ knp_pagination_render(entities) }}
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('vaga_new') }}">
+                {% trans %}Novo cadastro{% endtrans %}
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        require([
+            'shortcut/action-menu',
+            'shortcut/pagination',
+            'shortcut/table'
+        ]);
+    </script>
+{% endblock %}

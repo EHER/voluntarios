@@ -1,22 +1,18 @@
-EherQueroSerVoluntarioBundle:
-    resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing.yml"
+eher_quero_ser_voluntario_admin:
+    resource: "@EherQueroSerVoluntarioAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+eher_quero_ser_voluntario_api:
+    resource: "@EherQueroSerVoluntarioApiBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+eher_quero_ser_voluntario_auth:
+    resource: "@EherQueroSerVoluntarioSecurityBundle/Resources/config/routing.yml"
     prefix:   /
 
-EherQueroSerVoluntarioBundle_voluntario:
-    resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/voluntario.yml"
-    prefix:   /admin/voluntarios
-
-EherQueroSerVoluntarioBundle_entidade:
-    resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/entidade.yml"
-    prefix:   /admin/entidades
-
-EherQueroSerVoluntarioBundle_vaga:
-    resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/vaga.yml"
-    prefix:   /admin/vagas
-
-EherQueroSerVoluntarioBundle_mensagem:
-    resource: "@EherQueroSerVoluntarioBundle/Resources/config/routing/mensagem.yml"
-    prefix:   /admin/mensagens
+eher_quero_ser_voluntario_frontend:
+    resource: "@EherQueroSerVoluntarioFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
 
 # Internal routing configuration to handle ESI
 #_internal:

@@ -1,0 +1,17 @@
+mensagem:
+    path: /
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioAdminBundle:Mensagem:index.html.twig"
+
+mensagem_welcome:
+    path: /bem-vindo
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Mensagem:welcome" }
+
+mensagem_recomendation:
+    path: /recomendacao
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Mensagem:recomendation" }
+
+mensagem_news:
+    path: /novidades
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Mensagem:news" }

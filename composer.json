@@ -1,15 +1,24 @@
 {
+    "name": "eher/voluntarios",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
     },
     "minimum-stability": "dev",
     "require": {
-        "php": "~5.5",
         "doctrine/doctrine-bundle": "*",
+        "doctrine/doctrine-migrations-bundle": "*@dev",
+        "doctrine/migrations": "*@dev",
         "doctrine/orm": "*",
         "eher/chegamos-lib": "~2.0",
+        "fp/jsformvalidator-bundle": "*",
         "jms/di-extra-bundle": "*",
         "jms/i18n-routing-bundle": "*",
+        "knplabs/knp-paginator-bundle": "*",
         "sensio/distribution-bundle": "*",
         "sensio/framework-extra-bundle": "*",
         "sensio/generator-bundle": "*",
@@ -18,14 +27,11 @@
         "symfony/swiftmailer-bundle": "*",
         "symfony/symfony": "*",
         "twig/extensions": "*",
-        "knplabs/knp-paginator-bundle": "*",
-        "fp/jsformvalidator-bundle": "*",
-        "doctrine/migrations": "*@dev",
-        "doctrine/doctrine-migrations-bundle": "*@dev",
-        "h4cc/alice-fixtures-bundle": "0.5.*"
+        "friendsofsymfony/oauth-server-bundle": "~1.4@dev",
+        "renanivo/authoritarian": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.3",
+        "phpunit/phpunit": "*",
         "phpspec/phpspec": "*"
     },
     "scripts": {
@@ -42,7 +48,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ]
     },
-    "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"

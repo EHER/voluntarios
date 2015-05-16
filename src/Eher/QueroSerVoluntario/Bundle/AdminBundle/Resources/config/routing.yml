@@ -1,0 +1,16 @@
+EherQueroSerVoluntarioBundle_voluntario:
+    resource: "@EherQueroSerVoluntarioAdminBundle/Resources/config/routing/voluntario.yml"
+    prefix:   /admin/voluntarios
+
+EherQueroSerVoluntarioBundle_entidade:
+    resource: "@EherQueroSerVoluntarioAdminBundle/Resources/config/routing/entidade.yml"
+    prefix:   /admin/entidades
+
+EherQueroSerVoluntarioBundle_vaga:
+    resource: "@EherQueroSerVoluntarioAdminBundle/Resources/config/routing/vaga.yml"
+    prefix:   /admin/vagas
+
+EherQueroSerVoluntarioBundle_mensagem:
+    resource: "@EherQueroSerVoluntarioAdminBundle/Resources/config/routing/mensagem.yml"
+    prefix:   /admin/mensagens
+

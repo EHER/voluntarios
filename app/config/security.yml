@@ -1,20 +1,40 @@
 security:
-    encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
+        - { path: ^/, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
 
-    providers:
-        in_memory:
-            memory:
-                users:
-                    %admin_web_username%: { password: %admin_web_password%, roles: 'ROLE_ADMIN' }
+    encoders:
+        Eher\QueroSerVoluntario\Bundle\SecurityBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
 
     firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        oauth_token:
+            pattern: ^/oauth/v2/token
+            security: false
+
+        oauth_authorize:
+            pattern: ^/oauth/v2/auth
+            anonymous: true
+
         secured_area:
-            pattern:    ^/
+            pattern: ^/
             anonymous: ~
             form_login: ~
             logout: ~
 
-    access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
+        api:
+            pattern: ^/api
+            fos_oauth: true
+            stateless: true
 
+    providers:
+        user_db:
+            entity:
+                class: Eher\QueroSerVoluntario\Bundle\SecurityBundle\Entity\User
+                property: email

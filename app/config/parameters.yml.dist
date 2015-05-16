@@ -22,7 +22,4 @@ parameters:
     apontador_api_base_url: %apontador.api.baseurl%
     apontador_api_access_token: %apontador.api.accesstoken%
 
-    admin_web_username: %admin.web.user%
-    admin_web_password: %admin.web.password%
-
     contact_email: %contact.email%

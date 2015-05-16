@@ -1,0 +1,3 @@
+eher_quero_ser_voluntario_api_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EherQueroSerVoluntarioApiBundle:Default:index }

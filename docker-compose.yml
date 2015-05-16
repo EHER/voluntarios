@@ -1,0 +1,34 @@
+web:
+    build: .
+    links:
+        - db
+    ports:
+        - "8000:8000"
+    volumes:
+        - $PWD:/usr/src/queroSerVoluntario
+    environment:
+        - SYMFONY__DATABASE__DRIVER
+        - SYMFONY__DATABASE__HOST
+        - SYMFONY__DATABASE__USER
+        - SYMFONY__DATABASE__PORT
+        - SYMFONY__DATABASE__NAME
+        - SYMFONY__DATABASE__PASSWORD
+        - SYMFONY__DATABASE__SOCKET
+        - SYMFONY__DATABASE__PATH
+        - SYMFONY__MAILER__TRANSPORT
+        - SYMFONY__MAILER__HOST
+        - SYMFONY__MAILER__PORT
+        - SYMFONY__MAILER__USER
+        - SYMFONY__MAILER__PASSWORD
+        - SYMFONY__MAILER__AUTH__MODE
+        - SYMFONY__MAILER__ENCRYPTION
+        - SYMFONY__FRAMEWORK__LOCALE
+        - SYMFONY__FRAMEWORK__SECRET
+        - SYMFONY__APONTADOR__API__BASEURL
+        - SYMFONY__APONTADOR__API__ACCESSTOKEN
+        - SYMFONY__CONTACT__EMAIL
+
+db:
+    image: mysql
+    environment:
+        - MYSQL_ROOT_PASSWORD

@@ -10,7 +10,12 @@ class AppKernel extends Kernel
         $bundles = array(
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
-            new Eher\QueroSerVoluntario\Bundle\EherQueroSerVoluntarioBundle(),
+            new Eher\QueroSerVoluntario\Bundle\AdminBundle\EherQueroSerVoluntarioAdminBundle(),
+            new Eher\QueroSerVoluntario\Bundle\ApiBundle\EherQueroSerVoluntarioApiBundle(),
+            new Eher\QueroSerVoluntario\Bundle\SecurityBundle\EherQueroSerVoluntarioSecurityBundle(),
+            new Eher\QueroSerVoluntario\Bundle\DomainBundle\EherQueroSerVoluntarioDomainBundle(),
+            new Eher\QueroSerVoluntario\Bundle\FrontendBundle\EherQueroSerVoluntarioFrontendBundle(),
+            new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Fp\JsFormValidatorBundle\FpJsFormValidatorBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
@@ -31,7 +36,6 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
-            $bundles[] = new h4cc\AliceFixturesBundle\h4ccAliceFixturesBundle();
         }
 
         return $bundles;

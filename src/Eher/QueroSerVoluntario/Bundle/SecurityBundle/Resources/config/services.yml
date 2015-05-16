@@ -1,0 +1,4 @@
+services:
+#    eher_quero_ser_voluntario_security.example:
+#        class: Eher\QueroSerVoluntario\Bundle\SecurityBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

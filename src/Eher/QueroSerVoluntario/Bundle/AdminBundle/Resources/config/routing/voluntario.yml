@@ -1,0 +1,40 @@
+voluntario_new:
+    path:  /cadastrar
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:new" }
+    requirements: { _method: get }
+
+voluntario_create:
+    path:  /
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:create" }
+    requirements: { _method: post }
+
+voluntario:
+    path:  /
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:index" }
+    requirements: { _method: get }
+
+voluntario_show:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:show" }
+    requirements: { _method: get }
+
+voluntario_edit:
+    path:  /{id}/editar
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:edit" }
+    requirements: { _method: get }
+
+voluntario_update:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:update" }
+    requirements: { _method: post|put }
+
+voluntario_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:delete" }
+    requirements: { _method: delete }
+
+voluntario_mail:
+    path:  /{id}/mail
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Voluntario:mail" }
+    requirements: { _method: post }
+

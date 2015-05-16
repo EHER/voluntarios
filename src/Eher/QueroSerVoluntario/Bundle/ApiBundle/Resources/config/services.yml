@@ -1,0 +1,4 @@
+services:
+#    eher_quero_ser_voluntario_api.example:
+#        class: Eher\QueroSerVoluntario\Bundle\ApiBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

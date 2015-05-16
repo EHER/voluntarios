@@ -1,0 +1,72 @@
+admin:
+    path:  /admin
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioAdminBundle:Admin:home.html.twig"
+
+homepage:
+    path:  /
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioFrontendBundle:Default:home.html.twig"
+
+sobre:
+    path:  /sobre
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioFrontendBundle:Default:sobre.html.twig"
+
+contato:
+    path:  /contato
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioFrontendBundle:Default:contato.html.twig"
+
+buscar:
+    path:  /entidades
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:buscarEntidade" }
+    requirements: { _method: get }
+
+entidades:
+    path:  /{stateName}/{cityName}
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:entidadesByCityAndState" }
+    requirements:
+            stateName: \w\w
+
+voluntario_cadastrar:
+    path:  /voluntarios/cadastrar
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:newVoluntarioForm" }
+
+voluntario_criar:
+    path:  /voluntarios
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:createVoluntario" }
+    requirements: { _method: post }
+
+voluntario_parabens:
+    path:  /voluntarios/parabens
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioFrontendBundle:Default:voluntarioParabens.html.twig"
+
+entidade_cadastrar:
+    path:  /entidades/cadastrar
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:newEntidadeForm" }
+
+entidade_criar:
+    path:  /entidades
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:createEntidade" }
+    requirements: { _method: post }
+
+entidade_parabens:
+    path:  /entidades/parabens
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        template: "EherQueroSerVoluntarioFrontendBundle:Default:entidadeParabens.html.twig"
+
+brasil:
+    path:  /brasil
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Estado:index" }
+
+cidade_em_estado:
+    path:  /cidades/em/{estado}
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Cidade:emEstado" }

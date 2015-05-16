@@ -1,0 +1,34 @@
+entidade_new:
+    path:  /cadastrar
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Entidade:new" }
+    requirements: { _method: get }
+
+entidade_create:
+    path:  /
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Entidade:create" }
+    requirements: { _method: post }
+
+entidade:
+    path:  /
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Entidade:index" }
+    requirements: { _method: get }
+
+entidade_show:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Entidade:show" }
+    requirements: { _method: get }
+
+entidade_edit:
+    path:  /{id}/editar
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Entidade:edit" }
+    requirements: { _method: get }
+
+entidade_update:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Entidade:update" }
+    requirements: { _method: post|put }
+
+entidade_delete:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Entidade:delete" }
+    requirements: { _method: delete }

@@ -1,0 +1,33 @@
+vaga_new:
+    path:  /cadastrar
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Vaga:new" }
+    requirements: { _method: get }
+
+vaga_create:
+    path:  /
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Vaga:create" }
+    requirements: { _method: post }
+
+vaga:
+    path:  /
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Vaga:index" }
+
+vaga_show:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Vaga:show" }
+    requirements: { _method: get }
+
+vaga_edit:
+    path:  /{id}/editar
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Vaga:edit" }
+    requirements: { _method: get }
+
+vaga_update:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Vaga:update" }
+    requirements: { _method: post|put }
+
+vaga_delete:
+    path:  /{id}
+    defaults: { _controller: "EherQueroSerVoluntarioAdminBundle:Vaga:delete" }
+    requirements: { _method: delete }

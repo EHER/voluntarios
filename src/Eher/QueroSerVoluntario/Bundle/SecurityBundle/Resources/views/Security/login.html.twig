@@ -1,0 +1,17 @@
+{% extends "EherQueroSerVoluntarioFrontendBundle::layout.html.twig" %}
+{% block title %}Quero ser Voluntário{% endblock %}
+{% block content %}
+    {% if error %}
+        <div>{{ error }}</div>
+    {% endif %}
+
+    <form action="{{ path('login_check') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password" />
+
+        <input type="submit" name="login" />
+    </form>
+{% endblock %}

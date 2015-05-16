@@ -22,7 +22,4 @@ parameters:
     apontador_api_base_url: fake_value
     apontador_api_access_token: fake_value
 
-    admin_web_username: fake_value
-    admin_web_password: fake_value
-
     contact_email: fake_value
