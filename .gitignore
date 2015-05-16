@@ -9,7 +9,6 @@
 /app/config/parameters.yml
 /app/logs
 /bin
-/composer.phar
 /vendor
 /web/bundles
 credentials
