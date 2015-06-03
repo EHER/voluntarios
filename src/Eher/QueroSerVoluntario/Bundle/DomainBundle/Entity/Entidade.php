@@ -22,28 +22,28 @@ class Entidade
     /**
      * @var string $nome
      *
-     * @ORM\Column(name="nome", type="string", length=50)
+     * @ORM\Column(name="nome", type="string", length=100)
      */
     private $nome;
 
     /**
      * @var string $endereco
      *
-     * @ORM\Column(name="endereco", type="string", length=50)
+     * @ORM\Column(name="endereco", type="string", length=100, nullable=true)
      */
     private $endereco;
 
     /**
      * @var string $cep
      *
-     * @ORM\Column(name="cep", type="string", length=9)
+     * @ORM\Column(name="cep", type="string", length=9, nullable=true)
      */
     private $cep;
 
     /**
      * @var string $bairro
      *
-     * @ORM\Column(name="bairro", type="string", length=50)
+     * @ORM\Column(name="bairro", type="string", length=50, nullable=true)
      */
     private $bairro;
 
@@ -57,23 +57,44 @@ class Entidade
     /**
      * @var string $telefone
      *
-     * @ORM\Column(name="telefone", type="string", length=50)
+     * @ORM\Column(name="telefone", type="string", length=50, nullable=true)
      */
     private $telefone;
 
     /**
      * @var string $site
      *
-     * @ORM\Column(name="site", type="string", length=200)
+     * @ORM\Column(name="site", type="string", length=200, nullable=true)
      */
     private $site;
 
     /**
      * @var string $email
      *
-     * @ORM\Column(name="email", type="string", length=50)
+     * @ORM\Column(name="email", type="string", length=50, nullable=true)
      */
     private $email;
+
+    /**
+     * @var string $contato
+     *
+     * @ORM\Column(name="contato", type="string", length=50, nullable=true)
+     */
+    private $contato;
+
+    /**
+     * @var string $latitude
+     *
+     * @ORM\Column(name="latitude", type="decimal", precision=18, scale=12, nullable=true)
+     */
+    private $latitude;
+
+    /**
+     * @var string $longitude
+     *
+     * @ORM\Column(name="longitude", type="decimal", precision=18, scale=12, nullable=true)
+     */
+    private $longitude;
 
     /**
      * @ORM\Column(name="created_at", type="datetime")
@@ -251,6 +272,22 @@ class Entidade
     }
 
     /**
+     * @param string $contato
+     */
+    public function setContato($contato)
+    {
+        $this->contato = $contato;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContato()
+    {
+        return $this->contato;
+    }
+
+    /**
      * Set email
      *
      * @param string $email
@@ -268,6 +305,38 @@ class Entidade
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * @param string $latitude
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * @param string $longitude
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
     }
 
     /**

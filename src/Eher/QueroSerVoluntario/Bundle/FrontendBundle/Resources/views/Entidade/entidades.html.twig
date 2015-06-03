@@ -1,11 +1,10 @@
 {% extends "EherQueroSerVoluntarioFrontendBundle::layout.html.twig" %}
-{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Entidades em{% endtrans %} {{ cityName|title }} - {{ stateName|upper }}{% endblock %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Entidades em{% endtrans %} {{ cidade|title }} - {{ estado|upper }}{% endblock %}
 {% block content %}
-    <h2>{% trans %}Entidades em{% endtrans %} {{ cityName|title }} - {{ stateName|upper }}</h2>
-    <p><a href="{{ path('cidade_em_estado', {'estado': stateName}) }}">{% trans %}Mudar cidade{% endtrans %}</a></p>
-    {% if search %}
+    <h2>{% trans %}Entidades em{% endtrans %} {{ cidade|title }} - {{ estado|upper }}</h2>
+    <p><a href="{{ path('cidade_em_estado', {'estado': estado}) }}">{% trans %}Mudar cidade{% endtrans %}</a></p>
         <div class="col-md-8">
-            {% if search.getNumFound > 0 %}
+            {% if search|length > 0 %}
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -15,18 +14,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for place in search.getItems %}
+                        {% for entity in search %}
                             <tr>
-                                <td> {{ place.name }} </td>
-                                <td> {{ place.address.toOneLine }} </td>
-                                <td> {{ place.phone }} </td>
+                                <td> {{ entity.nome }} </td>
+                                <td> {{ entity.endereco }} </td>
+                                <td> {{ entity.telefone }} </td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             {% else %}
                 <h4>{% trans %}Nenhuma entidade cadastrada{% endtrans %}</h4>
-                <p>{% trans %}No momento não temos entidades cadastradas em{% endtrans %} {{ cityName|title }}.</p>
+                <p>{% trans %}No momento não temos entidades cadastradas em{% endtrans %} {{ cidade|title }}.</p>
                 <p>{% trans %}Você pode{% endtrans %}:
                 <ul>
                     <li>
@@ -34,8 +33,6 @@
                     </li>
                     <li>{% trans %}Adicionar uma entidade no{% endtrans %} <a href="{{ path('entidade_cadastrar') }}">{% trans %}Cadastro de Entidade{% endtrans %}</a></li>
                 </ul>
-                </br>
-            {% endif %}
         </div>
     {% endif %}
 {% endblock %}

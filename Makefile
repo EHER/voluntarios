@@ -1,30 +1,44 @@
-default:
-	@echo "install\t\t"
-	@echo "update\t\t"
-	@echo "test\t\t"
-	@echo "translation\t\t"
-	@echo "clear\t\t"
-	@echo "perms\t\t"
-	@echo "config\t\t"
-	@echo "dummy-config\t\t"
-	@echo "deb\t\t"
-	@echo "database\t\t"
-	@echo "migrations\t\t"
-	@echo "server\t\t"
+default: help
 
-clear: _remove-cache-files
+build: _docker-build-image
+clear: _remove-cache-files _remove-log-files
 config: _create-config
 database: _create-database _run-migrations
-reset: _drop-database database
 deb: _debian-package
+deploy: _ensure-that-db-is-running _docker-update-containers
 dummy-config: _create-dummy-config
+help: _display-avaiable-commands
 install: _composer-install perms
+logs: _tail-logs
 migrations: _run-migrations
 perms: _cache-perms _logs-perms
+reset: _drop-database database
+server: _debug database _run-server
 test: _run-phpunit _run-phpspec _run-npm_test
 translation: _extract-translation-for-locale
 update: _composer-self-update _composer-update perms
-server: database _run-server
+
+_docker-build-image: install clear
+	docker-compose build --no-cache
+
+_ensure-that-db-is-running:
+	docker-compose up -d db
+
+_docker-update-containers:
+	docker-compose stop nginx
+	docker-compose stop php code
+	docker-compose rm --force php code nginx
+	docker-compose up -d php code
+	docker-compose up -d nginx
+	docker-compose up -d
+
+_display-avaiable-commands:
+	@echo "Usage:"
+	@echo "     make [command]"
+	@echo ""
+	@echo "Available commands:"
+	@grep -v '^_' Makefile | grep '^[^#[:space:]].*:' | grep -v '^default' | sed 's/:\(.*\)//' | xargs -n 1 echo ' -'
+	@echo ""
 
 _composer-self-update:
 	php bin/composer self-update
@@ -51,6 +65,9 @@ _symfony-clear:
 _remove-cache-files:
 	rm -rf app/cache/*
 
+_remove-log-files:
+	rm -rf app/logs/*
+
 _logs-perms:
 	mkdir -p app/logs
 	chmod -R 777 app/logs
@@ -61,8 +78,8 @@ _cache-perms:
 
 _create-config:
 	cp -v app/config/parameters.yml.dist app/config/parameters.yml
-	cp -v app/config/parameters.sh.dist app/config/parameters.sh
-	cp -v app/config/parameters.fish.dist app/config/parameters.fish
+	cp -v .envrc.dist .envrc
+	direnv allow .
 
 _create-dummy-config:
 	cp -v app/config/parameters.yml.dummy app/config/parameters.yml
@@ -84,6 +101,9 @@ _run-migrations:
 
 _run-server:
 	php app/console server:run --env=prod 0:8000
+
+_tail-logs:
+	tail -f app/logs/*
 
 _debug:
 	@echo SYMFONY__DATABASE__DRIVER=${SYMFONY__DATABASE__DRIVER}

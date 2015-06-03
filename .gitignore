@@ -1,7 +1,4 @@
-*.db3
-.DS_Store
-.idea
-.vagrant/
+.envrc
 /app/bootstrap.php.cache
 /app/cache
 /app/config/parameters.fish
@@ -9,6 +6,6 @@
 /app/config/parameters.yml
 /app/logs
 /bin
+/docker/logs
 /vendor
 /web/bundles
-credentials

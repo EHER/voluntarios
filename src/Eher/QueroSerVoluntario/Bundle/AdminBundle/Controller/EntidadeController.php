@@ -5,16 +5,8 @@ use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Entidade;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Form\EntidadeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-/**
- * Entidade controller.
- *
- */
 class EntidadeController extends Controller
 {
-    /**
-     * Lists all Entidade entities.
-     *
-     */
     public function indexAction()
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -33,15 +25,11 @@ class EntidadeController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a Entidade entity.
-     *
-     */
     public function showAction($id)
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $entityManager->getRepository('EherQueroSerVoluntarioAdminBundle:Entidade')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioDomainBundle:Entidade')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Entidade entity.');
@@ -56,10 +44,6 @@ class EntidadeController extends Controller
         ));
     }
 
-    /**
-     * Displays a form to create a new Entidade entity.
-     *
-     */
     public function newAction()
     {
         $entity = new Entidade();
@@ -75,10 +59,6 @@ class EntidadeController extends Controller
         ));
     }
 
-    /**
-     * Creates a new Entidade entity.
-     *
-     */
     public function createAction()
     {
         $entity  = new Entidade();
@@ -102,15 +82,11 @@ class EntidadeController extends Controller
         ));
     }
 
-    /**
-     * Displays a form to edit an existing Entidade entity.
-     *
-     */
     public function editAction($id)
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $entityManager->getRepository('EherQueroSerVoluntarioAdminBundle:Entidade')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioDomainBundle:Entidade')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Entidade entity.');
@@ -126,15 +102,11 @@ class EntidadeController extends Controller
         ));
     }
 
-    /**
-     * Edits an existing Entidade entity.
-     *
-     */
     public function updateAction($id)
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $entity = $entityManager->getRepository('EherQueroSerVoluntarioAdminBundle:Entidade')->find($id);
+        $entity = $entityManager->getRepository('EherQueroSerVoluntarioDomainBundle:Entidade')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Entidade entity.');
@@ -161,10 +133,6 @@ class EntidadeController extends Controller
         ));
     }
 
-    /**
-     * Deletes a Entidade entity.
-     *
-     */
     public function deleteAction($id)
     {
         $form = $this->createDeleteForm($id);
@@ -174,7 +142,7 @@ class EntidadeController extends Controller
 
         if ($form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entity = $entityManager->getRepository('EherQueroSerVoluntarioAdminBundle:Entidade')->find($id);
+            $entity = $entityManager->getRepository('EherQueroSerVoluntarioDomainBundle:Entidade')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Entidade entity.');

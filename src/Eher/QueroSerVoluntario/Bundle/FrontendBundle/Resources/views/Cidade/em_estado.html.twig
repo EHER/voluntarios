@@ -7,7 +7,7 @@
     <ul>
     {% for entity in entities %}
         <li>
-            <a href="{{ path('entidades', { 'cityName': entity.slug, 'stateName': entity.estado.nome|lower }) }}">{{ entity.nome }}</a>
+            <a href="{{ path('entidades', { 'cidade': entity.slug, 'estado': entity.estado.nome|lower }) }}">{{ entity.nome }}</a>
         </li>
     {% endfor %}
     </ul>

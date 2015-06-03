@@ -24,12 +24,7 @@ class User implements UserInterface, Serializable
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=32)
-     */
-    private $salt;
-
-    /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=60)
      */
     private $password;
 
@@ -41,7 +36,6 @@ class User implements UserInterface, Serializable
     public function __construct()
     {
         $this->isAdmin = false;
-        $this->salt = md5(uniqid(null, true));
     }
 
     public function getId()
@@ -62,12 +56,7 @@ class User implements UserInterface, Serializable
      */
     public function getSalt()
     {
-        return $this->salt;
-    }
-
-    public function setSalt($salt)
-    {
-        $this->salt = $salt;
+        return null;
     }
 
     /**

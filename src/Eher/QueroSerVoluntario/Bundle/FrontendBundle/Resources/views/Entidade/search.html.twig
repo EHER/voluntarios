@@ -6,33 +6,33 @@
         <form role="form">
             <div class="form-group">
                     <label for="cidade">{% trans %}Cidade{% endtrans %}</label>
-                    <input name="cidade" type="text" class="form-control" value="{{ cityName }}" placeholder="{% trans %}Exemplo{% endtrans %}: São Paulo"/>
+                    <input name="cidade" type="text" class="form-control" value="{{ cidade }}" placeholder="{% trans %}Exemplo{% endtrans %}: São Paulo"/>
             </div>
 
             <div class="form-group">
                     <label for="estado">{% trans %}Estado{% endtrans %}</label>
-                    <input name="estado" type="text" class="form-control" value="{{ stateName }}" placeholder="{% trans %}Exemplo{% endtrans %}: SP"/>
+                    <input name="estado" type="text" class="form-control" value="{{ estado }}" placeholder="{% trans %}Exemplo{% endtrans %}: SP"/>
             </div>
             <button type="submit" class="btn btn-primary">{% trans %}Buscar{% endtrans %}</button>
         </form>
     </div>
     {% if search %}
         <div class="col-md-8">
-            {% if search.getNumFound > 0 %}
+            {% if search|length > 0 %}
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Endereço</th>
-                            <th class="col-md-2">Telefone</th>
+                            <th>{% trans %}Nome{% endtrans %}</th>
+                            <th>{% trans %}Endereço{% endtrans %}</th>
+                            <th class="col-md-2">{% trans %}Telefone{% endtrans %}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for place in search.getItems %}
+                        {% for entity in search %}
                             <tr>
-                                <td>{{ place.name }}</td>
-                                <td>{{ place.address.toOneLine}} </td>
-                                <td>{{ place.phone }}</td>
+                                <td>{{ entity.nome }}</td>
+                                <td>{{ entity.endereco }} </td>
+                                <td>{{ entity.telefone }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>

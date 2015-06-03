@@ -1,5 +1,4 @@
 <?php
-
 namespace Eher\QueroSerVoluntario\Bundle\FrontendBundle\Controller;
 
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Entidade;
@@ -8,76 +7,9 @@ use Eher\QueroSerVoluntario\Bundle\DomainBundle\Form\EntidadeType;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Form\VoluntarioType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use chegamos\entity\Address;
-use chegamos\entity\City;
-use chegamos\entity\Config;
-use chegamos\entity\Place;
-use chegamos\entity\repository\PlaceRepository;
-use chegamos\entity\repository\UserRepository;
-use chegamos\rest\auth\BasicAuth;
-use chegamos\rest\client\Guzzle as RestClient;
 
 class DefaultController extends Controller
 {
-    public function buscarEntidadeAction(Request $request)
-    {
-        $search = null;
-        $cityName = $request->query->get('cidade');
-        $stateName = $request->query->get('estado');
-
-        if (!empty($cityName) && !empty($stateName)) {
-            $city = new City();
-            $city->setName($cityName);
-            $city->setState($stateName);
-
-            $address = new Address();
-            $address->setCity($city);
-
-            $search = $this->get('place_repository')
-                ->byAddress($address)
-                ->byListId(25)
-                ->getAll();
-        }
-
-        return $this->render(
-            'EherQueroSerVoluntarioFrontendBundle:Default:buscarEntidade.html.twig',
-            [
-                'cityName' => $cityName,
-                'stateName' => $stateName,
-                'search' => $search,
-            ]
-        );
-    }
-
-    public function entidadesByCityAndStateAction($cityName, $stateName)
-    {
-        $search = null;
-        $cityName = str_replace('-', ' ', $cityName);
-
-        if (!empty($cityName) && !empty($stateName)) {
-            $city = new City();
-            $city->setName($cityName);
-            $city->setState($stateName);
-
-            $address = new Address();
-            $address->setCity($city);
-
-            $search = $this->get('place_repository')
-                ->byAddress($address)
-                ->byListId(25)
-                ->getAll();
-        }
-
-        return $this->render(
-            'EherQueroSerVoluntarioFrontendBundle:Default:entidades.html.twig',
-            array(
-                'cityName' => $cityName,
-                'stateName' => $stateName,
-                'search' => $search,
-            )
-        );
-    }
-
     public function newVoluntarioFormAction()
     {
         $entity = new Voluntario();

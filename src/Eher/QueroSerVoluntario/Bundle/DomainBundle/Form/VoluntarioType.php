@@ -3,7 +3,7 @@ namespace Eher\QueroSerVoluntario\Bundle\DomainBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class VoluntarioType extends AbstractType
 {
@@ -18,7 +18,7 @@ class VoluntarioType extends AbstractType
         ;
     }
 
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Voluntario'

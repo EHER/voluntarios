@@ -5,16 +5,8 @@ use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Voluntario;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Form\VoluntarioType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-/**
- * Voluntario controller.
- *
- */
 class VoluntarioController extends Controller
 {
-    /**
-     * Lists all Voluntario entities.
-     *
-     */
     public function indexAction()
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -28,15 +20,11 @@ class VoluntarioController extends Controller
             10
         );
 
-        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:index.html.twig', array(
+        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:index.html.twig', [
             'entities' => $entities
-        ));
+        ]);
     }
 
-    /**
-     * Finds and displays a Voluntario entity.
-     *
-     */
     public function showAction($id)
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -49,17 +37,13 @@ class VoluntarioController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:show.html.twig', array(
+        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:show.html.twig', [
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
 
-        ));
+        ]);
     }
 
-    /**
-     * Displays a form to create a new Voluntario entity.
-     *
-     */
     public function newAction()
     {
         $entity = new Voluntario();
@@ -69,16 +53,12 @@ class VoluntarioController extends Controller
             ['action' => $this->generateUrl('voluntario_create')]
         );
 
-        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:new.html.twig', array(
+        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:new.html.twig', [
             'entity' => $entity,
             'form'   => $form->createView()
-        ));
+        ]);
     }
 
-    /**
-     * Creates a new Voluntario entity.
-     *
-     */
     public function createAction()
     {
         $entity  = new Voluntario();
@@ -103,10 +83,10 @@ class VoluntarioController extends Controller
             );
         }
 
-        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:new.html.twig', array(
+        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:new.html.twig', [
             'entity' => $entity,
             'form'   => $form->createView()
-        ));
+        ]);
     }
 
     /**
@@ -126,11 +106,11 @@ class VoluntarioController extends Controller
         $editForm = $this->createForm(new VoluntarioType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EherQueroSerVoluntarioFrontendBundle:Voluntario:edit.html.twig', array(
+        return $this->render('EherQueroSerVoluntarioAdminBundle:Voluntario:edit.html.twig', [
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -158,14 +138,14 @@ class VoluntarioController extends Controller
             $entityManager->persist($entity);
             $entityManager->flush();
 
-            return $this->redirect($this->generateUrl('voluntario_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('voluntario_edit', ['id' => $id]));
         }
 
-        return $this->render('EherQueroSerVoluntarioFrontendBundle:Voluntario:edit.html.twig', array(
+        return $this->render('EherQueroSerVoluntarioFrontendBundle:Voluntario:edit.html.twig', [
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+        ]);
     }
 
     public function mailAction($id)
@@ -222,7 +202,7 @@ class VoluntarioController extends Controller
 
     private function createDeleteForm($id)
     {
-        return $this->createFormBuilder(array('id' => $id))
+        return $this->createFormBuilder(['id' => $id])
             ->add('id', 'hidden')
             ->getForm()
         ;

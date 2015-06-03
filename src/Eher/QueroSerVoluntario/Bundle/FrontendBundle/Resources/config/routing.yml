@@ -24,14 +24,14 @@ contato:
 
 buscar:
     path:  /entidades
-    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:buscarEntidade" }
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Entidade:search" }
     requirements: { _method: get }
 
 entidades:
-    path:  /{stateName}/{cityName}
-    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:entidadesByCityAndState" }
+    path:  /{estado}/{cidade}
+    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Entidade:cityAndState" }
     requirements:
-            stateName: \w\w
+            estado: \w\w
 
 voluntario_cadastrar:
     path:  /voluntarios/cadastrar

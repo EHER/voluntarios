@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "953e92b50165862041f569e867d209d9",
+    "hash": "e80efba08456bcb49cf9f80f966c868a",
     "packages": [
+        {
+            "name": "cspoo/swiftmailer-mailgun-bundle",
+            "version": "dev-master",
+            "target-dir": "cspoo/Swiftmailer/MailgunBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tehplague/swiftmailer-mailgun-bundle.git",
+                "reference": "c7e50cf32a979cc09a2681d97f29e4dd05f96026"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tehplague/swiftmailer-mailgun-bundle/zipball/c0e661092f80e601e49cbc5bc22a4ff68bdec45c",
+                "reference": "c7e50cf32a979cc09a2681d97f29e4dd05f96026",
+                "shasum": ""
+            },
+            "require": {
+                "mailgun/mailgun-php": ">=1.7",
+                "php": ">=5.3.2"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "cspoo\\Swiftmailer\\MailgunBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Spoo",
+                    "email": "mail@christian-spoo.info",
+                    "homepage": "http://www.christian-spoo.info/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Swiftmailer Mailgun bundle",
+            "homepage": "https://github.com/tehplague/swiftmailer-mailgun-bundle",
+            "keywords": [
+                "e-mail",
+                "mailgun",
+                "swiftmailer"
+            ],
+            "time": "2015-04-20 07:12:13"
+        },
         {
             "name": "doctrine/annotations",
             "version": "dev-master",
@@ -364,7 +410,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/1c6b83570bba40a5ab562373ebb9dd8e4d1a348c",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/0b9e27037c4fdbad515ee5ec89842e9091a6480f",
                 "reference": "1c6b83570bba40a5ab562373ebb9dd8e4d1a348c",
                 "shasum": ""
             },
@@ -525,7 +571,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMigrationsBundle/zipball/6a1bd731dbdd4ad952a3b246a8f38c9c12f52e62",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMigrationsBundle/zipball/1e8cd4415bd2f893eb828216b529a75e8b61d579",
                 "reference": "6a1bd731dbdd4ad952a3b246a8f38c9c12f52e62",
                 "shasum": ""
             },
@@ -758,7 +804,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/a4f14d3a3d397104e557ec65d1a4e43bb86e4ddf",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/abb87d84ed21fd30c27bd3b52252a495a36d32fb",
                 "reference": "a4f14d3a3d397104e557ec65d1a4e43bb86e4ddf",
                 "shasum": ""
             },
@@ -884,48 +930,6 @@
                 "orm"
             ],
             "time": "2015-05-07 12:36:20"
-        },
-        {
-            "name": "eher/chegamos-lib",
-            "version": "2.0.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/EHER/chegamos-lib.git",
-                "reference": "bc6f330fd36c6b5af1c4a8222849a5054534eb9f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/EHER/chegamos-lib/zipball/bc6f330fd36c6b5af1c4a8222849a5054534eb9f",
-                "reference": "bc6f330fd36c6b5af1c4a8222849a5054534eb9f",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~5.0",
-                "php": "~5.3"
-            },
-            "require-dev": {
-                "hamcrest/hamcrest-php": "~1.2",
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "chegamos": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Alexandre Eher",
-                    "email": "alexandre@eher.com.br"
-                }
-            ],
-            "description": "Core do Chegamos (https://github.com/EHER/chegamos) para ser usado em outros projetos :D",
-            "time": "2014-12-25 21:24:28"
         },
         {
             "name": "fp/jsformvalidator-bundle",
@@ -1284,7 +1288,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/2498ee848cd01639aecdcf3d5a257bace8665b7c",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/9465032ac5d6beaa55f10923403e6e1c36018d9c",
                 "reference": "2498ee848cd01639aecdcf3d5a257bace8665b7c",
                 "shasum": ""
             },
@@ -1530,7 +1534,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSDiExtraBundle/zipball/cd1c5a439a9c636e4a120e760adfd35e61eb4469",
+                "url": "https://api.github.com/repos/schmittjoh/JMSDiExtraBundle/zipball/36f8b06e34e55582be59c810eac855396fc57221",
                 "reference": "cd1c5a439a9c636e4a120e760adfd35e61eb4469",
                 "shasum": ""
             },
@@ -1850,7 +1854,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/5990419ed9cfb54fac4a4b63056c3cd2ceb2f14a",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/800eb12f225573869b6f04d77a6e329a6da9110f",
                 "reference": "5990419ed9cfb54fac4a4b63056c3cd2ceb2f14a",
                 "shasum": ""
             },
@@ -1974,6 +1978,47 @@
                 "minification"
             ],
             "time": "2015-03-02 19:47:30"
+        },
+        {
+            "name": "mailgun/mailgun-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mailgun/mailgun-php.git",
+                "reference": "225e8005950027df22fc5f5b1ada58f4ad116d60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mailgun/mailgun-php/zipball/225e8005950027df22fc5f5b1ada58f4ad116d60",
+                "reference": "225e8005950027df22fc5f5b1ada58f4ad116d60",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.0"
+            },
+            "require-dev": {
+                "php": ">=5.4.0",
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mailgun\\Tests": "tests/",
+                    "Mailgun": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Travis Swientek",
+                    "email": "travis@mailgunhq.com"
+                }
+            ],
+            "description": "The Mailgun SDK provides methods for all API functions.",
+            "time": "2015-05-06 17:52:51"
         },
         {
             "name": "monolog/monolog",
@@ -2236,7 +2281,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/79b820aee1f1daeb2717fa9471ee19275cc1d638",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/e971317e2e4f9f94d1f972948e612e45e64d708f",
                 "reference": "0fe4ec86db57c232becb694e01cdabe3c4d9af7c",
                 "shasum": ""
             },
@@ -2296,7 +2341,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/98871b3397e258dd9d16d65023268e6baa0202cf",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/a30fc18bf147bc25faf6b1d54bf55cfad4b63cba",
                 "reference": "98871b3397e258dd9d16d65023268e6baa0202cf",
                 "shasum": ""
             },
@@ -2398,7 +2443,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cecb1397087dc9c733796eda6e9d121336039cdc",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/2c2a71f1c77d9765c12638c4724d9ca23658a810",
                 "reference": "cecb1397087dc9c733796eda6e9d121336039cdc",
                 "shasum": ""
             },
@@ -2495,7 +2540,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/4bfd74e41d6d3d153b5de402604ab637fb88917a",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/4282ddd31ff2a0f7f91c90d42ef3947b23b8e4a3",
                 "reference": "4bfd74e41d6d3d153b5de402604ab637fb88917a",
                 "shasum": ""
             },
@@ -2560,7 +2605,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/64c314c3465256b15e00b1743df544bba028338e",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/0d7387b2a41375fefe46c7bd122d403333eaee90",
                 "reference": "64c314c3465256b15e00b1743df544bba028338e",
                 "shasum": ""
             },
@@ -2619,7 +2664,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/b5281c8cacdea3eab8c80c88df9e00fde1ea2b34",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/a77136d0b51593fd498d0bc2b738673723247d9f",
                 "reference": "b5281c8cacdea3eab8c80c88df9e00fde1ea2b34",
                 "shasum": ""
             },
@@ -2676,7 +2721,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/4b71fe031039a38719de5c6253a142a3bd81997f",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/2983ecbf3d74900e49981cca002957aa88f8a74a",
                 "reference": "88b7e7ce599c0c8bb808e1ae1d0dac8afb61cb8f",
                 "shasum": ""
             },
@@ -2900,6 +2945,48 @@
     ],
     "packages-dev": [
         {
+            "name": "eher/chegamos-lib",
+            "version": "2.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EHER/chegamos-lib.git",
+                "reference": "bc6f330fd36c6b5af1c4a8222849a5054534eb9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EHER/chegamos-lib/zipball/bc6f330fd36c6b5af1c4a8222849a5054534eb9f",
+                "reference": "bc6f330fd36c6b5af1c4a8222849a5054534eb9f",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.0",
+                "php": "~5.3"
+            },
+            "require-dev": {
+                "hamcrest/hamcrest-php": "~1.2",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "chegamos": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandre Eher",
+                    "email": "alexandre@eher.com.br"
+                }
+            ],
+            "description": "Core do Chegamos (https://github.com/EHER/chegamos) para ser usado em outros projetos :D",
+            "time": "2014-12-25 21:24:28"
+        },
+        {
             "name": "phpdocumentor/reflection-docblock",
             "version": "dev-master",
             "source": {
@@ -2993,7 +3080,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/73d0335bf8473be8bcfab5a9d66adce8d0db3857",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/6634a08350971e316c058441e87b5649753dbffe",
                 "reference": "73d0335bf8473be8bcfab5a9d66adce8d0db3857",
                 "shasum": ""
             },
@@ -3071,7 +3158,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/5a355f91730c845301a9e28f91c8a5053353c496",
                 "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
                 "shasum": ""
             },
@@ -3131,7 +3218,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9ef4b8cbf3e839a44a9b375d8c59e109ac7aa020",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/120e97abe4297f7a76b5c8896335cb5e94e0f08d",
                 "reference": "9ef4b8cbf3e839a44a9b375d8c59e109ac7aa020",
                 "shasum": ""
             },
@@ -3447,7 +3534,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/74ffb87f527f24616f72460e54b595f508dccb5c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/253c005852591fd547fc18cd5b7b43a1ec82d8f7",
                 "reference": "74ffb87f527f24616f72460e54b595f508dccb5c",
                 "shasum": ""
             },
@@ -3862,6 +3949,58 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2015-02-24 06:35:25"
+        },
+        {
+            "name": "symfony/phpunit-bridge",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/phpunit-bridge.git",
+                "reference": "242cbb7b4cb7b15c4987a59e85543bdfa8a4c720"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/242cbb7b4cb7b15c4987a59e85543bdfa8a4c720",
+                "reference": "242cbb7b4cb7b15c4987a59e85543bdfa8a4c720",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "suggest": {
+                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+            },
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Bridge\\PhpUnit\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony PHPUnit Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2015-05-12 15:48:43"
         }
     ],
     "aliases": [],
@@ -3870,7 +4009,9 @@
         "doctrine/doctrine-migrations-bundle": 20,
         "doctrine/migrations": 20,
         "friendsofsymfony/oauth-server-bundle": 20,
-        "renanivo/authoritarian": 20
+        "renanivo/authoritarian": 20,
+        "cspoo/swiftmailer-mailgun-bundle": 20,
+        "symfony/phpunit-bridge": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

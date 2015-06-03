@@ -12,9 +12,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Eher\QueroSerVoluntario\Bundle\AdminBundle\EherQueroSerVoluntarioAdminBundle(),
             new Eher\QueroSerVoluntario\Bundle\ApiBundle\EherQueroSerVoluntarioApiBundle(),
-            new Eher\QueroSerVoluntario\Bundle\SecurityBundle\EherQueroSerVoluntarioSecurityBundle(),
             new Eher\QueroSerVoluntario\Bundle\DomainBundle\EherQueroSerVoluntarioDomainBundle(),
             new Eher\QueroSerVoluntario\Bundle\FrontendBundle\EherQueroSerVoluntarioFrontendBundle(),
+            new Eher\QueroSerVoluntario\Bundle\SecurityBundle\EherQueroSerVoluntarioSecurityBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Fp\JsFormValidatorBundle\FpJsFormValidatorBundle(),
             new JMS\AopBundle\JMSAopBundle(),
@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new cspoo\Swiftmailer\MailgunBundle\cspooSwiftmailerMailgunBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

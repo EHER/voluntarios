@@ -5,21 +5,11 @@ parameters:
     database_name: sqlite_database
     database_user: fake_value
     database_password: fake_value
-    database_unix_socket: fake_value
-    database_path: %kernel.root_dir%/../database.db3
 
-    mailer_transport: smtp
-    mailer_host: fake_value
-    mailer_port: fake_value
-    mailer_user: fake_value
-    mailer_password: fake_value
-    mailer_auth_mode:  login
-    mailer_encryption: tls
+    mailgun_key:
+    mailgun_domain:
 
     locale: fake_value
     secret: fake_value
-
-    apontador_api_base_url: fake_value
-    apontador_api_access_token: fake_value
 
     contact_email: fake_value

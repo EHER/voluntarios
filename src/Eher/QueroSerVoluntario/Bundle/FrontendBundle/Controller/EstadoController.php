@@ -4,30 +4,16 @@ namespace Eher\QueroSerVoluntario\Bundle\FrontendBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Estado;
 
-/**
- * Estado controller.
- *
- */
 class EstadoController extends Controller
 {
-    /**
-     * Lists all Estado entities.
-     *
-     */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository(Estado::class)->findAll();
 
-        return $this->render('EherQueroSerVoluntarioFrontendBundle:Estado:index.html.twig', array(
-            'entities' => $entities
-        ));
+        return $this->render('EherQueroSerVoluntarioFrontendBundle:Estado:index.html.twig', ['entities' => $entities]);
     }
 
-    /**
-     * Finds and displays a Estado entity.
-     *
-     */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -42,5 +28,4 @@ class EstadoController extends Controller
             'entity'      => $entity,
         ));
     }
-
 }

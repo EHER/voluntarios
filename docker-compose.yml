@@ -1,34 +1,38 @@
-web:
+code:
     build: .
     links:
         - db
+
+php:
+    build: docker/php-fpm
+    volumes_from:
+        - code
+    links:
+        - db
+
+nginx:
+    build: docker/nginx
+    volumes_from:
+        - code
+    links:
+        - php
     ports:
-        - "8000:8000"
-    volumes:
-        - $PWD:/usr/src/queroSerVoluntario
+        - 81:80
     environment:
-        - SYMFONY__DATABASE__DRIVER
-        - SYMFONY__DATABASE__HOST
-        - SYMFONY__DATABASE__USER
-        - SYMFONY__DATABASE__PORT
-        - SYMFONY__DATABASE__NAME
-        - SYMFONY__DATABASE__PASSWORD
-        - SYMFONY__DATABASE__SOCKET
-        - SYMFONY__DATABASE__PATH
-        - SYMFONY__MAILER__TRANSPORT
-        - SYMFONY__MAILER__HOST
-        - SYMFONY__MAILER__PORT
-        - SYMFONY__MAILER__USER
-        - SYMFONY__MAILER__PASSWORD
-        - SYMFONY__MAILER__AUTH__MODE
-        - SYMFONY__MAILER__ENCRYPTION
-        - SYMFONY__FRAMEWORK__LOCALE
-        - SYMFONY__FRAMEWORK__SECRET
-        - SYMFONY__APONTADOR__API__BASEURL
-        - SYMFONY__APONTADOR__API__ACCESSTOKEN
-        - SYMFONY__CONTACT__EMAIL
+        - VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com
 
 db:
-    image: mysql
+    image: mysql:5.7
     environment:
         - MYSQL_ROOT_PASSWORD
+    ports:
+        - 3306:3306
+
+loadbalancer:
+    image: jwilder/nginx-proxy
+    volumes:
+        - /var/run/docker.sock:/tmp/docker.sock
+    links:
+        - nginx
+    ports:
+        - 80:80

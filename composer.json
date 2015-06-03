@@ -14,7 +14,6 @@
         "doctrine/doctrine-migrations-bundle": "*@dev",
         "doctrine/migrations": "*@dev",
         "doctrine/orm": "*",
-        "eher/chegamos-lib": "~2.0",
         "fp/jsformvalidator-bundle": "*",
         "jms/di-extra-bundle": "*",
         "jms/i18n-routing-bundle": "*",
@@ -28,11 +27,13 @@
         "symfony/symfony": "*",
         "twig/extensions": "*",
         "friendsofsymfony/oauth-server-bundle": "~1.4@dev",
-        "renanivo/authoritarian": "dev-master"
+        "renanivo/authoritarian": "dev-master",
+        "cspoo/swiftmailer-mailgun-bundle": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "phpspec/phpspec": "*"
+        "phpspec/phpspec": "*",
+        "symfony/phpunit-bridge": "^3.0@dev"
     },
     "scripts": {
         "post-install-cmd": [

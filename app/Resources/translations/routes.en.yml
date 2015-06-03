@@ -13,6 +13,15 @@ cidade_em_estado: '/cidades/in/{estado}'
 # Desc: /contato
 contato: /contact
 
+# Desc: /api/hello/{name}
+eher_quero_ser_voluntario_api_homepage: '/api/hello/{name}'
+
+# Desc: /oauth/v2/auth_login_check
+eher_quero_ser_voluntario_auth_check: /oauth/v2/auth_login_check
+
+# Desc: /oauth/v2/auth_login
+eher_quero_ser_voluntario_auth_login: /oauth/v2/auth_login
+
 # Desc: /admin/entidades/
 entidade: /admin/entities
 
@@ -43,8 +52,14 @@ entidade_show: '/admin/entities/{id}'
 # Desc: /admin/entidades/{id}
 entidade_update: '/admin/entities/{id}'
 
-# Desc: /{stateName}/{cityName}
-entidades: '/{stateName}/{cityName}/en'
+# Desc: /{estado}/{cidade}
+entidades: '/{estado}/{cidade}/en'
+
+# Desc: /oauth/v2/auth
+fos_oauth_server_authorize: /oauth/v2/auth
+
+# Desc: /oauth/v2/token
+fos_oauth_server_token: /oauth/v2/token
 
 # Desc: /
 homepage: /en

@@ -5,21 +5,11 @@ parameters:
     database_name: %database.name%
     database_user: %database.user%
     database_password: %database.password%
-    database_unix_socket: %database.socket%
-    database_path: %database.path%
 
-    mailer_transport: %mailer.transport%
-    mailer_host: %mailer.host%
-    mailer_port: %mailer.port%
-    mailer_user: %mailer.user%
-    mailer_password: %mailer.password%
-    mailer_auth_mode:  %mailer.auth.mode%
-    mailer_encryption: %mailer.encryption%
+    mailgun_key: %mailgun.key%
+    mailgun_domain: %mailgun.domain%
 
     locale: %framework.locale%
     secret: %framework.secret%
-
-    apontador_api_base_url: %apontador.api.baseurl%
-    apontador_api_access_token: %apontador.api.accesstoken%
 
     contact_email: %contact.email%
