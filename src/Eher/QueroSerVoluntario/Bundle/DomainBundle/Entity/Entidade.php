@@ -29,14 +29,14 @@ class Entidade
     /**
      * @var string $endereco
      *
-     * @ORM\Column(name="endereco", type="string", length=100, nullable=true)
+     * @ORM\Column(name="endereco", type="string", length=200, nullable=true)
      */
     private $endereco;
 
     /**
      * @var string $cep
      *
-     * @ORM\Column(name="cep", type="string", length=9, nullable=true)
+     * @ORM\Column(name="cep", type="string", length=30, nullable=true)
      */
     private $cep;
 
@@ -57,7 +57,7 @@ class Entidade
     /**
      * @var string $telefone
      *
-     * @ORM\Column(name="telefone", type="string", length=50, nullable=true)
+     * @ORM\Column(name="telefone", type="string", length=100, nullable=true)
      */
     private $telefone;
 
