@@ -43,7 +43,7 @@ class Entidade
     /**
      * @var string $bairro
      *
-     * @ORM\Column(name="bairro", type="string", length=50, nullable=true)
+     * @ORM\Column(name="bairro", type="string", length=100, nullable=true)
      */
     private $bairro;
 
