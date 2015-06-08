@@ -16,7 +16,7 @@
             <button type="submit" class="btn btn-primary">{% trans %}Buscar{% endtrans %}</button>
         </form>
     </div>
-    {% if search %}
+    {% if search is not null %}
         <div class="col-md-8">
             {% if search|length > 0 %}
                 <table class="table table-bordered table-striped">
@@ -24,7 +24,7 @@
                         <tr>
                             <th>{% trans %}Nome{% endtrans %}</th>
                             <th>{% trans %}Endereço{% endtrans %}</th>
-                            <th class="col-md-2">{% trans %}Telefone{% endtrans %}</th>
+                            <th class="col-md-3">{% trans %}Telefone{% endtrans %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,7 +32,7 @@
                             <tr>
                                 <td>{{ entity.nome }}</td>
                                 <td>{{ entity.endereco }} </td>
-                                <td>{{ entity.telefone }}</td>
+                                <td>{{ entity.telefone|replace({' - ': "\n"}) }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>

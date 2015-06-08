@@ -10,15 +10,15 @@
                         <tr>
                             <th>{% trans %}Nome{% endtrans %}</th>
                             <th>{% trans %}Endereço{% endtrans %}</th>
-                            <th class="col-md-2">{% trans %}Telefone{% endtrans %}</th>
+                            <th class="col-md-3">{% trans %}Telefone{% endtrans %}</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for entity in search %}
                             <tr>
-                                <td> {{ entity.nome }} </td>
-                                <td> {{ entity.endereco }} </td>
-                                <td> {{ entity.telefone }} </td>
+                                <td>{{ entity.nome }}</td>
+                                <td>{{ entity.endereco }}</td>
+                                <td>{{ entity.telefone|replace({' - ': "\n"})|nl2br }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
