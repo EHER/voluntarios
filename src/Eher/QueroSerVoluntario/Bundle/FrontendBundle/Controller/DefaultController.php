@@ -54,42 +54,4 @@ class DefaultController extends Controller
             'form'   => $form->createView()
         ));
     }
-
-    public function newEntidadeFormAction()
-    {
-        $entity = new Entidade();
-        $form   = $this->createForm(
-            new EntidadeType(),
-            $entity,
-            ['action' => $this->generateUrl('entidade_criar')]
-        );
-
-        return $this->render('EherQueroSerVoluntarioFrontendBundle:Default:newEntidadeForm.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        ));
-    }
-
-    public function createEntidadeAction()
-    {
-        $entity  = new Entidade();
-        $request = $this->getRequest();
-        $form    = $this->createForm(new EntidadeType(), $entity);
-        $form->bind($request);
-
-        if ($form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($entity);
-            $entityManager->flush();
-
-            return $this->redirect(
-                $this->generateUrl('entidade_parabens')
-            );
-        }
-
-        return $this->render('EherQueroSerVoluntarioFrontendBundle:Entidade:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        ));
-    }
 }

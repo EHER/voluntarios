@@ -83,18 +83,25 @@ class Entidade
     private $contato;
 
     /**
-     * @var string $latitude
+     * @var int $latitude
      *
      * @ORM\Column(name="latitude", type="decimal", precision=18, scale=12, nullable=true)
      */
     private $latitude;
 
     /**
-     * @var string $longitude
+     * @var int $longitude
      *
      * @ORM\Column(name="longitude", type="decimal", precision=18, scale=12, nullable=true)
      */
     private $longitude;
+
+    /**
+     * @var int $geohash
+     *
+     * @ORM\Column(name="geohash", type="string", length=12, nullable=true)
+     */
+    private $geohash;
 
     /**
      * @ORM\Column(name="created_at", type="datetime")

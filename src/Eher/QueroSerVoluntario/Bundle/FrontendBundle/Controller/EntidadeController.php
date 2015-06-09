@@ -1,14 +1,21 @@
 <?php
 namespace Eher\QueroSerVoluntario\Bundle\FrontendBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Entidade;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Eher\QueroSerVoluntario\Bundle\DomainBundle\Form\EntidadeType;
 
 class EntidadeController extends Controller
 {
     private $search;
 
+    /**
+     * @Route("/entidades", name="buscar")
+     * @Method("GET")
+     */
     public function searchAction(Request $request)
     {
         $cidade = $request->query->get('cidade');
@@ -37,6 +44,13 @@ class EntidadeController extends Controller
         );
     }
 
+    /**
+     * @Route("/{estado}/{cidade}", name="entidades", requirements={
+     *      "estado": "[a-z]{2}",
+     *      "cidade": "[a-z-]+",
+     * })
+     * @Method("GET")
+     */
     public function cityAndStateAction($cidade, $estado)
     {
         $em = $this->getDoctrine()->getManager();
@@ -60,27 +74,73 @@ class EntidadeController extends Controller
         );
     }
 
-    public function indexAction()
+    /**
+     * @Route("/entidades/{geohash}", name="entidade_geohash", requirements={
+     *      "geohash": "[\w]+",
+     * })
+     * @Method("GET")
+     */
+    public function geohashAction($geohash)
     {
         $em = $this->getDoctrine()->getManager();
-        $entities = $em->getRepository(Entidade::class)->findAll();
+        $this->search = $em->getRepository(Entidade::class)->createQueryBuilder('en')
+            ->where('en.geohash like :geohash')
+            ->setParameter('geohash', $geohash . '%')
+            ->getQuery()
+            ->getResult();
 
-        return $this->render('EherQueroSerVoluntarioFrontendBundle:Entidade:index.html.twig', array(
-            'entities' => $entities
+        return $this->render(
+            'EherQueroSerVoluntarioFrontendBundle:Entidade:geohash.html.twig',
+            array(
+                'title' => '',
+                'search' => $this->search,
+            )
+        );
+    }
+
+    /**
+     * @Route("/entidades/cadastrar", name="entidade_cadastrar")
+     * @Method("GET")
+     */
+    public function formAction()
+    {
+        return $this->render('EherQueroSerVoluntarioFrontendBundle:Entidade:new.html.twig', [
+            'entity' => new Entidade(),
+            'form' => $this->createForm(new EntidadeType())->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/entidades/cadastrar", name="entidade_create")
+     * @Method("POST")
+     */
+    public function createAction(Request $request)
+    {
+        $form = $this->createForm(new EntidadeType());
+        $form->bind($request);
+
+        if ($form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($form->getData());
+            $entityManager->flush();
+
+            return $this->redirect(
+                $this->generateUrl('entidade_parabens')
+            );
+        }
+
+        return $this->render('EherQueroSerVoluntarioFrontendBundle:Entidade:new.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView()
         ));
     }
 
-    public function showAction($id)
+    /**
+     * @Route("/entidades/parabens", name="entidade_parabens")
+     * @Method("GET")
+     */
+    public function parabensAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $entity = $em->getRepository(Entidade::class)->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Entidade entity.');
-        }
-
-        return $this->render('EherQueroSerVoluntarioFrontendBundle:Entidade:show.html.twig', [
-            'entity'      => $entity,
-        ]);
+        return $this->render('EherQueroSerVoluntarioFrontendBundle:Entidade:parabens.html.twig');
     }
 }

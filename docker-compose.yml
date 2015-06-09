@@ -19,8 +19,6 @@ nginx:
         - code
     links:
         - php
-    ports:
-        - 81:80
     environment:
         - VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com
 

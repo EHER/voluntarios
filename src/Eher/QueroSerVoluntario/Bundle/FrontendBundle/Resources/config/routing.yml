@@ -1,8 +1,6 @@
-admin:
-    path:  /admin
-    defaults:
-        _controller: "FrameworkBundle:Template:template"
-        template: "EherQueroSerVoluntarioAdminBundle:Admin:home.html.twig"
+app:
+    resource: "@EherQueroSerVoluntarioFrontendBundle/Controller/"
+    type: annotation
 
 homepage:
     path:  /
@@ -22,17 +20,6 @@ contato:
         _controller: "FrameworkBundle:Template:template"
         template: "EherQueroSerVoluntarioFrontendBundle:Default:contato.html.twig"
 
-buscar:
-    path:  /entidades
-    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Entidade:search" }
-    requirements: { _method: get }
-
-entidades:
-    path:  /{estado}/{cidade}
-    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Entidade:cityAndState" }
-    requirements:
-            estado: \w\w
-
 voluntario_cadastrar:
     path:  /voluntarios/cadastrar
     defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:newVoluntarioForm" }
@@ -47,21 +34,6 @@ voluntario_parabens:
     defaults:
         _controller: "FrameworkBundle:Template:template"
         template: "EherQueroSerVoluntarioFrontendBundle:Default:voluntarioParabens.html.twig"
-
-entidade_cadastrar:
-    path:  /entidades/cadastrar
-    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:newEntidadeForm" }
-
-entidade_criar:
-    path:  /entidades
-    defaults: { _controller: "EherQueroSerVoluntarioFrontendBundle:Default:createEntidade" }
-    requirements: { _method: post }
-
-entidade_parabens:
-    path:  /entidades/parabens
-    defaults:
-        _controller: "FrameworkBundle:Template:template"
-        template: "EherQueroSerVoluntarioFrontendBundle:Default:entidadeParabens.html.twig"
 
 brasil:
     path:  /brasil

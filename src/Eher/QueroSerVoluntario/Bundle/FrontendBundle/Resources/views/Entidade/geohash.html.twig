@@ -1,0 +1,36 @@
+{% extends "EherQueroSerVoluntarioFrontendBundle::layout.html.twig" %}
+{% block title %}{% trans %}Quero ser Voluntário{% endtrans %} - {% trans %}Entidades{% endtrans %}{% endblock %}
+{% block content %}
+    <h2>{% trans %}Entidades{% endtrans %}</h2>
+        <div class="col-md-8">
+            {% if search|length > 0 %}
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>{% trans %}Nome{% endtrans %}</th>
+                            <th>{% trans %}Endereço{% endtrans %}</th>
+                            <th class="col-md-3">{% trans %}Telefone{% endtrans %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entity in search %}
+                            <tr>
+                                <td>{{ entity.nome }}</td>
+                                <td>{{ entity.endereco }}</td>
+                                <td>{{ entity.telefone|replace({' - ': "\n"})|nl2br }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4>{% trans %}Nenhuma entidade encontrada{% endtrans %}</h4>
+                <p>{% trans %}Você pode{% endtrans %}:
+                <ul>
+                    <li>
+                        {% trans %}Fazer o{% endtrans %} <a href="{{ path('voluntario_cadastrar') }}">{% trans %}Cadastro de Voluntário{% endtrans %}</a> {% trans %}para que possamos encontrar uma oportunidade para você{% endtrans %}</p>
+                    </li>
+                    <li>{% trans %}Adicionar uma entidade no{% endtrans %} <a href="{{ path('entidade_cadastrar') }}">{% trans %}Cadastro de Entidade{% endtrans %}</a></li>
+                </ul>
+        </div>
+    {% endif %}
+{% endblock %}
