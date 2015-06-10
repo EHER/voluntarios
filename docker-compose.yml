@@ -1,12 +1,11 @@
 code:
     build: .
-    mem_limit: 32m
     links:
         - db
 
 php:
     build: docker/php-fpm
-    mem_limit: 64m
+    mem_limit: 128m
     volumes_from:
         - code
     links:
