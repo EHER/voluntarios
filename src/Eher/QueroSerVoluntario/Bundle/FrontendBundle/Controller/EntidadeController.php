@@ -75,30 +75,6 @@ class EntidadeController extends Controller
     }
 
     /**
-     * @Route("/entidades/{geohash}", name="entidade_geohash", requirements={
-     *      "geohash": "[\w]+",
-     * })
-     * @Method("GET")
-     */
-    public function geohashAction($geohash)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $this->search = $em->getRepository(Entidade::class)->createQueryBuilder('en')
-            ->where('en.geohash like :geohash')
-            ->setParameter('geohash', $geohash . '%')
-            ->getQuery()
-            ->getResult();
-
-        return $this->render(
-            'EherQueroSerVoluntarioFrontendBundle:Entidade:geohash.html.twig',
-            array(
-                'title' => '',
-                'search' => $this->search,
-            )
-        );
-    }
-
-    /**
      * @Route("/entidades/cadastrar", name="entidade_cadastrar")
      * @Method("GET")
      */
@@ -142,5 +118,29 @@ class EntidadeController extends Controller
     public function parabensAction()
     {
         return $this->render('EherQueroSerVoluntarioFrontendBundle:Entidade:parabens.html.twig');
+    }
+
+    /**
+     * @Route("/entidades/{geohash}", name="entidade_geohash", requirements={
+     *      "geohash": "[\w]{4,12}",
+     * })
+     * @Method("GET")
+     */
+    public function geohashAction($geohash)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $this->search = $em->getRepository(Entidade::class)->createQueryBuilder('en')
+            ->where('en.geohash like :geohash')
+            ->setParameter('geohash', $geohash . '%')
+            ->getQuery()
+            ->getResult();
+
+        return $this->render(
+            'EherQueroSerVoluntarioFrontendBundle:Entidade:geohash.html.twig',
+            array(
+                'title' => '',
+                'search' => $this->search,
+            )
+        );
     }
 }
