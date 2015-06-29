@@ -5,7 +5,6 @@ use Eher\QueroSerVoluntario\Bundle\Entity\Cidade;
 use Eher\QueroSerVoluntario\Bundle\Entity\Estado;
 use Eher\QueroSerVoluntario\Bundle\Entity\Voluntario;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class MailManagerSpec extends ObjectBehavior
 {
