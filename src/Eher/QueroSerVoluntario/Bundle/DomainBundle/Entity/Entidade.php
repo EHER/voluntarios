@@ -211,7 +211,7 @@ class Entidade
     /**
      * Get cidade
      *
-     * @return string
+     * @return Cidade
      */
     public function getCidade()
     {
@@ -323,7 +323,7 @@ class Entidade
     }
 
     /**
-     * @return string
+     * @return integer
      */
     public function getLatitude()
     {
@@ -339,7 +339,7 @@ class Entidade
     }
 
     /**
-     * @return string
+     * @return integer
      */
     public function getLongitude()
     {

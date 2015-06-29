@@ -1,12 +1,9 @@
 <?php
 namespace Eher\QueroSerVoluntario\Bundle\FrontendBundle\Controller;
 
-use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Entidade;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Voluntario;
-use Eher\QueroSerVoluntario\Bundle\DomainBundle\Form\EntidadeType;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Form\VoluntarioType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
