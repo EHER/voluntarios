@@ -1,11 +1,11 @@
 default: help
 
-build: _docker-build-image
+build: clear _drop-database _docker-build-image
 clear: _remove-cache-files _remove-log-files
 config: _create-config
-database: _create-database _run-migrations
+database: _run-migrations
 deb: _debian-package
-deploy: _ensure-that-db-is-running _docker-update-containers
+deploy: _docker-update-containers
 dummy-config: _create-dummy-config
 help: _display-avaiable-commands
 install: _composer-install perms
@@ -19,10 +19,7 @@ translation: _extract-translation-for-locale
 update: _composer-self-update _composer-update perms
 
 _docker-build-image: install clear
-	docker-compose build --no-cache
-
-_ensure-that-db-is-running:
-	docker-compose up -d db
+	docker-compose build
 
 _docker-update-containers:
 	docker-compose stop nginx
@@ -76,6 +73,10 @@ _cache-perms:
 	mkdir -p app/cache
 	chmod -R 777 app/cache
 
+_database-perms:
+	mkdir -p database
+	chmod -R 777 database
+
 _create-config:
 	cp -v app/config/parameters.yml.dist app/config/parameters.yml
 	cp -v .envrc.dist .envrc
@@ -92,9 +93,6 @@ _extract-translation-for-locale:
 
 _drop-database:
 	php app/console doctrine:database:drop --force
-
-_create-database:
-	php app/console doctrine:database:create --if-not-exists
 
 _run-migrations:
 	php app/console doctrine:migrations:migrate --no-interaction

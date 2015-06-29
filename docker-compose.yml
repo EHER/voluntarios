@@ -1,15 +1,12 @@
 code:
     build: .
-    links:
-        - db
+    mem_limit: 16m
 
 php:
     build: docker/php-fpm
     mem_limit: 128m
     volumes_from:
         - code
-    links:
-        - db
 
 nginx:
     build: docker/nginx
@@ -20,11 +17,3 @@ nginx:
         - php
     environment:
         - VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com
-
-db:
-    image: mysql:5.7
-    mem_limit: 256m
-    environment:
-        - MYSQL_ROOT_PASSWORD
-    ports:
-        - 3306:3306
