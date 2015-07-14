@@ -1,8 +1,8 @@
 FROM php:latest
 MAINTAINER Alexandre Eher <alexandre@eher.com.br>
 RUN echo 'date.timezone="GMT"' >> /usr/local/etc/php/php.ini
-RUN apt-get update && apt-get install -y zlib1g-dev libsqlite3-0 libsqlite3-dev git \
-    && docker-php-ext-install zip pdo_sqlite
+RUN apt-get update && apt-get install -y zlib1g-dev git \
+    && docker-php-ext-install zip
 VOLUME /var/www/symfony
 VOLUME /var/www/symfony/database
 COPY app /var/www/symfony/app

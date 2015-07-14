@@ -1,6 +1,6 @@
 default: help
 
-build: clear _drop-database _docker-build-image
+build: clear _docker-build-image
 clear: _remove-cache-files _remove-log-files
 config: _create-config
 database: _run-migrations
@@ -11,7 +11,7 @@ help: _display-avaiable-commands
 install: _composer-install perms
 logs: _tail-logs
 migrations: _run-migrations
-perms: _cache-perms _logs-perms
+perms: _cache-perms _logs-perms _database-perms
 reset: _drop-database database
 server: _debug database _run-server
 test: _run-phpunit _run-phpspec _run-npm_test
@@ -23,9 +23,11 @@ _docker-build-image: install clear
 
 _docker-update-containers:
 	docker-compose stop nginx
+	docker-compose stop nginxdebug
 	docker-compose stop php code
-	docker-compose rm --force php code nginx
+	docker-compose rm --force php code nginx nginxdebug
 	docker-compose up -d php code
+	docker-compose up -d nginxdebug
 	docker-compose up -d nginx
 	docker-compose up -d
 
@@ -75,6 +77,7 @@ _cache-perms:
 
 _database-perms:
 	mkdir -p database
+	touch database/sqlite.db
 	chmod -R 777 database
 
 _create-config:
