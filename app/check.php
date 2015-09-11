@@ -96,9 +96,6 @@ function echo_title($title, $style = null)
     echo PHP_EOL;
 }
 
-/**
- * @param string $message
- */
 function echo_style($style, $message)
 {
     // ANSI color codes

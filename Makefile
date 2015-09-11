@@ -18,7 +18,7 @@ test: _run-phpunit _run-phpspec _run-npm_test
 translation: _extract-translation-for-locale
 update: _composer-self-update _composer-update perms
 
-_docker-build-image: install clear
+_docker-build-image: clear
 	docker-compose build
 
 _docker-update-containers:

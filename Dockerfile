@@ -16,4 +16,4 @@ COPY composer.json /var/www/symfony/
 COPY composer.lock /var/www/symfony/
 COPY package.json /var/www/symfony/
 WORKDIR /var/www/symfony
-ENTRYPOINT ["make", "perms", "database", "logs"]
+ENTRYPOINT ["make", "perms", "composer-install", "database", "logs"]

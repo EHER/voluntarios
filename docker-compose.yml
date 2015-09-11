@@ -3,13 +3,11 @@ code:
 
 php:
     build: docker/php-fpm
-    mem_limit: 128m
     volumes_from:
         - code
 
 nginxdebug:
     build: docker/nginx-debug
-    mem_limit: 16m
     volumes_from:
         - code
     links:
@@ -19,7 +17,6 @@ nginxdebug:
 
 nginx:
     build: docker/nginx
-    mem_limit: 16m
     volumes_from:
         - code
     links:
