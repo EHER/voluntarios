@@ -4,16 +4,9 @@ namespace Eher\QueroSerVoluntario\Bundle\FrontendBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Eher\QueroSerVoluntario\Bundle\DomainBundle\Entity\Cidade;
 
-/**
- * Cidade controller.
- *
- */
+
 class CidadeController extends Controller
 {
-    /**
-     * Lists all Cidade entities.
-     *
-     */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -25,10 +18,6 @@ class CidadeController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a Cidade entity.
-     *
-     */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();

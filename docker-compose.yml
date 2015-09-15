@@ -1,19 +1,31 @@
+db:
+    build: docker/db
+    tty: true
+
 code:
     build: .
-    links:
+    volumes_from:
         - db
+    environment:
+        - SYMFONY__MAILGUN__KEY
+        - SYMFONY__MAILGUN__DOMAIN
+        - SYMFONY__FRAMEWORK__LOCALE
+        - SYMFONY__FRAMEWORK__SECRET
+        - SYMFONY__CONTACT__EMAIL
 
 php:
     build: docker/php-fpm
-    mem_limit: 128m
     volumes_from:
         - code
-    links:
-        - db
+    environment:
+        - SYMFONY__MAILGUN__KEY
+        - SYMFONY__MAILGUN__DOMAIN
+        - SYMFONY__FRAMEWORK__LOCALE
+        - SYMFONY__FRAMEWORK__SECRET
+        - SYMFONY__CONTACT__EMAIL
 
 nginx:
     build: docker/nginx
-    mem_limit: 16m
     volumes_from:
         - code
     links:
@@ -21,10 +33,11 @@ nginx:
     environment:
         - VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com
 
-db:
-    image: mysql:5.7
-    mem_limit: 256m
+nginxdebug:
+    build: docker/nginx-debug
+    volumes_from:
+        - code
+    links:
+        - php
     environment:
-        - MYSQL_ROOT_PASSWORD
-    ports:
-        - 3306:3306
+        - VIRTUAL_HOST=dev.queroservoluntario.com

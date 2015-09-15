@@ -1,0 +1,5 @@
+export SYMFONY__MAILGUN__KEY=
+export SYMFONY__MAILGUN__DOMAIN=
+export SYMFONY__FRAMEWORK__LOCALE=pt_BR
+export SYMFONY__FRAMEWORK__SECRET=$(openssl rand -base64 32)
+export SYMFONY__CONTACT__EMAIL=tequeremosvoluntario@gmail.com
