@@ -1,19 +1,28 @@
+db:
+    build: docker/db
+    tty: true
+
 code:
     build: .
+    volumes_from:
+        - db
+    environment:
+        - SYMFONY__MAILGUN__KEY
+        - SYMFONY__MAILGUN__DOMAIN
+        - SYMFONY__FRAMEWORK__LOCALE
+        - SYMFONY__FRAMEWORK__SECRET
+        - SYMFONY__CONTACT__EMAIL
 
 php:
     build: docker/php-fpm
     volumes_from:
         - code
-
-nginxdebug:
-    build: docker/nginx-debug
-    volumes_from:
-        - code
-    links:
-        - php
     environment:
-        - VIRTUAL_HOST=dev.queroservoluntario.com
+        - SYMFONY__MAILGUN__KEY
+        - SYMFONY__MAILGUN__DOMAIN
+        - SYMFONY__FRAMEWORK__LOCALE
+        - SYMFONY__FRAMEWORK__SECRET
+        - SYMFONY__CONTACT__EMAIL
 
 nginx:
     build: docker/nginx
@@ -23,3 +32,12 @@ nginx:
         - php
     environment:
         - VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com
+
+nginxdebug:
+    build: docker/nginx-debug
+    volumes_from:
+        - code
+    links:
+        - php
+    environment:
+        - VIRTUAL_HOST=dev.queroservoluntario.com

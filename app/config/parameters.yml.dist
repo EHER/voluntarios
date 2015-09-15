@@ -3,3 +3,4 @@ parameters:
     mailgun_domain: %mailgun.domain%
     locale: %framework.locale%
     secret: %framework.secret%
+    contact_email: %contact.email%
