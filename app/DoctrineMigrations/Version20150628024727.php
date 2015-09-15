@@ -1,14 +1,10 @@
 <?php
-
 namespace Application\Migrations;
 
 use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
 
-/**
- * Auto-generated Migration: Please modify to your needs!
- */
-class Version20150503222203 extends AbstractMigration
+class Version20150628024727 extends AbstractMigration
 {
     /**
      * @param Schema $schema
