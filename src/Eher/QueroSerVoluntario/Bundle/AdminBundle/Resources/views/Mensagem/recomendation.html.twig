@@ -18,9 +18,8 @@ Assim que aparecer alguma coisa entramos em contato.
 Tenho uma vaga disponível
 {%- endif -%}
 {%- if vagas|length > 1 -%}
-Essas são as vagas que tenho disponíveis
+Essas são as vagas que tenho disponíveis {{ cidade ? " para " }}{{ cidade|default("") }}:
 {%- endif -%}
-{{ cidade ? " para " }}{{ cidade|default("") }}:
 
 {% for vaga in vagas %}
 Entidade: {{ vaga.entidade.nome }}
