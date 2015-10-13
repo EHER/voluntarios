@@ -1,4 +1,5 @@
 .envrc
+.otto
 /app/bootstrap.php.cache
 /app/cache
 /app/config/parameters.fish
