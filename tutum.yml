@@ -9,7 +9,7 @@ code:
   volumes_from:
     - data
 data:
-  image: 'tutum.co/eher/voluntarios_php:latest'
+  image: 'tutum.co/eher/voluntarios:php-latest'
   command: 'true'
   tags:
     - data
@@ -17,7 +17,7 @@ data:
     - /var/www/symfony/database
     - /var/www/symfony/vendor
 nginx:
-  image: 'tutum.co/eher/voluntarios_nginx:latest'
+  image: 'tutum.co/eher/voluntarios:nginx-latest'
   environment:
     - 'VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com'
   expose:
@@ -29,7 +29,7 @@ nginx:
   volumes_from:
     - code
 php:
-  image: 'tutum.co/eher/voluntarios_php:latest'
+  image: 'tutum.co/eher/voluntarios:php-latest'
   environment:
     - SYMFONY__CONTACT__EMAIL
     - SYMFONY__FRAMEWORK__LOCALE
