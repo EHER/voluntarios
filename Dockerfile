@@ -3,6 +3,7 @@ MAINTAINER Alexandre Eher <alexandre@eher.com.br>
 RUN echo 'date.timezone="GMT"' >> /usr/local/etc/php/php.ini
 RUN apt-get update && apt-get install -y zlib1g-dev git \
     && docker-php-ext-install zip
+VOLUME /var/www/symfony
 COPY app /var/www/symfony/app
 COPY bin /var/www/symfony/bin
 COPY src /var/www/symfony/src
