@@ -1,43 +1,38 @@
-db:
-    build: docker/db
-    tty: true
-
 code:
     build: .
-    volumes_from:
-        - db
     environment:
-        - SYMFONY__MAILGUN__KEY
-        - SYMFONY__MAILGUN__DOMAIN
-        - SYMFONY__FRAMEWORK__LOCALE
-        - SYMFONY__FRAMEWORK__SECRET
-        - SYMFONY__CONTACT__EMAIL
-
-php:
+        - SYMFONY__CONTACT__EMAIL=tequeremosvoluntario@gmail.com
+        - SYMFONY__FRAMEWORK__LOCALE=pt_BR
+        - SYMFONY__FRAMEWORK__SECRET=random-secret-key
+        - SYMFONY__MAILGUN__DOMAIN=queroservoluntario.com
+        - SYMFONY__MAILGUN__KEY=8hdR+Y3bMkrW2m9Wp7PMflw25FRml16/Ja87bq0SAnk=
+    volumes_from:
+        - data
+data:
     build: docker/php-fpm
-    volumes_from:
-        - code
-    environment:
-        - SYMFONY__MAILGUN__KEY
-        - SYMFONY__MAILGUN__DOMAIN
-        - SYMFONY__FRAMEWORK__LOCALE
-        - SYMFONY__FRAMEWORK__SECRET
-        - SYMFONY__CONTACT__EMAIL
-
+    command: 'true'
+    volumes:
+        - /var/www/symfony/database
+        - /var/www/symfony/vendor
 nginx:
     build: docker/nginx
-    volumes_from:
-        - code
+    environment:
+        - 'VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com'
+    expose:
+        - '443'
     links:
         - php
-    environment:
-        - VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com
-
-nginxdebug:
-    build: docker/nginx-debug
+    ports:
+        - '80'
     volumes_from:
         - code
-    links:
-        - php
+php:
+    build: docker/php-fpm
     environment:
-        - VIRTUAL_HOST=dev.queroservoluntario.com
+        - SYMFONY__CONTACT__EMAIL=tequeremosvoluntario@gmail.com
+        - SYMFONY__FRAMEWORK__LOCALE=pt_BR
+        - SYMFONY__FRAMEWORK__SECRET=random-secret-key
+        - SYMFONY__MAILGUN__DOMAIN=queroservoluntario.com
+        - SYMFONY__MAILGUN__KEY=8hdR+Y3bMkrW2m9Wp7PMflw25FRml16/Ja87bq0SAnk=
+    volumes_from:
+        - code
