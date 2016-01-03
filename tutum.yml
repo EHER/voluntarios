@@ -1,0 +1,40 @@
+code:
+  image: 'tutum.co/eher/voluntarios:code-latest'
+  environment:
+    - SYMFONY__CONTACT__EMAIL
+    - SYMFONY__FRAMEWORK__LOCALE
+    - SYMFONY__FRAMEWORK__SECRET
+    - SYMFONY__MAILGUN__DOMAIN
+    - SYMFONY__MAILGUN__KEY
+  volumes_from:
+    - data
+data:
+  image: 'tutum.co/eher/voluntarios_php:latest'
+  command: 'true'
+  tags:
+    - data
+  volumes:
+    - /var/www/symfony/database
+    - /var/www/symfony/vendor
+nginx:
+  image: 'tutum.co/eher/voluntarios_nginx:latest'
+  environment:
+    - 'VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com'
+  expose:
+    - '443'
+  links:
+    - php
+  ports:
+    - '80'
+  volumes_from:
+    - code
+php:
+  image: 'tutum.co/eher/voluntarios_php:latest'
+  environment:
+    - SYMFONY__CONTACT__EMAIL
+    - SYMFONY__FRAMEWORK__LOCALE
+    - SYMFONY__FRAMEWORK__SECRET
+    - SYMFONY__MAILGUN__DOMAIN
+    - SYMFONY__MAILGUN__KEY
+  volumes_from:
+    - code
