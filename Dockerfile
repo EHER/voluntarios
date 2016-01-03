@@ -1,4 +1,4 @@
-FROM php:latest
+FROM php:5
 MAINTAINER Alexandre Eher <alexandre@eher.com.br>
 RUN echo 'date.timezone="GMT"' >> /usr/local/etc/php/php.ini
 RUN apt-get update && apt-get install -y zlib1g-dev git \
