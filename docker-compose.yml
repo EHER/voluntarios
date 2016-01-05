@@ -1,11 +1,11 @@
 code:
     build: .
     environment:
-        - SYMFONY__CONTACT__EMAIL=tequeremosvoluntario@gmail.com
-        - SYMFONY__FRAMEWORK__LOCALE=pt_BR
-        - SYMFONY__FRAMEWORK__SECRET=random-secret-key
-        - SYMFONY__MAILGUN__DOMAIN=queroservoluntario.com
-        - SYMFONY__MAILGUN__KEY=8hdR+Y3bMkrW2m9Wp7PMflw25FRml16/Ja87bq0SAnk=
+        - SYMFONY__CONTACT__EMAIL
+        - SYMFONY__FRAMEWORK__LOCALE
+        - SYMFONY__FRAMEWORK__SECRET
+        - SYMFONY__MAILGUN__DOMAIN
+        - SYMFONY__MAILGUN__KEY
     volumes_from:
         - data
 data:
@@ -29,10 +29,10 @@ nginx:
 php:
     build: docker/php-fpm
     environment:
-        - SYMFONY__CONTACT__EMAIL=tequeremosvoluntario@gmail.com
-        - SYMFONY__FRAMEWORK__LOCALE=pt_BR
-        - SYMFONY__FRAMEWORK__SECRET=random-secret-key
-        - SYMFONY__MAILGUN__DOMAIN=queroservoluntario.com
-        - SYMFONY__MAILGUN__KEY=8hdR+Y3bMkrW2m9Wp7PMflw25FRml16/Ja87bq0SAnk=
+        - SYMFONY__CONTACT__EMAIL
+        - SYMFONY__FRAMEWORK__LOCALE
+        - SYMFONY__FRAMEWORK__SECRET
+        - SYMFONY__MAILGUN__DOMAIN
+        - SYMFONY__MAILGUN__KEY
     volumes_from:
         - code

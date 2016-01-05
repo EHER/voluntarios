@@ -1,5 +1,6 @@
 code:
   image: 'tutum.co/eher/voluntarios:code-latest'
+  autoredeploy: true
   environment:
     - SYMFONY__CONTACT__EMAIL
     - SYMFONY__FRAMEWORK__LOCALE
@@ -18,8 +19,9 @@ data:
     - /var/www/symfony/vendor
 nginx:
   image: 'tutum.co/eher/voluntarios:nginx-latest'
+  autoredeploy: true
   environment:
-    - 'VIRTUAL_HOST=*.queroservoluntario.com,queroservoluntario.com'
+    - 'VIRTUAL_HOST=www.queroservoluntario.com,queroservoluntario.com'
   expose:
     - '443'
   links:
@@ -30,6 +32,7 @@ nginx:
     - code
 php:
   image: 'tutum.co/eher/voluntarios:php-latest'
+  autoredeploy: true
   environment:
     - SYMFONY__CONTACT__EMAIL
     - SYMFONY__FRAMEWORK__LOCALE
